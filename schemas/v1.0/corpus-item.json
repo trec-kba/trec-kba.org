@@ -1,0 +1,68 @@
+{
+    "id": "http://trec-kba.org/schemas/v1.0/corpus-item.json",
+    "description": "An item in a corpus of text documents.  Typically has one or more properties of type content-item.",
+    "type": "object",
+    "$schema": "http://json-schema.org/draft-03/schema#",
+    "properties": {
+        "$schema": {
+            "description": "URI of this JSON schema document; provided as a property in every instance document.",
+            "type": "string",
+            "enum": [
+                "http://trec-kba.org/schemas/v1.0/corpus-item.json",
+                "http://trec-kba.org/schemas/v1.0/stream-item.json"
+                ],
+            "required": true,
+            "default": "http://trec-kba.org/schemas/v1.0/corpus-item.json"
+            },
+        "doc_id": {
+            "description": "md5 hash of abs_url",
+            "title": "Document ID",
+            "type": "string",
+            "pattern": "^[a-f0-9]{32}$",
+            "required": true
+            },
+	"abs_url": {
+            "description": "Normalized absolute URL derived from original_url.",
+            "title": "Normalized URL",
+            "type": "string",
+            "required": true
+            },
+	"schost": {
+            "description": "scheme://netloc from abs_url",
+            "title": "scheme://netloc",
+            "type": "string",
+            "required": true
+            },
+	"original_url": {
+            "description": "URL provided by source, only non-null if differs from abs_url.",
+            "title": "Original URL",
+            "type": ["string", "null"],
+            "required": true
+            },
+        "source": {
+            "description": "Identifier of source providing URL and possibly other metadata.",
+            "title": "Source",
+            "type": "string"
+            },
+        "title": {
+            "description": "Headline for article, often HTML title.",
+            "type": [{"$ref": "http://trec-kba.org/schemas/v1.0/content-item.json"}]
+            },
+        "body": {
+            "description": "Primary content of article.",
+            "type": [{"$ref": "http://trec-kba.org/schemas/v1.0/content-item.json"}]
+            },
+        "anchor": {
+            "description": "Short commentary for article, typically the anchor text of an HTML in-link.",
+            "type": [{"$ref": "http://trec-kba.org/schemas/v1.0/content-item.json"}]
+            },
+        "source_metadata": {
+            "description": "Info provided by source.",
+            "type": [
+                {"$ref": "http://trec-kba.org/schemas/v1.0/news-metadata.json"},
+                {"$ref": "http://trec-kba.org/schemas/v1.0/social-metadata.json"},
+                {"$ref": "http://trec-kba.org/schemas/v1.0/linking-metadata.json"}
+                ]
+            }
+        }
+    }

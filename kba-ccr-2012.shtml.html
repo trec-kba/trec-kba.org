@@ -1,0 +1,546 @@
+<html>
+  <head>
+        <title>Knowledge Base Acceleration (KBA) -- a track in NIST's TREC 2012</title>
+    <style>
+#kbabanner {
+  background: #9D9FA1;
+  color: #FFFFFF;
+  font-family: "Trebuchet MS", Helvetica, Arial, sans-serif;
+  font-size: 44px;
+  text-shadow: 2px 2px 3px gray;
+  padding: 4px 16px 0px 16px;
+  vertical-align: top;
+}
+#kbabanner a:link {
+  text-decoration: none;
+  color: #FFFFFF;
+}
+#kbabanner a:visited {
+  text-decoration: none;
+  color: #FFFFFF;
+}
+#container {
+  width: 90%;
+  margin: 10px auto;
+  background-color: #fff;
+  color: #333;
+  border: 1px solid gray;
+  line-height: 130%;
+}
+#top {
+  padding: .5em;
+  background-color: #ddd;
+  border-bottom: 1px solid gray;
+}
+#top h1 {
+  padding: 0;
+  margin: 0;
+}
+#leftnav {
+  float: left;
+  width: 250px;
+  margin: 0;
+  padding: 1em;
+}
+#leftnav li { 
+  //margin-left:0px; 
+  //margin-right:0px; 
+  padding: 0px 0px 5px 0px;
+  list-style:square; 
+  list-style-type:none;
+  font-weight: bold;
+}
+#leftnav ul { 
+  //margin-left:0px; 
+  //margin-right:0px; 
+  padding: 0px 0px 0px 20px;
+  list-style:square; 
+  list-style-type:none;
+}
+#content {
+  margin-left: 290px;
+  border-left: 1px solid gray;
+  padding: 1em;
+  max-width: 56em;
+}
+
+html, body {height: 90%;}
+
+#wrap {min-height: 100%;}
+
+#main {
+  overflow:auto;
+  padding-bottom: 15px; /* must be same height as the footer */
+}
+
+#footer {
+  position: relative;
+  margin-top: -15px; /* negative value of footer height */
+  height: 15px;
+  clear:both;
+  margin: 0;
+  padding: .5em;
+  color: #333;
+  background-color: #ddd;
+  border-top: 1px solid gray;	
+}
+/*Opera Fix*/
+body:before {
+  content:"";
+  height:100%;
+  float:left;
+  width:0;
+  margin-top:-32767px;/
+}
+#leftnav p { margin: 0 0 1em 0; }
+#content h2 { margin: 0 0 .5em 0; }
+
+.diagram {
+   position: relative;
+   width: 100%; /* for IE 6 */
+}
+.diagram p {
+   position: absolute;
+   top: -20px;
+   left: 300px;
+   width: 50%;
+   text-align: left;
+   font-size: large;
+   font-weight: normal;
+   border-style: solid;
+   padding: 5px;
+}
+    </style>
+    <script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-27631853-2']);
+  _gaq.push(['_trackPageview']);
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+    </script>
+
+    <script type="text/javascript">
+  (function() {
+    var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+    po.src = 'https://apis.google.com/js/plusone.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+  })();
+    </script>
+    <!--[if !IE 7]>
+	<style type="text/css">
+	  #wrap {display:table;height:100%}
+	</style>
+    <![endif]-->
+
+  </head>
+  <body>
+        <div id="kbabanner">
+      <a href="index.html">
+	TREC Knowledge Base Acceleration
+	<image src="/trec-knowledge-base-acceleration-logo.png" height="50" style="float:right;"/>
+      </a>
+    </div>
+    <div id="wrap">
+      <div id="leftnav">
+	<ul>
+	  <li><a href="index.html">Overview</a></li>
+	  <li><a href="data/index.shtml.html">Truth Data</a></li>
+	    <ol>
+	      <li><a href="data/fakba1/index.shtml.html">Google Freebase Annotation of KBA StreamCorpus</a></li>
+	    </ol>
+	  <li><a href="trec-kba-2014/index.shtml.html">2014 Evaluation (three tasks):</a>
+	    <ol>
+	      <li><a href="trec-kba-2014/vital-filtering.shtml.html">1) Vital Filtering</a></li>
+	      <li><a href="trec-kba-2014/streaming-slot-filling.shtml.html">2) Streaming Slot Filling</a></li>
+	      <li><a href="trec-kba-2014/accelerate-and-create.shtml.html">3) Accelerate &amp; Create</a></li>
+	      <li><a href="trec-kba-2014/technical-details.shtml.html">Technical Details</a></li>
+	    </ol>
+	  </li>
+	  <li><a href="trec-kba-2013.shtml.html">2013 Tasks</a></li>
+	  <li><a href="kba-ccr-2012.shtml.html">2012 Task</a></li>
+	  <li>Stream Corpus</a>
+	    <ol>
+	      <li><a href="kba-stream-corpus-2014.shtml.html">StreamCorpus 2014</a>
+	      <li><a href="kba-stream-corpus-2013.shtml.html">StreamCorpus 2013</a>
+	      <li><a href="kba-stream-corpus-2012.shtml.html">StreamCorpus 2012</a>
+	    </ol>
+	  </li>
+	  <!--li><a href="/future-task-ideas.shtml">Future Task Ideas</a></li-->
+	  <li><a href="background.shtml.html">Background</a></li>
+	  <li><a href="organizers.shtml.html">Organizers</a></li>
+	</ul>
+	<table>
+	  <tr><td>
+	      <p>Supporters:</p>
+	      <center>
+		<p><a href="http://aws.amazon.com/"><img src="img/AWS-logo.png"/></a></p>
+		<p><a href="http://trec.nist.gov/"><img src="img/NIST-logo.png"/></a></p>
+		<p><a href="http://diffeo.com/"><img src="img/Diffeo-logo.png"/></a></p>
+		<p><a href="http://mit.edu/"><img width="100" src="img/MIT-logo.gif"/></a></p>
+		<p><a href="http://hertzfoundation.org/"><img src="img/Hertz-Foundation-logo.png"/></a></p>
+	  </center></td></tr>
+	</table>
+        <!-- Place this tag where you want the +1 button to render -->
+        <g:plusone size="small" annotation="inline"></g:plusone>
+      </div>
+    <!-- wrap gets closed in footer.shtml -->
+
+      <div id="content">
+	<h2>Cumulative Citation Recommendation 2012<br/>(kba-ccr-2012)</h2>
+
+	<p><font size="5" color="red">This page is an archival record of the first KBA task, which ran in 
+	<a href="http://trec.nist.gov/pubs/call2012.html">NIST's TREC 2012</a></font>.
+
+	<p>CCR task: filter a <i>stream</i> for documents relevant to
+	a set of <i>entities</i>.</p>
+
+	<p>11 teams submitted 43 runs to TREC KBA 2012.  The papers
+	and run data will be made available by NIST in February 2013.</p>
+
+	<h3>Questions & Answers</h3>
+	<ul>
+	  <h3>Big Picture</h3>
+	  <li>
+	    <p>Q: How does kba-ccr-2012 differ from querying for information about entities in a regular text corpus?</p>
+	    <p>A: The stream structure of the KBA corpus allows the topic entities to evolve.  This means that a relevant document from later in the stream might not have been relevant to that entity earlier in the stream.</p>
+	  </li>
+	  <li>
+	    <p>Q: How do the KBA query topics differ from topic filtering?</p>
+	    <p>A: Using entities as filter topics differs from traditional filtering tasks in at least two ways:  1) as mentioned above, entities can evolve as the stream progresses, and 2) unlike traditional topics defined by a list of keyword queries (a so-called &quot;profile query&quot;), entities are described by semi-structured articles in a KB like Wikipedia, Facebook, LinkedIn, Crunchbase, etc.  Such KB articles are more human-centric and also provide richer material for modeling.  For the kba-ccr-2012 task, we are using entities from the    the <a href="http://s3.amazonaws.com/aws-publicdatasets/trec/kba/enwiki-20120104/index.html">English Wikipedia snapshot created in early January 2012</a>.</p>
+	  </li>
+
+	  <li>
+	    <p>Q:  What do you mean an entity can evolve in time?</p>
+	    <p>A:  The stream nature of KBA allows the target entity to "move" as accumulated content implies modifications to the attributes, relations, and free text associated with a node.  For example, the South African painter <a href="http://en.wikipedia.org/wiki/Gavin_Rain">Gavin Rain</a> has an exhibit at <a href="http://en.wikipedia.org/wiki/Venice_Biennale">the Venice Biennale</a>.  After his <a href="http://www.beeld.com/Vermaak/Nuus/Rain-in-Costa-Rica-paviljoen-in-Venesie-20110602">participation was announced</a>, a controversy emerged about the <a href="http://www.timeslive.co.za/lifestyle/article1088155.ece/The-Venice-effect">South African pavilion</a> at the exhibit.  To detect the pertinence of this controversy to the Gavin Rain KB node, a system must first detect the new relationship implied by the earlier article about his participation.</p>
+	  </li>
+
+	  <h3><a name="cutoff">Cutoff</a></h3>
+	  <li>
+	    <p>Q:  What is the cutoff?</p>
+	    <p>A:  The &quot;cutoff&quot; is a key concept in defining the kba-ccr-2012 task.  KBA is motivated by the many large streams of unstructured data that people interact with on the Internet, such as news wires and the on-going edits in Wikipedia.  By definition, these streams do not have beginning or end points.  However, an structured evaluation like TREC must select beginning and end points.  In fact, to accurately mimic real streams, we must select <i>three</i> moments:
+	      <ol>
+		<li> <b>start</b> date of the stream corpus.</li>
+		<li> <b>cutoff</b> date after which a fully <b>automatic</b> system should not access human feedback for verification of its results, i.e. must run open loop.  For TREC 2012, the cutoff is defined by the English Wikipedia snapshot from January 2012, which completed on January XX, 2012.</li>
+		<li> <b>end</b> date the stream corpus.</li>
+	      </ol>
+	    </p>
+	    <p>We sometimes refer to the time between start-and-cutoff as the &quot;training time range&quot; (TTR) and the time between cutoff-and-end as the &quot;evaluation time range&quot; (ETR).
+	  </li>
+
+ 	  <h3><a name="timeline">Timeline leading up to TREC 2012 conference</a></h3>
+	  <li>
+	    <p>Q: What is the timeline for this task?</p>
+	    <p>A: Key dates:
+	      <ul>
+		<li><b>now</b> NIST accepting KBA Data Access Agreements -- see links below.</li>
+		<li><b>first week of June:</b>  Full corpus with NER available (done, see below for more details)</li>
+		<li><b>second week of June:</b>  Annotation data for beginning of stream for <b>sample</b> entities released (done, see below)</li>
+		<li><b>June 1, 2012 at 11:30 EDT:</b>  Online meeting and conference call to describe annotation and answer questions (done.)</li>
+		<li><b>June 22, 2012 at 11:00 EDT</b> via https://join.me/nist-trec-kba  you must install the join.me client to enable audio (both listening and speaking)</b>  Online meeting and conference call to describe annotation and answer questions</li>
+		<li><b>June 29, 2012</b>  All topic entities and annotation data for beginning of stream for <b>all</b> entities released</li>
+		<li><p><b><font color="red">Monday September 17, 2012 by 2:00am on Baker Island (10:00am eastern US time, 2:00pm UTC):</b>  Deadline</font> for <a href="https://ir.nist.gov/trecsubmit/kba.html">submitting runs to NIST's web submission form</a>.  Note that &quot;by midnight on Baker Island&quot; means the last moment of that Thursday anywhere on the planet.  Here is <a href="http://www.worldtimezone.com/time/wtzresult.php?CiID=42241">a clock the time on Baker Island right now</a>.  It corresponds to noon the next day UTC and 8am on the east coast of the US.</p></li>
+		<li><p><b>done</b>: Full evaluation data and tools released to teams who submitted runs.</p></li>
+		<li><p><b>October 15</b>: Submission deadline for TREC Notebook papers.</p></li>
+		<li><p><b>September through November</b>: Discussing refinements to CCR and possible new tasks for KBA 2013</p></li>
+		<li><b>November 6-9 2012:</b> TREC Conference in Gaithersburg, MD.  <br/>Plenary speakers:
+<ul>
+<li>Laura Dietz &amp; Jeff Dalton - UMass_CIIR</li>
+<li>Miles Efron - uiucGSLIS</li>
+<li>Gebrekirstos Gebremeskel - CWI</li>
+<li>Xitong Liu - udel_fang</li>
+<li>Edgar Meij - UvA</li>
+</ul>
+</li>
+	      </ul>
+	    </p>
+	  </li>
+
+	  <h3>Corpus</h3>
+	  <li>
+	    <p><a name="data-request-forms">Q:  How do I get the corpus?</a></p>
+
+	    <p>A: See <a href="kba-stream-corpus-2012.shtml.html#data-request-forms"><b>Obtaining the corpus</b> on the corpus description page</a>.</p>
+	  </li>
+
+	  <li>
+	    <p>Q: What text in the corpus is being evaluated for this task?</p>
+	    <p>A: Only those documents that have 'cleansed' text are candidates for the task.  Other documents can be ignored for KBA CCR 2012; they will not be judged.  The other languages in the corpus may be useful for future tasks.  We generated 'cleansed' for documents that had a reasonable chance of being English.  The judgments generated by NIST annotators were only for documents that have 'cleansed.'
+	  </li>
+
+	  <li>
+	    <p>Q: What is the corpus?</p>
+	    <p>A: The kba-ccr-2012 task can be executed against a wide range of corpora that have timestamps.  For TREC 2012, we are using the <a href="kba-stream-corpus-2012.shtml.html">kba-stream-corpus-2012</a>.</p>
+	  </li>
+	  <li>
+	    <p>Q: I see that the target corpus has three parts.  Is there a chronological ordering across all three subcorpora of "news" "linking" and "social"?</p>
+	    <p>A: Yes, every <a href="schemas/v1.0/stream-item.json">stream-item</a> has a stream_time and also a stream_id.  See structure in <a href="schemas/v1.0/stream-item.json">JSON schema for stream-item.json</a>, which extends <a href="schemas/v1.0/corpus-item.json">corpus-item.json</a>.  Note that these JSON schemas are deprecated, and the corpus is now in thrift format -- see details on the corpus description page.</p>
+	  </li>
+
+	  <h3><a name="annotation">Annotation</a></h3>
+	  <li>
+	    <p>Q: What annotation data will be available?</p>
+	    <p>A: We are providing the assessors judgments (aka &quot;annotation data&quot;) for corpus documents from the months of November and December 2011.  Teams can train systems on this data.  The task is to assign relevance scores to documents in the months from January through April in chronological order.  </p>
+	  </li>
+	  <li>
+	    <p>Q: When will this annotation will be available?</p>
+	    <p>A: Now.  See timeline.</p>
+	  </li>
+
+	  <li>
+	    <p>Q: How will the stream be annotated?</p>
+	    <p>A: In the terminology of Wikipedia, a link could be a citation, external link, or other form of hyperlink to a page outside the KB.  Wikipedians create links to external content for many reasons.  Some of these reasons are repeatable in the sense that annotators with modest training would agree on which links to create.  In designing the annotation procedure for KBA, we sought to capture these repeatable reasons for linking in simple guidelines that assessors at NIST and elsewhere can easily apply.  Our annotation guidelines include documents that do not explicitly mention the target entity, however this is a rare case -- approximately 4% of citations in Category:Living_people do not mention the person.</p>
+	  </li>
+
+	  <li>
+	    <p>Q: What documents are relevant to an entity?</p>
+	    <p>A: A document is relevant if a reader can learn something about the entity from the reading the document.</p>
+
+	    <li>
+	      <p><a name="annotation">Q: How should I interpret &quot;learn&quot; in this definition of relevant?</a>  Is a document relevant if it contains any information about the input entity, or only if it contains <b>new</b> information compared to what is already known about the entity in the KB (at the cutoff date)?</p>
+	      <p>A: The former, not the latter.  For KBA 2012 there is no novelty component.  We have ideas about how to introduce novelty next year.</p>
+	      <p>Here is how to think about the use of the word &quot;learn&quot; in the definition of relevance: imagine using the wikipedia article to identify (disambiguate) the entity, and then imagine <b>forgetting</b> all the info in the wikipedia article and asking with the text provides any information about the entity.</p>
+	      <p>To be more concrete, here is the annotation task performed by the NIST assessors.  This was discussed on the first conference call, and will be discussed more on the second conference call:</p>
+	      <img src="kba-ccr-2012-annotation-grid.png" width="300"/>
+
+	      <p>This two-by-four grid has the following row and column definitions:</p>
+	      <p>Rows:</p>
+	      <ul>
+		<li> Mentions: Document explicitly mentions target entity, such as full name, partial name, nickname, pseodonym, title, stage name.</li>
+		<li> Zero Mentions: Document does not directly mention target.  Could still be relevant, e.g. <a href="http://en.wikipedia.org/wiki/Metonymy" target="_wikipedia">metonymic</a> references like &quot;this administration&quot; --> &quot;Obama&quot;.  See also <a href="http://en.wikipedia.org/wiki/Synecdoche" target="_wikipedia">synecdoche</a>.  A document could also be relevant to the target entity through relation to entities mentioned in the document -- apply this test question:  can I learn something from this document about the target entity using whatever other information I have about the entity?</li>
+              </ul>
+              <p>Columns:</p>
+              <ul>
+		<li> Garbage: not relevant, e.g. spam.</li>
+		<li> Neutral: Not relevant, i.e. no info could be deduced about entity, e.g., entity name used in product name, or only pertains to community of target such that no information could be learned about entity, although you can see how an automatic algorithm might have thought it was relevant.</li>
+		<li> Relevant:  Relates indirectly, e.g., tangential with substantive implications, or topics or events of likely impact on entity.</li>
+		<li> Central: Relates directly to target such that you would cite it in the wikipedia article for this entity, e.g. entity is a central figure in topics/events.</li>
+              </ul>
+            </li>
+
+            <li>
+	      <p>Q: Whoa!  What is with the huge grid of judgments!?  The run submission format specifies only True/False with a confidence score.  How does that map on to this grid?</p>
+	      <p>A: <b>Idealistic Answer:</b> Systems should aim to replicate the &quot;central&quot; judgment, i.e. to propose articles that a human would want to cite in the Wikipedia article.  As described above, we blindly assume that the information about the entity contained in the document is not already provided by other cited references in the Wikipedia article.</p>
+	      <p>A: <b>Practical Answer:</b>  Even though the judgments from assessors are multi-valued, we can collapse the 2x4 grid into True/False regions in a few different ways.  This allows everyone to measure systems against these different definitions of True/False.  For example, the upper-right two cells D+F can be one definition of True, with all others binned as False.  This means that participants should decide which portion of the grid they want to target, and you should tell us about this in your run submission metadata.  For example, if you feel that your approach is better suited to identifying D+F, then do so and tell us about it.  If you want to target some other binning, such as F+V, then go ahead!  Just identify it in the 'system_description' part of your run submission.</p>
+	      <p>A: <b>Data-Oriented Answer:</b>  very few of judgments have landed in the lower-right grid cells of non-mentioning-yet-relevant.  Here are counts of judgments from the first couple weeks of the four-week annotation exercise -- we will update this with final counts in a couple weeks:</p>
+	      <table>
+		<tr><td>contains_mention</td><td>7991</td><td>3862</td><td>13971</td><td>7806</td></tr>
+		<tr><td>zero_mention</td><td>15367</td><td>163</td><td>61</td><td>0</td></tr>
+                <tr><td></td><td>garbage</td><td>neutral</td><td>rel</td><td>central</td></tr>
+	      </table>
+
+	      <p>A: <b>Strategic Philosophical Answer:</b> The kba-ccr-2012 task has an element that is like coreference resolution.  Our goal is to go beyond coref and exercise the streaming nature of real world KB building efforts.  For this first year, we made the simplifying decision to avoid novelty, which is the most straightforward way to excerise the streaming context.  Operating within this constraint, we decided on this citation-worthiness-type task, which has some uncomfortable wiggle room around the definition of &quot;central&quot;.  Whether this &quot;Would-you-cite-it?&quot; judgment works as a retrieval task is part of what we hope to learn from this first year.  <b>Note that this is essentially equivalent to nominating a document as source material for a KBP-style &quot;cold start&quot; population of a KB record about the entity.</b> At a minimum, we will be able to measure multiple flavors of streaming coref by binning D+F or S+D+F, and we may succeed in measuring systems that can distinguish D from F.  To enable this, we plan to measure interannotator agreement on D-versus-F.</p>
+
+	    </li>
+	  </li>
+
+          <li>
+	    <p>Q: Given an input entity, the output effectively is a scoring of all documents that mention this entity.  Is there any limit on the number of records returned?</p>
+	    <p>A: There is no limit.  However, we expect all participants to follow the rule that judgments are rendered on an hour-by-hour basis in chronological order without going back to promote documents using information from the future.</p>
+	  </li>
+
+	  <li>
+	    <p>Q: Is there any sample annotation?</p>
+	    <p>A: Yes, here is a <a href="judgments-2012JUN14.filter-run.before-cutoff.four-entities.txt">sample for four entities from before the cutoff</a>.  Data for all of the target entities from before the cutoff will be released at the end of this month (June 2012).  Note that the annotation data is the same format as run submission format <i><b>with two more columns:</b></i>:
+	      <ul>
+		<li>seventh column: integer in [-1, 0, 1, 2] corresponding to relevance judgment in ['garbage', 'neutral', 'relevant', 'central']</li>
+		<li>eigth column: integer in [0, 1], which is boolean indicating whether the document contained a mention of the entity or not.</li>
+	      </ul>
+	    </p>
+	  </li>
+		
+	  <li>
+	    <p>Q: What does the rest of the time series look like?</p>
+	    <p>A: Here is a plot of the number of F-annotated ('central') documents per hour per entity (NB: here a document scored with &quot;F&quot; is one that the annotators marked as &quot;central&quot; using the grid of annotations above; it is <i>not</i> an F_1 score, the harmonic mean of precision and recall:</p>
+	    <img src="time-series-of-F-scoring-documents-per-entity.png"/>
+	  </li>
+	  
+	  <li>
+	    <p>Q: What about novelty?</p>
+	    <p>A: In kba-ccr-2012, there is no novelty requirement, so if Justin Bieber were a target entity (he is not) and he happens to produce a new album, and two hundred content items announce it, then in principle they are all correct choices -- they all contain information that pertains to that KB node.</p>
+	  </li>
+
+	  <li>
+	    <p>A: What about salience?</p>
+	    <p>Q: In kba-ccr-2012, there is no salience requirement.  If a content item clearly refers to or pertains to the target entity -- even only tangentially -- such that a reader can learn something about the entity, then it is relevant.  This probably allows trivial algorithms to get many correct answers, which will cause both simple and sophisticated systems to receive very similar scores.  While we would like to differentiate sophisticated systems, we must keep the first year's annotation task as simple as possible.  We hope to construct a baseline measure that would subtract such easy responses and provide a means of differentiating sophisticated systems.</p>
+	  </li>
+
+	  <li>
+	    <p>Q: Will the Wikipedia edit history be annotated?</p>
+	    <p>A: In future years, it may prove useful to manually label Wikipedia edit history for a task.  However, we do not need this for kba-ccr-2012.</p>
+	  </li>
+
+	  <li>
+	    <p>Q: Will the annotators judge the entire corpus?</p>
+	    <p>A: No.  We are feeding a subset of the corpus to the annotators.  The system prioritizing documents for the annotators is like a high-recall KBA system, however we retrain it periodically on the judgments as they become available.  This is similar to adaptive filter systems used in TREC 2002 Filtering.  Participants' systems will probably find some true positive results that we did not send to the annotators in the original annotation project in June 2012.  We will gather this pool of results that were highly ranked by participants' systems but not previously assessed by NIST annotators.  By judging a sample of this pool, we will measure the recall of the tools that created the subcorpus for the original annotation project.
+	      <ol>
+		<li> Ian Soboroff, Ellen Voorhees, and Nick Craswell (September 2003), 
+		  <strong><a href="http://doi.acm.org/10.1145/959258.959267">
+		      Summary of the SIGIR 2003 workshop on defining evaluation methodologies for terabyte-scale test collections
+		  </a></strong>
+		  <i>SIGIR Forum</i>, vol. 37, no. 2 (Fall 2003)
+		</li>
+		
+		<li> Ian Soboroff and Stephen Robertson (July 2003)
+		  <strong>
+		    <a href="http://doi.acm.org/10.1145/860435.860481">
+		      Building a Filtering Test Collection for TREC 2002
+		  </a></strong>
+		  Proceedings of the 26th Annual International Conference on Research
+		  and Development in Information Retrieval (SIGIR 2003), Toronto,
+		  Ontario, Canada.
+		</li>
+	      </ol>
+	    </p>
+	  </li>
+	  
+	  <li>
+	    <p>Q: What about feedback?</p>
+	    <p>A: The cumulative citation recommendation task gets progressively harder as the stream pushes the target around without confirmational feedback from human curators.  This reflects real KB evolution, in which human curators tend &quot;hot&quot; nodes while mostly ignoring the long tail of not-yet-on-fire nodes.  Fortunately, difficulty increases gradually with duration of accumulation and we can use this in measuring performance.  A longer evaluation time range (after the cutoff) corresponds to nodes that receive less frequent editorial attention.  See time lag plot in <a href="http://groups.google.com/group/trec-kba/browse_thread/thread/3a88c6b5da750ab5">slides presented at TREC 2011 planning session</a>, which suggest that Wikipedians' reaction time to news events is only slightly better than random.  We plan to write up more details about those plots in a brief note.</p>
+	  </li>
+
+
+	  <h3>Filter Topics: Entities</h3>
+	  <li>
+	    <p>Q:  What are the query topics for kba-ccr-2012</p>
+	    <p>A:  We have selected a set of ~50 people and a few organizations from Wikipedia's Living_people category.  We avoided actors, atheletes, and politicians.  We focused on entities with complex link graphs of relationships with other active entities.  For example, <a href="http://en.wikipedia.org/wiki/Alisher_Usmanov">Alisher Usmanov</a> is a fascinating Russian with many business holdings and an active public persona.</p>
+	  </li>
+	  <li>
+	    <p>Q:  How will the entities be distributed to teams?</p>
+	    <p>A:  As illustrated in <a href="schemas/v1.0/filter-topics.sample-trec-kba-targets-2012.json">this sample set of entities</a>, entities are defined in a JSON document according to the <a href="schemas/v1.0/filter-topics.json">filter-topics.json schema</a>.  A file of this type will be emailed to registered teams on the date indicated in the timeline (above).</p>
+	  </li>
+	  <li>
+	    <p>Q:  Are all the entities mentioned in the stream corpus?</p>
+	    <p>A:  All target entities receive a moderate number of mentions in the stream corpus:  between once per day and once per week.</p>
+	  </li>
+	  <li>
+	    <p>Q: Will all of the filter topics be available up front?</p>
+	    <p>A: Yes, all the queries will be available at the same time, so that one could process the stream just once.</p>
+	  </li>
+	  <li>
+	    <p>Q: Is their ambiguity in the definition of the filter topics?</p>
+	    <p>A: For KBA 2012, we are defining entities by specifying their &quot;urlname&quot; in the <a href="http://dumps.wikimedia.org/enwiki/20120104/">English Wikipedia snapshot from early January 2012</a>.  The <i>primary</i> &quot;urlname&quot; combined with specifying that particular snapshot is an unambiguous definition of an entity.  &quot;<i>primary</i>&quot; urlname means the unique urlname that is not a redirect to the article about the entity.  See <a href="schemas/v1.0/filter-topics.sample-trec-kba-targets-2012.json">this sample</a>, which is based on <a href="schemas/v1.0/filter-topics.json">this schema</a></p>
+	  </li>
+	  
+	  <h3>Metrics</h3>
+	  <li>
+	    <p>Q:  What metrics will be used to evaluate teams?</p>
+	    <p>A:  At a minimum, we will compute precision, recall, and F_1 curves as a function of relevance cutoff, and the area under the F_1 curve.  We may also consider ROC curves.  We will also compute metrics such as ERR that treat the result data as lists ordered on confidence.
+	  </li>
+
+	  <li>
+	    <p>Q:  What motivates the different metrics?</p>
+	    <p>A:  KBA systems running in a production environment might be used in two very different ways:  1) to select a substream of data for processing by other machines, or 2) to prioritize a substream for consumption by humans.  In the former case, one expects the machines to use a confidence cutoff and consume <i>all</i> results above the cutoff.  Precision/recall/F_1 are the most useful metrics for this use case.  In the latter case, one expects the human to process the results in sorted order and become exhausted or lose patience the deeper they go in the list.  Cascade-style metrics, like ERR and NDCG, are more useful for this use case.  We plan to measure both.</p>
+	  </li>
+
+	  <li>
+	    <p>Q:  How does the hourly structure of the corpus interact with metrics?</p>
+	    <p>A:  We can compute metrics like F_1 and ERR on each hour individually and average.  We plan to compare this to computing metrics on the sum of all hours.</p>
+	  </li>
+
+	  <h3>External Information</h3>
+	  <li>
+	    <p>Q: Will the documents in the TREC KBA 2012 corpus contain additional URLs that we can crawl to &quot;expand&quot; the document?</p>
+	    <p>A: Yes.  Since those documents may contain information about the world <i>after</i> that moment in the stream corpus, we ask that you identify runs that use this information by labeling them as &quot;other&quot; and including text in &quot;description&quot; field of the <a href="schemas/v1.0/filter-run.json">filter-run</a> JSON document.  </p>
+	  </li>
+
+	  <h3>So much data!</h3>
+	  <li>
+	    <p>Q: What approaches work for handling a corpus of this size in the stream-like fashion required for this task?</p>
+	    <p>A: The corpus is organized into ~4300 hourly batches to facilitate processing the corpus sequentially in batches of 10^5 docs.  Several architectural approaches can work for processing these batches.  Two broad classes of architectures are:
+	      <ul>
+		<li><b>Pre-indexing</b>: you can index the entire corpus ahead of time in a search engine like <a href="http://www.lemurproject.org/indri/">indri</a>, <a href="http://lucene.apache.org/solr/">solr</a>, <a href="http://www.elasticsearch.org/">elasticsearch</a>, or some other document database system, and then simulate an hourly stream by issuing ~4300 queries with a time range restrictions for each hour.  A benefit of this approach is that such text search engines have processing pipelines that you might use for executing per-document analytics of your choice.  In implementing such an approach, you may be tempted to use corpus-wide ranking algorithms that incorporate statistics from documents in all hours of the corpus.  Please label such runs as "other" and explain what you used.</li>
+		<li><b>Batch processing</b>: you can iterate over the corpus as a sequence of ~4300 batches.  This can be implemented using a MapReduce framework like Hadoop or even <a href="https://github.com/erikfrey/bashreduce">BashReduce</a>.</li>
+	      </ul>
+	    </p>
+	  </li>
+
+	  <h3><a name="format">Submitting Runs</a></h3>
+	  <li>
+	    <p>Q: What is the format for submitting runs?</p>
+	    <p>A: The output formats are described by JSON schema
+	    documents
+	    in <a href="schemas/v1.0/index.html">http://trec-kba.org/schemas/v1.0/</a>
+	    and also illustrated by
+	    this <a href="toy-kba-system.tar.gz">toy KBA system</a>
+	    written in python.  This toy system illustrates how to
+	    load the corpus and generate a run for submission.</p>
+
+	    <p>A: A submission consists of a single text file in a format that <b>differs</b> from most TREC submissions.  The file may contain comment lines that begin with a <b>#</b>.  The first line <b>must</b> be a comment containing a JSON string in the <a href="schemas/v1.0/filter-run.json">filter-run.json schema</a>.  Subsequent lines may be comments or results.  Results lines must contain exactly five columns separated by at least one white space. The width of the columns in the format is not important.  However, each non-comment row must have exactly five columns with at least one space between the columns.</p>
+	      <p>All submissions must be compressed (gzip or bzip2) -- be sure to put &quot;.gz&quot; or &quot;.bz2&quot; at the end of yoru file name.</p>
+	      <p>For example, here is an output file generated by toy_kba_system.py
+	      <pre>
+#{"team_id": "CompInsights", "run_info": {"num_entities": 4, "num_stream_hours": 3}, "topic_set_id": "sample-trec-kba-topics-2012", "corpus_id": "tiny-sample-of-hourly-corpus", "task_id": "kba-ccr-2012", "system_id": "toy_1", "$schema": "http://trec-kba.org/schemas/v1.0/filter-run.json", "system_description": "Collapses entity title strings and documents into sets of words and looks for fraction of exact match overlap with entity titles.  Relevance is fraction of entity title words that appear in doc.", "run_type": "automatic"}
+CompInsights	toy_1	1328055120-f6462409e60d2748a0adef82fe68b86d	Andrew_Forrest	1000
+CompInsights	toy_1	1328057880-79cdee3c9218ec77f6580183cb16e045	Andrew_Forrest	428
+CompInsights	toy_1	1328057280-80fb850c089caa381a796c34e23d9af8	Andrew_Forrest	428
+CompInsights	toy_1	1328056560-450983d117c5a7903a3a27c959cc682a	Amy_Chua	375
+CompInsights	toy_1	1328056560-450983d117c5a7903a3a27c959cc682a	Andrew_Forrest	428
+CompInsights	toy_1	1328056260-684e2f8fc90de6ef949946f5061a91e0	Andrew_Forrest	428
+CompInsights	toy_1	1328056560-be417475cca57b6557a7d5db0bbc6959	Andrew_Forrest	428
+CompInsights	toy_1	1328057520-4e92eb721bfbfdfa0b1d9476b1ecb009	Annie_Laurie_Gaylor	315
+CompInsights	toy_1	1328058660-807e4aaeca58000f6889c31c24712247	Andrew_Forrest	428
+CompInsights	toy_1	1328060040-7a8c209ad36bbb9c946348996f8c616b	Annie_Laurie_Gaylor	263
+CompInsights	toy_1	1328063280-1ac4b6f3a58004d1596d6e42c4746e21	Andrew_Forrest	428
+CompInsights	toy_1	1328064660-1a0167925256b32d715c1a3a2ee0730c	Andrew_Forrest	428
+CompInsights	toy_1	1328062980-7324a71469556bcd1f3904ba090ab685	Andrew_Forrest	428
+#{
+#    "team_id": "CompInsights", 
+#    "run_info": {
+#        "num_filter_results": 13, 
+#        "elapsed_time": 3.591719150543213, 
+#        "num_entities": 4, 
+#        "num_entity_doc_compares": 2296, 
+#        "num_stream_hours": 3
+#    }, 
+#    "topic_set_id": "sample-trec-kba-topics-2012", 
+#    "corpus_id": "tiny-sample-of-hourly-corpus", 
+#    "task_id": "kba-ccr-2012", 
+#    "system_id": "toy_1", 
+#    "$schema": "http://trec-kba.org/schemas/v1.0/filter-run.json", 
+#    "system_description": "Collapses entity title strings and documents into sets of words and looks for fraction of exact match overlap with entity titles.  Relevance is fraction of entity title words that appear in doc.", 
+#    "run_type": "automatic"
+#}
+	      </pre>
+	    <p>where:
+	      <ul>
+		<li>first column is your team_id</li>
+		<li>second column is your system_id.  This provides a unique identifier for the submission when combined with your team_id.</li>
+		<li>third column is a official document identifier of the retrieved document.  For documents in the KBA 2012 stream corpus this identifier is the stream_id.</li>
+		<li>fourth column is a unique identifier for the topic, which for kba-ccr-2012 is the urlname of the entity in the January 2012 snapshot of the English Wikipedia..</li>
+		<li>fifth column is a relevance score.  Relevance scores must be normalized to be less than or equal to 1000 and greater than 0, i.e. you can think of them as floating point numbers between zero and one that we present as interger thousandths.  In set notation, <pre>relevance &#8712; (0, 1000] and relevance &#8712; &#119833;</pre></li>
+	      </ul>
+	    </p>
+	    <p>NB: all comment lines after the first line are ignored.  So, for example, the block of comment lines at the end of the example above are ignored.  We include them as an example of how you might make your submission file easier for you to manage and track.</p>
+	  </li>
+	  <li>
+	    <p>Q:  I just generated a submission run.  (yay!)  How do I verify that it is correctly formatted?</p>
+	    <p>A:  This script validates the submission format: <a href="http://trec.nist.gov/act_part/scripts/12.scripts/check_kba.pl">http://trec.nist.gov/act_part/scripts/12.scripts/check_kba.pl</a>.</p>
+	  </li>
+	  <li>
+	    <p>Q:  How do I submit runs to TREC?</p>
+	    <p>A:  <a href="https://ir.nist.gov/trecsubmit/kba.html">https://ir.nist.gov/trecsubmit/kba.html</a></p>
+	  </li>
+	  <li>
+	    <p>Q: How much time will teams have to submit results, i.e. will there be a fixed window?</p>
+	    <p>A: See timeline above.</p>
+	  </li>
+	  <li>
+	    <p>Q: What is the difference between an &quot;automatic&quot; and &quot;manual&quot; run?</p>
+	    <p>A: As is standard for TREC tasks, you should design and implement your system without <b>studying</b> the particular topics and training data.  The purpose of the training data is to allow you to <b>automatically</b> train your system, not <b>manually</b> tune/tweak/patch your system for these particular topics.</p>
+
+	    <p>That said, after you generate an automatic run, it is probably quite fruitful to manually examine the training data and conceive of improvements.  In standard TREC fashion, you know the difference between your runs and are expected to label them accordingly as &quot;automatic&quot; and &quot;manual&quot;.  We want to hear about your insights, and please consider describing your work in a poster at the TREC conference and/or a technical report in the TREC proceedings.</p>
+
+	    <p>Since we are giving teams training data, one might worry about a grey area between manual and automatic.  If the run processes the training data in a fully automatic way, for example, randomizes it and runs 10x-CV to build topic models, then the run is still automatic.  If there is manual intervention in the training process, like choosing training examples manually, then the run is manual.</p>
+	  </li>
+	</ul>
+      </div>
+    </div> <!-- end of wrap -->
+    <div id="footer">
+      <a href="http://groups.google.com/group/trec-kba">Google Group for TREC KBA</a>
+    </div>
+
+  </body>
+</html>

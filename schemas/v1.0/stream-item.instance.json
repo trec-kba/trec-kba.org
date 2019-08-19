@@ -1,0 +1,36 @@
+{
+    "$schema": "http://trec-kba.org/schemas/v1.0/stream-item.json", 
+    "abs_url": "http://priyachauhan.suite101.com/important-hindu-samskaras---rituals-of-passage-a389385", 
+    "body": {
+        "encoding": "UTF-8", 
+        "raw": "33264 bytes printed below", 
+        "stages": []
+    }, 
+    "doc_id": "3bb958d6905ef84a157d4746e33321cc", 
+    "original_url": null, 
+    "schost": "http://priyachauhan.suite101.com", 
+    "source": "news", 
+    "source_metadata": {
+        "http_headers": {
+            "cache-control": "no-cache", 
+            "content-encoding": "gzip", 
+            "content-language": "en-US", 
+            "content-type": "text/html; charset=UTF-8", 
+            "date": "Thu, 08 Mar 2012 04:58:56 GMT", 
+            "pragma": "no-cache", 
+            "server": "Apache/2.2.3 (CentOS) PHP/5.1.6 mod_ssl/2.2.3 OpenSSL/0.9.8e-fips-rhel5 JRun/4.0", 
+            "set-cookie": "CFID=774909911;expires=Sat, 01-Mar-2042 04:58:56 GMT;path=/, CFTOKEN=95706661;expires=Sat, 01-Mar-2042 04:58:56 GMT;path=/, SUITE101_TRACKING=66BDDC0E%2D92B0%2D4A0B%2DDC4C341111DA7B0C;domain=.suite101.com;expires=Sat, 01-Mar-2042 04:58:56 GMT;path=/, ABTEST_ID=418;domain=.suite101.com;path=/, TEMPLATE_FILE=article%5F44%2Ecfm;domain=.suite101.com;path=/, ABTEST_CHANNEL=adspot%5F14;domain=.suite101.com;path=/, ABTEST_LINKADS_CHANNEL=adspot%5F15;domain=.suite101.com;path=/, Coyote-2-455a6255=455a625a:0; expires=Thu, 08-Mar-12 05:47:40 GMT; path=/", 
+            "transfer-encoding": "chunked", 
+            "vary": "Accept-Encoding,User-Agent"
+        }, 
+        "http_status": 200, 
+        "is_duplicate": false, 
+        "language": "English", 
+        "redirect_chain": []
+    }, 
+    "stream_id": "1321723140-3bb958d6905ef84a157d4746e33321cc", 
+    "stream_time": {
+        "epoch_ticks": 1321723140.0, 
+        "zulu_timestamp": "2011-11-19T17:19:00.000000Z"
+    }
+}

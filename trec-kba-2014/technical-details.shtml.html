@@ -1,0 +1,303 @@
+<html>
+  <head>
+        <title>Knowledge Base Acceleration (KBA) -- a track in NIST's TREC 2012</title>
+    <style>
+#kbabanner {
+  background: #9D9FA1;
+  color: #FFFFFF;
+  font-family: "Trebuchet MS", Helvetica, Arial, sans-serif;
+  font-size: 44px;
+  text-shadow: 2px 2px 3px gray;
+  padding: 4px 16px 0px 16px;
+  vertical-align: top;
+}
+#kbabanner a:link {
+  text-decoration: none;
+  color: #FFFFFF;
+}
+#kbabanner a:visited {
+  text-decoration: none;
+  color: #FFFFFF;
+}
+#container {
+  width: 90%;
+  margin: 10px auto;
+  background-color: #fff;
+  color: #333;
+  border: 1px solid gray;
+  line-height: 130%;
+}
+#top {
+  padding: .5em;
+  background-color: #ddd;
+  border-bottom: 1px solid gray;
+}
+#top h1 {
+  padding: 0;
+  margin: 0;
+}
+#leftnav {
+  float: left;
+  width: 250px;
+  margin: 0;
+  padding: 1em;
+}
+#leftnav li { 
+  //margin-left:0px; 
+  //margin-right:0px; 
+  padding: 0px 0px 5px 0px;
+  list-style:square; 
+  list-style-type:none;
+  font-weight: bold;
+}
+#leftnav ul { 
+  //margin-left:0px; 
+  //margin-right:0px; 
+  padding: 0px 0px 0px 20px;
+  list-style:square; 
+  list-style-type:none;
+}
+#content {
+  margin-left: 290px;
+  border-left: 1px solid gray;
+  padding: 1em;
+  max-width: 56em;
+}
+
+html, body {height: 90%;}
+
+#wrap {min-height: 100%;}
+
+#main {
+  overflow:auto;
+  padding-bottom: 15px; /* must be same height as the footer */
+}
+
+#footer {
+  position: relative;
+  margin-top: -15px; /* negative value of footer height */
+  height: 15px;
+  clear:both;
+  margin: 0;
+  padding: .5em;
+  color: #333;
+  background-color: #ddd;
+  border-top: 1px solid gray;	
+}
+/*Opera Fix*/
+body:before {
+  content:"";
+  height:100%;
+  float:left;
+  width:0;
+  margin-top:-32767px;/
+}
+#leftnav p { margin: 0 0 1em 0; }
+#content h2 { margin: 0 0 .5em 0; }
+
+.diagram {
+   position: relative;
+   width: 100%; /* for IE 6 */
+}
+.diagram p {
+   position: absolute;
+   top: -20px;
+   left: 300px;
+   width: 50%;
+   text-align: left;
+   font-size: large;
+   font-weight: normal;
+   border-style: solid;
+   padding: 5px;
+}
+    </style>
+    <script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-27631853-2']);
+  _gaq.push(['_trackPageview']);
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+    </script>
+
+    <script type="text/javascript">
+  (function() {
+    var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+    po.src = 'https://apis.google.com/js/plusone.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+  })();
+    </script>
+    <!--[if !IE 7]>
+	<style type="text/css">
+	  #wrap {display:table;height:100%}
+	</style>
+    <![endif]-->
+
+  </head>
+  <body>
+        <div id="kbabanner">
+      <a href="../index.html">
+	TREC Knowledge Base Acceleration
+	<image src="/trec-knowledge-base-acceleration-logo.png" height="50" style="float:right;"/>
+      </a>
+    </div>
+    <div id="wrap">
+      <div id="leftnav">
+	<ul>
+	  <li><a href="../index.html">Overview</a></li>
+	  <li><a href="../data/index.shtml.html">Truth Data</a></li>
+	    <ol>
+	      <li><a href="../data/fakba1/index.shtml.html">Google Freebase Annotation of KBA StreamCorpus</a></li>
+	    </ol>
+	  <li><a href="index.shtml.html">2014 Evaluation (three tasks):</a>
+	    <ol>
+	      <li><a href="vital-filtering.shtml.html">1) Vital Filtering</a></li>
+	      <li><a href="streaming-slot-filling.shtml.html">2) Streaming Slot Filling</a></li>
+	      <li><a href="accelerate-and-create.shtml.html">3) Accelerate &amp; Create</a></li>
+	      <li><a href="technical-details.shtml.html">Technical Details</a></li>
+	    </ol>
+	  </li>
+	  <li><a href="../trec-kba-2013.shtml.html">2013 Tasks</a></li>
+	  <li><a href="../kba-ccr-2012.shtml.html">2012 Task</a></li>
+	  <li>Stream Corpus</a>
+	    <ol>
+	      <li><a href="../kba-stream-corpus-2014.shtml.html">StreamCorpus 2014</a>
+	      <li><a href="../kba-stream-corpus-2013.shtml.html">StreamCorpus 2013</a>
+	      <li><a href="../kba-stream-corpus-2012.shtml.html">StreamCorpus 2012</a>
+	    </ol>
+	  </li>
+	  <!--li><a href="/future-task-ideas.shtml">Future Task Ideas</a></li-->
+	  <li><a href="../background.shtml.html">Background</a></li>
+	  <li><a href="../organizers.shtml.html">Organizers</a></li>
+	</ul>
+	<table>
+	  <tr><td>
+	      <p>Supporters:</p>
+	      <center>
+		<p><a href="http://aws.amazon.com/"><img src="../img/AWS-logo.png"/></a></p>
+		<p><a href="http://trec.nist.gov/"><img src="../img/NIST-logo.png"/></a></p>
+		<p><a href="http://diffeo.com/"><img src="../img/Diffeo-logo.png"/></a></p>
+		<p><a href="http://mit.edu/"><img width="100" src="../img/MIT-logo.gif"/></a></p>
+		<p><a href="http://hertzfoundation.org/"><img src="../img/Hertz-Foundation-logo.png"/></a></p>
+	  </center></td></tr>
+	</table>
+        <!-- Place this tag where you want the +1 button to render -->
+        <g:plusone size="small" annotation="inline"></g:plusone>
+      </div>
+    <!-- wrap gets closed in footer.shtml -->
+
+      <div id="content">
+
+<h2>TREC KBA 2014: Technical Details</h2>
+<p>Knowledge Base Acceleration (KBA) is an open evaluation in
+NIST's <a href="http://trec.nist.gov">Text Retrieval Conference
+(TREC).</a>  KBA addresses this fundamental question:
+
+<!-- insert the core research question of KBA used on several pages -->
+<div style="text-align: center; background-color: #eeeeee; font-size: x-large;">
+<b>Given a <i>rich dossier</i> on a subject, 
+<br/> filter a stream of documents to 
+<br/> accelerate users filling in knowledge gaps.
+</b></div>
+
+
+<p><b>External Information:</b> teams can use external info that
+entered the world <i>before</i> the given hour being processed.  Teams
+must describe such external data in their run submission
+descriptions.</p>
+
+<p><b><a name="submissions">Submissions to KBA</a></b> are gzipped
+text files in the format below.  The first line <b>must</b> be a
+comment containing a JSON string in the 
+<a href="../schemas/v1.1/filter-run.json">filter-run.json schema</a>.  
+Assertions consist of seven fields with separated by whitespace.</p>
+
+<p>Be sure your file name ends with &quot;.gz&quot;.</p>
+
+<p>Comment lines must start with '#'.  All comment lines after the
+first line of the file are ignored.</p>
+
+<p>In order to attend the TREC conference, you must submit a run.  To
+send your runs to NIST, verify its format using this script:
+<a href="http://trec.nist.gov/act_part/scripts/13.scripts/check_kba.pl">http://trec.nist.gov/act_part/scripts/13.scripts/check_kba.pl</a>
+and then uploading
+to <a href="https://ir.nist.gov/trecsubmit/kba.html">https://ir.nist.gov/trecsubmit/kba.html</a>
+</p>
+
+<p><b>Example run submission</b> generated by this 
+<a href="https://github.com/trec-kba/kba-tools/tree/master/toy-system">toy KBA system</a> 
+written in python that generates both SSF and CCR example output.  NB: this system will be updated before queries are released for KBA 2014.</p>
+
+<pre>
+#{"run_type": "automatic", "poc_email": "trec-kba@googlegroups.com", "team_id": "CompInsights", "topic_set_id": "kba-2014-ccr-and-ssf", "corpus_id": "kba-streamcorpus-2014-v0_3_0", "$schema": "http://trec-kba.org/schemas/v1.1/filter-run.json", "team_name": "Computable Insights", "system_description_short": "relevance=2, exact name match, longest sentence slot fills", "system_description": "Entity title strings are used as surface form names, then any document containing one of the surface form names is ranked vital with confidence proportional to length of surface form name, and the longest sentence containing the longest surface form name is treated as a slot fill for all slot types for the given entity type.", "task_id": "kba-ccr-2014", "poc_name": "TREC KBA Organizers", "run_info": {"num_entities": 170, "num_stream_hours": 8951}, "system_id": "toy_1"}
+CompInsights	toy_1	1317995861-4c6376217ea27bb954f96164c7cdc8ab	http://en.wikipedia.org/wiki/The_Ritz_Apartment_(Ocala,_Florida)	1000	2	1	2011-10-07-14	Affiliate	19ed38ac70555a9f1bbf26feb79764bf	1057-1263
+CompInsights	toy_1	1317995861-4c6376217ea27bb954f96164c7cdc8ab	http://en.wikipedia.org/wiki/The_Ritz_Apartment_(Ocala,_Florida)	1000	2	1	2011-10-07-14	Contact_Meet_Entity	19ed38ac70555a9f1bbf26feb79764bf	1057-1263
+CompInsights	toy_1	1317995861-4c6376217ea27bb954f96164c7cdc8ab	http://en.wikipedia.org/wiki/Appleton_Museum_of_Art	1000	2	1	2011-10-07-14	Affiliate	19ed38ac70555a9f1bbf26feb79764bf	1057-1263
+CompInsights	toy_1	1317995861-4c6376217ea27bb954f96164c7cdc8ab	http://en.wikipedia.org/wiki/Appleton_Museum_of_Art	1000	2	1	2011-10-07-14	Contact_Meet_Entity	19ed38ac70555a9f1bbf26feb79764bf	1057-1263
+CompInsights	toy_1	1317995861-4c6376217ea27bb954f96164c7cdc8ab	http://en.wikipedia.org/wiki/Bill_Coen	1000	2	1	2011-10-07-14	Affiliate	fc9c67b4ca0bdeaf2cac34c3d6edb192	0-303
+CompInsights	toy_1	1317995861-4c6376217ea27bb954f96164c7cdc8ab	http://en.wikipedia.org/wiki/Bill_Coen	1000	2	1	2011-10-07-14	AssociateOf	fc9c67b4ca0bdeaf2cac34c3d6edb192	0-303
+CompInsights	toy_1	1317995861-4c6376217ea27bb954f96164c7cdc8ab	http://en.wikipedia.org/wiki/Bill_Coen	1000	2	1	2011-10-07-14	Contact_Meet_PlaceTime	fc9c67b4ca0bdeaf2cac34c3d6edb192	0-303
+CompInsights	toy_1	1317995861-4c6376217ea27bb954f96164c7cdc8ab	http://en.wikipedia.org/wiki/Bill_Coen	1000	2	1	2011-10-07-14	AwardsWon	fc9c67b4ca0bdeaf2cac34c3d6edb192	0-303
+snip...
+#{
+#    "$schema": "http://trec-kba.org/schemas/v1.1/filter-run.json", 
+#    "corpus_id": "kba-streamcorpus-2014-v0_3_0", 
+#    "poc_email": "trec-kba@googlegroups.com", 
+#    "poc_name": "TREC KBA Organizers", 
+#    "run_info": {
+#        "elapsed_time": 4.623950004577637, 
+#        "num_entities": 170, 
+#        "num_entity_doc_compares": 170000, 
+#        "num_filter_results": 16458, 
+#        "num_stream_hours": 3
+#    }, 
+#    "run_type": "automatic", 
+#    "system_description": "Entity title strings are used as surface form names, then any document containing one of the surface form names is ranked vital with confidence proportional to length of surface form name, and the longest sentence containing the longest surface form name is treated as a slot fill for all slot types for the given entity type.", 
+#    "system_description_short": "relevance=2, exact name match, longest sentence slot fills", 
+#    "system_id": "toy_1", 
+#    "task_id": "kba-ssf-2014", 
+#    "team_id": "CompInsights", 
+#    "team_name": "Computable Insights", 
+#    "topic_set_id": "kba-2014-ccr-and-ssf"
+#}
+</pre>
+<p>where:
+  <ol>
+    <li><b>first column:</b> your team_id</li>
+    <li><b>second column:</b> your system_id.  This provides a unique identifier for the submission when combined with your team_id.</li>
+    <li><b>third column:</b> official document identifier of the retrieved document, which is always the stream_id in the kba-stream-corpus-2014-v0_3_0.</li>
+    <li><b>fourth column:</b> unique identifier for the topic, which for kba-ccr-2014 and kba-ssf-2014 is the target_id of the entity provided in the topic set file.</li>
+    <li><b>fifth column:</b> <i>confidence</i> score, which must be an integer normalized to be less than or equal to 1000 and greater than 0, i.e. you can think of them as floating point numbers between zero and one that we present as integer thousandths.   <pre>confidence &#8712; (0, 1000] and confidence &#8712; &#119833;</pre></li>
+    <li><b>sixth column:</b> <i>relevance rating level</i>integer in [-1, 0, 1, 2] corresponding to relevance judgment in ['garbage', 'neutral', 'useful', 'vital'].  SSF run submissions can provide this field, however the scoring tool will only consider lines that have &quot;2&quot; (vital) in this field.  CCR run submissions must provide this field, and scoring tool considers both 'useful' and 'vital'.</li>
+    <li><b>seventh  column:</b> <i>contains mention</i> integer in [0, 1], which is boolean indicating whether the document contained a mention of the entity or not.</li>
+    <li><b>eighth column:</b> date-hour string corresponds to the directory name containing the chunk file that contains the document, e.g. '2012-04-04-04'.</li>
+    <li><b>ninth column:</b> slot name from the TAC KBP slot ontology.  Used in SSF.  Runs for CCR should use 'NULL' in this field.  This field most have a string from the list below.  Optionally, this field may contain a second string separated from the first by a colon &quot;:&quot;, where the second string is a system-selected name for a sub-type or variant of the target slot.  This will not be used in scoring and is provided solely for the purpose of allowing systems to output more information about the algorithm's perspective on the slot.  This field must not contain any spaces.</li>
+    <li><b>tenth column:</b> (ignored in 2014) slot value equivalence class name generated by system.  Was used in SSF 2013, and is not used in 2014. </li>
+    <li><b>eleventh column:</b> <i>inclusive byte range</i>, e.g. &quot;23-27&quot; specifies five bytes.  Byte numbering is zero-based.  Used in SSF.  Runs for CCR should use '0-0' in this field.</li>
+  </ol>
+</p>
+
+
+<p><b>automatic versus manual:</b> As is standard for TREC tasks, you
+should design and implement your system without <b>studying</b> the
+particular topics and training data.  The purpose of the training data
+is to allow you to <b>automatically</b> train your system,
+not <b>manually</b> tune/tweak/patch your system for these particular
+topics.  After you generate an automatic run, it is probably quite
+fruitful to manually examine the training data and conceive of
+improvements for manual runs.</p>
+
+<p>We want to hear about your insights, and please consider describing
+your work in a poster at the TREC conference and/or a technical report
+in the TREC proceedings.</p>
+
+      </div>
+    </div> <!-- end of wrap -->
+    <div id="footer">
+      <a href="http://groups.google.com/group/trec-kba">Google Group for TREC KBA</a>
+    </div>
+
+  </body>
+</html>

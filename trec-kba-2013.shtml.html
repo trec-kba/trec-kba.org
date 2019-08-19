@@ -1,0 +1,738 @@
+<html>
+  <head>
+        <title>Knowledge Base Acceleration (KBA) -- a track in NIST's TREC 2012</title>
+    <style>
+#kbabanner {
+  background: #9D9FA1;
+  color: #FFFFFF;
+  font-family: "Trebuchet MS", Helvetica, Arial, sans-serif;
+  font-size: 44px;
+  text-shadow: 2px 2px 3px gray;
+  padding: 4px 16px 0px 16px;
+  vertical-align: top;
+}
+#kbabanner a:link {
+  text-decoration: none;
+  color: #FFFFFF;
+}
+#kbabanner a:visited {
+  text-decoration: none;
+  color: #FFFFFF;
+}
+#container {
+  width: 90%;
+  margin: 10px auto;
+  background-color: #fff;
+  color: #333;
+  border: 1px solid gray;
+  line-height: 130%;
+}
+#top {
+  padding: .5em;
+  background-color: #ddd;
+  border-bottom: 1px solid gray;
+}
+#top h1 {
+  padding: 0;
+  margin: 0;
+}
+#leftnav {
+  float: left;
+  width: 250px;
+  margin: 0;
+  padding: 1em;
+}
+#leftnav li { 
+  //margin-left:0px; 
+  //margin-right:0px; 
+  padding: 0px 0px 5px 0px;
+  list-style:square; 
+  list-style-type:none;
+  font-weight: bold;
+}
+#leftnav ul { 
+  //margin-left:0px; 
+  //margin-right:0px; 
+  padding: 0px 0px 0px 20px;
+  list-style:square; 
+  list-style-type:none;
+}
+#content {
+  margin-left: 290px;
+  border-left: 1px solid gray;
+  padding: 1em;
+  max-width: 56em;
+}
+
+html, body {height: 90%;}
+
+#wrap {min-height: 100%;}
+
+#main {
+  overflow:auto;
+  padding-bottom: 15px; /* must be same height as the footer */
+}
+
+#footer {
+  position: relative;
+  margin-top: -15px; /* negative value of footer height */
+  height: 15px;
+  clear:both;
+  margin: 0;
+  padding: .5em;
+  color: #333;
+  background-color: #ddd;
+  border-top: 1px solid gray;	
+}
+/*Opera Fix*/
+body:before {
+  content:"";
+  height:100%;
+  float:left;
+  width:0;
+  margin-top:-32767px;/
+}
+#leftnav p { margin: 0 0 1em 0; }
+#content h2 { margin: 0 0 .5em 0; }
+
+.diagram {
+   position: relative;
+   width: 100%; /* for IE 6 */
+}
+.diagram p {
+   position: absolute;
+   top: -20px;
+   left: 300px;
+   width: 50%;
+   text-align: left;
+   font-size: large;
+   font-weight: normal;
+   border-style: solid;
+   padding: 5px;
+}
+    </style>
+    <script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-27631853-2']);
+  _gaq.push(['_trackPageview']);
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+    </script>
+
+    <script type="text/javascript">
+  (function() {
+    var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+    po.src = 'https://apis.google.com/js/plusone.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+  })();
+    </script>
+    <!--[if !IE 7]>
+	<style type="text/css">
+	  #wrap {display:table;height:100%}
+	</style>
+    <![endif]-->
+
+  </head>
+  <body>
+        <div id="kbabanner">
+      <a href="index.html">
+	TREC Knowledge Base Acceleration
+	<image src="/trec-knowledge-base-acceleration-logo.png" height="50" style="float:right;"/>
+      </a>
+    </div>
+    <div id="wrap">
+      <div id="leftnav">
+	<ul>
+	  <li><a href="index.html">Overview</a></li>
+	  <li><a href="data/index.shtml.html">Truth Data</a></li>
+	    <ol>
+	      <li><a href="data/fakba1/index.shtml.html">Google Freebase Annotation of KBA StreamCorpus</a></li>
+	    </ol>
+	  <li><a href="trec-kba-2014/index.shtml.html">2014 Evaluation (three tasks):</a>
+	    <ol>
+	      <li><a href="trec-kba-2014/vital-filtering.shtml.html">1) Vital Filtering</a></li>
+	      <li><a href="trec-kba-2014/streaming-slot-filling.shtml.html">2) Streaming Slot Filling</a></li>
+	      <li><a href="trec-kba-2014/accelerate-and-create.shtml.html">3) Accelerate &amp; Create</a></li>
+	      <li><a href="trec-kba-2014/technical-details.shtml.html">Technical Details</a></li>
+	    </ol>
+	  </li>
+	  <li><a href="trec-kba-2013.shtml.html">2013 Tasks</a></li>
+	  <li><a href="kba-ccr-2012.shtml.html">2012 Task</a></li>
+	  <li>Stream Corpus</a>
+	    <ol>
+	      <li><a href="kba-stream-corpus-2014.shtml.html">StreamCorpus 2014</a>
+	      <li><a href="kba-stream-corpus-2013.shtml.html">StreamCorpus 2013</a>
+	      <li><a href="kba-stream-corpus-2012.shtml.html">StreamCorpus 2012</a>
+	    </ol>
+	  </li>
+	  <!--li><a href="/future-task-ideas.shtml">Future Task Ideas</a></li-->
+	  <li><a href="background.shtml.html">Background</a></li>
+	  <li><a href="organizers.shtml.html">Organizers</a></li>
+	</ul>
+	<table>
+	  <tr><td>
+	      <p>Supporters:</p>
+	      <center>
+		<p><a href="http://aws.amazon.com/"><img src="img/AWS-logo.png"/></a></p>
+		<p><a href="http://trec.nist.gov/"><img src="img/NIST-logo.png"/></a></p>
+		<p><a href="http://diffeo.com/"><img src="img/Diffeo-logo.png"/></a></p>
+		<p><a href="http://mit.edu/"><img width="100" src="img/MIT-logo.gif"/></a></p>
+		<p><a href="http://hertzfoundation.org/"><img src="img/Hertz-Foundation-logo.png"/></a></p>
+	  </center></td></tr>
+	</table>
+        <!-- Place this tag where you want the +1 button to render -->
+        <g:plusone size="small" annotation="inline"></g:plusone>
+      </div>
+    <!-- wrap gets closed in footer.shtml -->
+
+      <div id="content">
+
+	<p><font size="5" color="red">This page is an archival record of the second year of the KBA track, which ran in 
+	<a href="http://trec.nist.gov/pubs/call2012.html">NIST's TREC 2013</a>.  See the <a href="http://trec-kba.org/trec-kba-2014">2014 task.</a></font>
+
+<h2>Update</h2>
+KBA 2013 was a great success.  See summary of results:
+<ul>
+<li> <a href="TREC-KBA-overview-notebook-paper-2013NOV11.pdf">TREC KBA 2013 Overview Notebook Paper</a>
+<li> <a href="KBA-2013-overview-2013-11-20.pdf">KBA 2013 Overview Slides</a>
+<li> <a href="https://github.com/trec-kba/kba-scorer/">KBA scorer in GitHub</a>
+</ul>
+<h2>KBA 2013 Big Picture:</h2>
+
+<p>KBA systems must filter a large stream of text to find documents
+that can help update a knowledge base like Wikipedia.  This requires
+systems to disambiguate entity mentions and filter documents to
+satisfy particular information needs.
+
+<p>KBA 2013 has two tasks:
+<ol>
+  <li><a href="trec-kba-2013.shtml.html#ccr">CCR:  Cumulative Citation Recommendation</a> (same as KBA 2012)
+    <ul>
+      <li>Given a fixed list of target entities from Wikipedia and
+      Twitter, filter documents worth citing in a profile of the
+      entity, e.g. their Wikipedia or Freebase article.</li>
+      <li>CCR has no requirement for novelty or salience.</li>
+    </ul>
+  </li>
+  <li><a href="trec-kba-2013.shtml.html#ssf">SSF:  Streaming Slot Filling</a>  (new in KBA 2013)
+    <ul>
+      <li>Given a slot for each of the target entities, detect changes
+      to the slot value, such as location of next performance or
+      founder of ____.</li>
+      <li>The metric will favor systems that most closely match the
+      timeline of slot values created by the NIST assessors.</li>
+    </ul>
+  </li>
+</ol>
+</p>
+
+<p>See <a href="trec-kba-2012-overview.ppt">KBA 2012 Overview
+slides</a> and <a href="trec-kba-2013-preview.ppt">KBA 2013 Preview
+slides</a>.</p>
+
+<p>See <a href="TREC-KBA-overview-notebook-paper-final-2012OCT15.pdf">TREC
+KBA 2012 Track Overview paper (notebook version)</a></p>
+
+<p>The hourly structure of the KBA stream corpus allows entities
+to <i>evolve</i>.</p>
+
+<p>Unlike traditional filter topics defined by a list of keyword
+queries, <i>entities</i> are described by semi-structured articles in
+a knowledge base (KB) like Wikipedia, Facebook, LinkedIn, Crunchbase,
+etc.  Such KB articles are more human-centric and also provide richer
+material for modeling.</p>
+
+<p>Systems in KBA 2012 used a variety of approaches.  Given the large
+training set, machine learning approaches that used just words and
+phrases as features were above the median in CCR.  Given the rich
+structure of links in WP, mining rich features from the KB also
+performed well.  Several teams explored temporality within the CCR
+context.  In KBA 2013, we hope to see combinations of these ideas and
+new ones.</p>
+
+<p>The new SSF task focuses more on applying natural language
+understanding in the stream filtering context.</p>
+
+
+<h3>Terminology changes from KBA 2012</h3>
+  <ul>
+    <li>&quot;relevance score&quot; --> &quot;confidence score,&quot; as was always the documented meaning of the score in the run submissions</li>
+    <li>&quot;central rating&quot; --> &quot;vital rating,&quot; as is more common</li>
+    <li>&quot;relevant rating&quot; --> &quot;useful rating,&quot; as is more common</li>
+  </ul>
+
+<h3><a name="timeline">Timeline leading up to TREC <b>2013</b> conference</a></h3>
+<table padding="1" border="1">
+  <tr><td width="200"><b>now:</b></td>
+    <td>NIST accepting <a href="kba-stream-corpus-2013.shtml.html#data-request-forms">KBA Data Access Agreements</a>.</td></tr>
+  <tr><td><b>now:</b></td>
+    <td> <a href="trec-kba-stream-corpus.shtml#corpus">KBA 2012 corpus</a> and <a href="trec-kba-stream-corpus.shtml#annotation">annotation from KBA 2012</a> available for download.</td></tr>
+  <tr><td><b>March:</b></td>
+    <td> Expanded 2013 corpus available for download.</td></tr>
+
+  <tr><td><b>March:</b></td>
+    <td>  pre-hoc annotation for CCR conducted at NIST.</td></tr>
+
+  <tr><td><b>early April:</b></td>
+    <td>  queries and training data released for both CCR and SSF.</td></tr>
+
+  <tr><td rowspan="2">
+      <b><nowrap>Wed., June 12th 2013</nowrap></b>
+      <br/>
+      <font color="red"><nowrap>Regular Deadline</nowrap></font>
+    </td>
+    <td> <font color="red">First SSF Deadline</font> for <a href="trec-kba-2013.shtml.html#submissions">submitting runs</a>.</td></tr>
+  <tr>
+    <td> <font color="red">CCR <a href="trec-kba-2013.shtml.html#kbx">KBX</a> Deadline</font>
+      for <a href="trec-kba-2013.shtml.html#submissions">submitting runs</a>,</br>so <a href="trec-kba-2013.shtml.html#kbx">KBP can use
+	KBA CCR runs for Cold Start input corpora.</a></td></tr>
+
+  <tr><td><b>June 17-July 17:</b></td>
+    <td>  post-hoc annotation for SSF conducted at NIST.</td></tr>
+
+
+  <tr><td>
+      <b><nowrap>Wed., Aug 28th, 2013</nowrap></b>
+      <b><nowrap><font color="red">Extended Deadline</font></nowrap></b>
+    </td>
+    <td> <font color="red">Final Deadline</font> to <a href="trec-kba-2013.shtml.html#submissions">submit runs</a> for <b>SSF and CCR</b>.</td></tr>
+
+  <tr><td><b>October:</b></td>
+    <td> Submission deadline for TREC Notebook papers.</td></tr>
+  <tr><td><b>November:</b></td>
+    <td> TREC Conference in Gaithersburg, MD.  
+    <br/>Plenary speakers: TBD
+  </td></tr>
+</table>
+
+<h3><a name="ccr">kba-ccr-2013 Cumulative Citation Recommendation</a></h3>
+<p>This repeats the KBA 2012 task with a much richer set of target
+entities and refined definitions of relevance rating levels.  Systems should
+aim to replicate the &quot;vital&quot; judgment for entire documents,
+i.e. to propose documents that a human would want to cite in updating
+the Wikipedia article for the target entity.  We have revised
+the <a href="trec-kba-2013.shtml.html#submissions">run submission format</a> to allow systems
+to indicate other relevance rating levels.  This makes the run submission
+format the same as the training data.</p>
+
+<p>Systems must iterate over the hourly directories of data in
+chronological order, hour by hour.  Systems must not go back to
+promote documents using information from the future.  There is no
+limit on the number of documents that may be included in a run
+submission.</p>
+		
+<p>We are hand-picking a set of ~600 people and organizations from
+Wikipedia and Twitter.  We used several clusters of related entities
+from small towns and other types of communities.  We focused on
+entities with complex link graphs of relationships with other active
+entities.  For
+example, <a href="http://en.wikipedia.org/wiki/Phyllis_Lambert">Phyllis
+Lambert</a>.</p>
+
+<p>kba-ccr-2013 has no novelty requirement, so if Justin Bieber were a
+target entity (he is not) and he happens to produce a new album, and
+two hundred StreamItems (documents) announce it, then in principle
+they are all citation worthy -- they all contain information that
+pertains to building a profile.</p>
+
+<p>The hard part of CCR is modeling the notion of citation worthiness.
+In 2012, the assessors were instructed to treat the highest relevance rating
+level (then called &quot;central&quot;) as meaning that one would cite
+the text in the Wikipedia article for the taret entity.</p>
+
+<p>For 2013, we have revised the instructions to the assessors to make
+a better distinction between two different forms of relevance or
+citation-worthiness when building a profile:</p>
+<ul>
+  <li><i>useful</i> when creating a profile from scratch</li>
+  <li><i>vital</i> when maintaining an already up-to-date profile</li>
+</ul>
+
+<p>The NIST assessors were instructed to approach each entity as
+though they were building a profile or dossier about that entity.
+Since some entities are in Wikipedia, the assessors mental model of a
+profile should look like a completed Wikipedia article.  Other
+entities are less well known, and might not meet the notoriety
+requirements of Wikipedia -- in these cases, the NIST assessors were
+instructed to consider a profile appropriate for the entity, such as a
+Freebase article.  The profile and its content should match the
+entity.</p>
+
+<p>Using a high-recall (low-precision) system based on name matching,
+we fed a subset of the corpus to NIST annotators to judge.
+Participants' systems will probably find some true positive results
+that we did not send to the annotators in the original annotation
+effort.  See <a href="kba-ccr-2012.shtml.html">interannotator agreement and
+recall scores for KBA 2012.</a></p>
+
+<p>All of the filter topics and annotations from the beginning of the
+stream will be available to all teams at the start of the
+evaluation.</p>
+
+<p>The entities are specified by their &quot;target_id&quot; URL in
+either <a href="http://en.wikipedia.org/">Wikipedia</a> or
+in <a href="http://twitter.com">twitter</a>.</p>
+
+<p>For KBA 2013, we drop the earlier notion of a &quot;KB snapshot
+time.&quot; The &quot;no future info&quot; prescription still holds:
+for any given date hour, systems may only access information about the
+entity from the past.  Systems that use Twitter or Wikipedia APIs to
+access information about the entity must filter the data from those
+APIs to only consider information that was available before the
+date_hour being processed.</p>
+
+<p>It is possible for a document to be citation worthy for multiple
+target entities.<p>
+
+<p>As with KBA 2012, CCR is justed <font color="red">pre-hoc</font>,
+and provide all the annotation for an early portion of the stream
+corpus as training data for all the pariticpants in TREC 2013.</p>
+
+<p>Only those documents that have 'clean_visible' text are candidates
+for the task.  Other documents will not be judged, although they may be included in the truth data if the timestamp, URL, and/or string matching against other fields indicate that they contain the same content.  Further, the NIST
+Assessors were instructed to discard any documents that were not
+primarily English.</p>
+
+<img src="kba-2013-annotation-grid.png" width="300"/>
+<p>The letters asdfzxcv are keystrokes for rapid entry.</p>
+
+<p><b>Counts from KBA 2012 annotation:</b>
+  <table>
+    <tr><td>Mentions</td><td>7991</td><td>3862</td><td>13971</td><td>7806</td></tr>
+    <tr><td>Zero Mentions</td><td>15367</td><td>163</td><td>61</td><td>0</td></tr>
+    <tr><td></td><td>garbage</td><td>neutral</td><td>useful</td><td>vital</td></tr>
+  </table>
+
+<p>Rows:</p>
+<ul>
+  <li> Mentions: Document explicitly mentions target entity, such as
+  full name, partial name, nickname, pseodonym, title, stage
+  name.</li>
+
+  <li> Zero Mentions: Document does not directly mention target.
+  Could still be relevant,
+  e.g. <a href="http://en.wikipedia.org/wiki/Metonymy"
+  target="_wikipedia">metonymic</a> references like &quot;this
+  administration&quot; --> &quot;Obama&quot;.  See
+  also <a href="http://en.wikipedia.org/wiki/Synecdoche"
+  target="_wikipedia">synecdoche</a>.  A document could also be
+  relevant to the target entity through relation to entities mentioned
+  in the document -- apply this test question: can I learn something
+  from this document about the target entity using whatever other
+  information I have about the entity?  From manual investigation, we
+  have found that for citations in Category:Living_people, only
+  one-in-five are non-mentioning, and most of those mention another
+  entity that could (or should) have a KB entry.  These non-mentioning
+  citations would usually be better used as citations on that other
+  entity.  Thus, almost all useful and vital documents are
+  mentioning. </li>
+</ul>
+<p><a name="relevance">Columns:</a></p>
+<ul>
+  <li> <b><font color="red">Garbage:</font></b> no information about
+  target entity, e.g. target's name appears in chrome without any
+  context.  Could be "mentioning" but not informative, e.g. spam,
+  chrome link on side of article.</li>
+
+  <li> <b><font color="red">Neutral:</font></b> informative but not
+  citable, e.g. tertiary source like WP article itself not relevant.
+  The boundary between garbage and neutral is typified by mentioning
+  documents that provide very little info about entity, e.g. entity
+  name used in product name or a passing reference like &quot;this
+  books plot reminds me of Alexander McCall Smith.&quot; Assessors
+  must make a subjective judgment based on the context and the
+  particular entity whether such texts are neutral or garbage.</li>
+
+  <li> <b><font color="red">Useful:</font></b> possibly citable but
+  not timely, e.g. background bio, primary or secondary source.  This
+  might be useful if we were building the KB entry from scratch, but
+  since we're updating an existing entry, it's merely useful not
+  vital.  The boundary between neutral and useful is typified by
+  documents that provide only a little biographical detail about an
+  entity, such as &quot;Curduroy Mansions, by Alex McCall-Smith, is
+  one the best seller list.&quot; Assessors must judge whether such
+  content would be useful as a citable reference in the initial
+  compilation of the profile for <i>this particular entity.</i></li>
+
+  <li> <b><font color="red">Vital:</font></b> timely info about the
+  entity's current state, actions, or situation.  This would motivate
+  a change to an already up-to-date knowledge base article.  Special
+  cases include a deceased entity, in which case the entity's estate
+  is the current embodiment of the entity and changes to the estate
+  might trigger vital updates.  The boundary between useful and vital
+  is typified by documents in which the temporal context is vague or
+  requires thought to ascertain, such as a job posting by an
+  organization in which the assessor can deduce that the date on the
+  job posting implies that the organization recently changed by
+  opening the position.  Assessors must judge whether such content
+  is <i>timeless</i> (therefore Useful) or happening <i>in time</i>
+  (therefore Vital).</li>
+
+</ul>
+
+<h3><a name="ssf">kba-ssf-2013 Streaming Slot Filling</a></h3>
+<p>SSF builds on CCR by specifying a slot name for each entity.  The
+slot names will come from a fixed inventory based on the TAC KBP 2013
+ontology.  We will pick interesting slots that change regularly,
+e.g. the next location that a musician will perform or the
+sender/receiver of financial transactions involving the target
+entity.</p>
+
+<p>The SSF query entities will be the same as CCR plus collections of
+these entities --- we may define additional group-like entities that
+emerge as cohesive named entities from the CCR targets.</p>
+
+<p>The ground truth data generated <font color="red">post-hoc</font>
+by judging pooled results from teams will be structured as a timeline
+of acceptable slot values for each hour.  The slot values will be
+defined by equivalence classes of strings from the corpus that answer
+the question.  For example, (James_McCartney, founderOf, Beatles2)
+where founderOf is the slot name and Beatles2 points to a set of
+equivalent strings, such as &quot;The Beatles - The Next
+Generation&quot; and &quot;The Beatles II&quot;.</p>
+
+<p>The run submission format and details of the metric for SSF is
+under development.  It will favor systems that most closely match
+the <i>changes</i> in the ground truth timeline of slot values.  This
+will probably require that the run submission format distinguish when
+a system is asserting the appearance of a new equivalence class of
+values. </p>
+
+<p>We will probably require that systems produce only one slot value
+per hour per entity.</p>
+
+<p>For example, an SSF system should catch the first appearance of the
+new information that James McCartney might start a new band called
+Beatles 2 -- The Next Generation, which the sons of each of the
+original Beatles' members, who each happen to play his father's
+instrument.  A good SSF system will figure out that the subsequent
+echo is redundant:
+
+<img src="trec-kba-streaming-slot-filling-example.png"/>
+
+<p>Examples of redudant texts in this echo are:
+
+<font color="orange">COREFerence resolution</font>, <font color="purple"><i>EQUIVilance</i></font>, <font color="blue">RELation</font>, <font color="red">NOVelty</font>
+
+<p>All of these are examples of <font color="red">detecting REDUNDANCY</font>:</p>
+
+<p>Doc 1) Nothing may be sacred after all: <font color="orange">Sir
+Paul McCartney's son James</font> <font color="blue">is interested
+in</font> <font color="purple"><i>starting a second-generation Beatles
+band</i></font> with John Lennon's son Sean, George Harrison's son
+Dhani and Ringo Starr's son Zak.</p>
+
+<p>Doc 2) UPDATE: <font color="orange">James McCartney</font> has
+clarified his comments on his Facebook page: Hi Everyone...well, looks
+like quite some attention being given to my BBC interview!
+Honestly, <font color="blue">I was just thinking out loud
+about</font> <font color="purple"><i>playing with Beatles family
+friends</i></font>, nothing more. My band’s going to be on tour in the
+UK and US for most of this year, and the shows are going great! I'm so
+grateful…Lots of love to you all...!</p>
+
+<p>Doc 3) It is 42 years since the world's most famous band broke up,
+following an acrimonious split between former best friends Paul
+McCartney and John Lennon.  Now, however, <font color="orange">Sir
+Paul’s only son James</font>
+has <font color="red">revealed</font> <font color="purple"><i>a new
+group featuring the offspring of the Fab Four could become a
+reality</i></font>.  James -- <font color="blue">who was last night
+due to follow in The Beatles’ footsteps</font> by playing the Cavern
+Club in Liverpool ...</p>
+
+
+<p><b>Metrics</b>: The primary metric for KBA CCR is maximum
+macro-averaged F_1 measure.  F_1 is a function of confidence cutoff.
+By sweeping the cutoff, we obtain a range of precision (P) &amp;
+recall (R) scores for each target entity.  After averaging P and R
+across the set of target queries, we then compute F_1 at each
+confidence threshold and take the maximum F_1 as the single score for
+the system.  The SSF metric will be as similar as possible.</p>
+
+<p>We are also interested in ranking measures and temporally oriented
+measures, and may add other secondary metrics.</p>
+
+<p><b>External Information:</b> teams can use external info that
+entered the world <i>before</i> the given hour being processed.  Teams
+must describe such external data in their run submission
+descriptions.</p>
+
+<h3><a name="kbx">KBX</a></h3>
+<p>As an incentive to submit your CCR runs by the Regular Deadline we
+have coordinated with TAC KBP for an exciting joint experiment called
+"KBX"</p>
+
+<p>The KBP organizers will endeavor to use top scoring KBA runs
+submitted by the Regular Deadline as input corpora to KBP Cold
+Start.</p>
+
+<p>If feasible, KBX will evaluate end-to-end performance of combining
+KBA+KBX algorithms that filter a stream of ~10<sup>9</sup> documents and emit a
+knowledge base about a specific group of related entities.</p>
+
+<p>Note: KBX is an <i>experiment</i>.  It might get snarled up in a
+few ways: the KBA runs might not have enough "small town" entities and
+TAC-style relations to meet Cold Start's needs, or it might have so
+many documents that it exceeds the KBP assessor budget.  Also, we are
+still structuring its scientific questions and metrics.</p>
+
+<p>That said, neat things often appear at interfaces, so we feel
+compelled to try.  If you feel similarly compelled, then submit KBA
+CCR runs by the Regular Deadline in June.</p>
+
+
+
+<h3>Coping with the Big Data</h3>
+<p>While the corpus is large, each individual hour is only 10^5 docs.
+Teams have exploited this in several ways, including:
+  <ul>
+    <li><b>Pre-indexing</b> many hourly chunks in a search engine
+    like <a href="http://www.lemurproject.org/indri/">indri</a>, 
+    <a href="http://lucene.apache.org/solr/">solr</a>, 
+    <a href="http://www.elasticsearch.org/">elasticsearch</a>,
+    and then simulate an hourly stream by issuing queries restricted
+    to each hour in sequential order.  In implementing such an
+    approach, one should avoid using future information by configuring
+    ranking algorithms to <i>not</i> not use statistics future
+    documents.</li>
+    <li><b>Batch processing</b>: you can iterate over the corpus as a
+    sequence of ~4300 batches.  This can be implemented using a
+    MapReduce framework like Hadoop or
+    even <a href="https://github.com/erikfrey/bashreduce">BashReduce</a>.</li>
+  </ul>
+</p>
+
+<p><b><a name="submissions">Submissions to KBA</a></b> are gzipped
+text files in the format below.  The first line <b>must</b> be a
+comment containing a JSON string in the 
+<a href="schemas/v1.1/filter-run.json">filter-run.json schema</a>.  
+Assertions consist of seven fields with separated by whitespace.</p>
+
+<p>Be sure your file name ends with &quot;.gz&quot;.</p>
+
+<p>Comment lines must start with '#'.  All comment lines after the
+first line are ignored.</p>
+
+<p>In order to attend the TREC conference, you must submit a run.  To
+send your CCR runs to NIST, verify its format using the scripts that
+will be provided by NIST.  Last years verification scripts are here:
+<a href="http://trec.nist.gov/act_part/scripts/13.scripts/check_kba.pl">http://trec.nist.gov/act_part/scripts/13.scripts/check_kba.pl</a>
+before uploading to <a href="https://ir.nist.gov/trecsubmit/kba.html">https://ir.nist.gov/trecsubmit/kba.html</a>
+</p>
+
+<p><b>Example run submission</b> generated by this 
+<a href="https://github.com/trec-kba/kba-tools/tree/master/toy-system">toy KBA system</a> 
+written in python that generates both SSF and CCR example output.</p>
+
+<pre>
+#{"run_type": "automatic", "poc_email": "trec-kba@googlegroups.com", "team_id": "CompInsights", "topic_set_id": "kba-2013-ccr-and-ssf", "corpus_id": "kba-streamcorpus-2013-v0_2_0", "$schema": "http://trec-kba.org/schemas/v1.1/filter-run.json", "team_name": "Computable Insights", "system_description_short": "relevance=2, exact name match, longest sentence slot fills", "system_description": "Entity title strings are used as surface form names, then any document containing one of the surface form names is ranked vital with confidence proportional to length of surface form name, and the longest sentence containing the longest surface form name is treated as a slot fill for all slot types for the given entity type.", "task_id": "kba-ccr-2013", "poc_name": "TREC KBA Organizers", "run_info": {"num_entities": 170, "num_stream_hours": 8951}, "system_id": "toy_1"}
+CompInsights	toy_1	1317995861-4c6376217ea27bb954f96164c7cdc8ab	http://en.wikipedia.org/wiki/The_Ritz_Apartment_(Ocala,_Florida)	1000	2	1	2011-10-07-14	Affiliate	19ed38ac70555a9f1bbf26feb79764bf	1057-1263
+CompInsights	toy_1	1317995861-4c6376217ea27bb954f96164c7cdc8ab	http://en.wikipedia.org/wiki/The_Ritz_Apartment_(Ocala,_Florida)	1000	2	1	2011-10-07-14	Contact_Meet_Entity	19ed38ac70555a9f1bbf26feb79764bf	1057-1263
+CompInsights	toy_1	1317995861-4c6376217ea27bb954f96164c7cdc8ab	http://en.wikipedia.org/wiki/Appleton_Museum_of_Art	1000	2	1	2011-10-07-14	Affiliate	19ed38ac70555a9f1bbf26feb79764bf	1057-1263
+CompInsights	toy_1	1317995861-4c6376217ea27bb954f96164c7cdc8ab	http://en.wikipedia.org/wiki/Appleton_Museum_of_Art	1000	2	1	2011-10-07-14	Contact_Meet_Entity	19ed38ac70555a9f1bbf26feb79764bf	1057-1263
+CompInsights	toy_1	1317995861-4c6376217ea27bb954f96164c7cdc8ab	http://en.wikipedia.org/wiki/Bill_Coen	1000	2	1	2011-10-07-14	Affiliate	fc9c67b4ca0bdeaf2cac34c3d6edb192	0-303
+CompInsights	toy_1	1317995861-4c6376217ea27bb954f96164c7cdc8ab	http://en.wikipedia.org/wiki/Bill_Coen	1000	2	1	2011-10-07-14	AssociateOf	fc9c67b4ca0bdeaf2cac34c3d6edb192	0-303
+CompInsights	toy_1	1317995861-4c6376217ea27bb954f96164c7cdc8ab	http://en.wikipedia.org/wiki/Bill_Coen	1000	2	1	2011-10-07-14	Contact_Meet_PlaceTime	fc9c67b4ca0bdeaf2cac34c3d6edb192	0-303
+CompInsights	toy_1	1317995861-4c6376217ea27bb954f96164c7cdc8ab	http://en.wikipedia.org/wiki/Bill_Coen	1000	2	1	2011-10-07-14	AwardsWon	fc9c67b4ca0bdeaf2cac34c3d6edb192	0-303
+snip...
+#{
+#    "$schema": "http://trec-kba.org/schemas/v1.1/filter-run.json", 
+#    "corpus_id": "kba-streamcorpus-2013-v0_2_0", 
+#    "poc_email": "trec-kba@googlegroups.com", 
+#    "poc_name": "TREC KBA Organizers", 
+#    "run_info": {
+#        "elapsed_time": 4.623950004577637, 
+#        "num_entities": 170, 
+#        "num_entity_doc_compares": 170000, 
+#        "num_filter_results": 16458, 
+#        "num_stream_hours": 3
+#    }, 
+#    "run_type": "automatic", 
+#    "system_description": "Entity title strings are used as surface form names, then any document containing one of the surface form names is ranked vital with confidence proportional to length of surface form name, and the longest sentence containing the longest surface form name is treated as a slot fill for all slot types for the given entity type.", 
+#    "system_description_short": "relevance=2, exact name match, longest sentence slot fills", 
+#    "system_id": "toy_1", 
+#    "task_id": "kba-ssf-2013", 
+#    "team_id": "CompInsights", 
+#    "team_name": "Computable Insights", 
+#    "topic_set_id": "kba-2013-ccr-and-ssf"
+#}
+</pre>
+<p>where:
+  <ol>
+    <li><b>first column:</b> your team_id</li>
+    <li><b>second column:</b> your system_id.  This provides a unique identifier for the submission when combined with your team_id.</li>
+    <li><b>third column:</b> official document identifier of the retrieved document, which is always the stream_id in the kba-stream-corpus-2013.</li>
+    <li><b>fourth column:</b> unique identifier for the topic, which for kba-ccr-2012 is the urlname of the entity in the January 2012 snapshot of the English Wikipedia..</li>
+    <li><b>fifth column:</b> <i>confidence</i> score, which must be normalized to be less than or equal to 1000 and greater than 0, i.e. you can think of them as floating point numbers between zero and one that we present as integer thousandths.   <pre>confidence &#8712; (0, 1000] and confidence &#8712; &#119833;</pre></li>
+    <li><b>sixth column:</b> <i>relevance rating level</i>integer in [-1, 0, 1, 2] corresponding to relevance judgment in ['garbage', 'neutral', 'useful', 'vital'].  SSF run submissions can provide this field, however the scoring tool will only consider lines that have &quot;2&quot; (vital) in this field.  CCR run submissions must provide this field, and scoring tool considers both 'useful' and 'vital'.</li>
+    <li><b>seventh  column:</b> <i>contains mention</i> integer in [0, 1], which is boolean indicating whether the document contained a mention of the entity or not.</li>
+    <li><b>eighth column:</b> date-hour string corresponds to the directory name containing the chunk file that contains the document, e.g. '2012-04-04-04'.</li>
+    <li><b>ninth column:</b> slot name from the TAC KBP slot ontology.  Used in SSF.  Runs for CCR should use 'NULL' in this field.  This field most have a string from the list below.  Optionally, this field may contain a second string separated from the first by a colon &quot;:&quot;, where the second string is a system-selected name for a sub-type or variant of the target slot.  This will not be used in scoring and is provided solely for the purpose of allowing systems to output more information about the algorithm's perspective on the slot.  This field must not contain any spaces.</li>
+    <li><b>tenth column:</b> slot value equivalence class name generated by system.  Used in SSF.  Runs for CCR should use '-1' in this field.</li>
+    <li><b>eleventh column:</b> <i>inclusive byte range</i>, e.g. &quot;23-27&quot; specifies five bytes.  Byte numbering is zero-based.  Used in SSF.  Runs for CCR should use '0-0' in this field.</li>
+  </ol>
+</p>
+
+<h3>Slot Names:</h3>
+<p>Each entity is one of these three types:</p>
+<ul>
+  <li>Facility (FAC)</li>
+  <li>Person (PER)</li>
+  <li>Organization (ORG)</li>
+</ul>
+
+<p>The entity_type determines the target slots to fill:</p>
+<ul>
+  <li>PER: 
+    <ul>
+      <li>Affiliate</li>
+      <li>AssociateOf</li>
+      <li>Contact_Meet_PlaceTime</li>
+      <li>AwardsWon</li>
+      <li>DateOfDeath</li>
+      <li>CauseOfDeath</li>
+      <li>Titles</li>
+      <li>FounderOf</li>
+      <li>EmployeeOf</li>
+    </ul>
+  </li>
+  <li>FAC:
+    <ul>
+      <li>Affiliate</li>
+      <li>Contact_Meet_Entity</li>
+    </ul>
+  </li>
+  <li>ORG: 
+    <ul>
+      <li>Affiliate</li> 
+      <li>TopMembers</li>
+      <li>FoundedBy</li>
+    </ul>
+  </li>
+</ul>
+
+<p><b>automatic versus manual:</b> As is standard for TREC tasks, you
+should design and implement your system without <b>studying</b> the
+particular topics and training data.  The purpose of the training data
+is to allow you to <b>automatically</b> train your system,
+not <b>manually</b> tune/tweak/patch your system for these particular
+topics.  After you generate an automatic run, it is probably quite
+fruitful to manually examine the training data and conceive of
+improvements for manual runs.</p>
+
+<p>We want to hear about your insights, and please consider describing
+your work in a poster at the TREC conference and/or a technical report
+in the TREC proceedings.</p>
+
+      </div>
+    </div> <!-- end of wrap -->
+    <div id="footer">
+      <a href="http://groups.google.com/group/trec-kba">Google Group for TREC KBA</a>
+    </div>
+
+  </body>
+</html>

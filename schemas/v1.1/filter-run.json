@@ -1,0 +1,71 @@
+{
+    "id": "http://trec-kba.org/schemas/v1.1/filter-run.json",
+    "description": "Describes a run of a KBA system and is first line of a text file containing one result per line.  See http://trec-kba.org/trec-kba-2013.shtml#submissions",
+    "type": "object",
+    "$schema": "http://json-schema.org/draft-03/schema#",
+    "properties": {
+        "$schema": {
+            "description": "URI of this JSON schema document.",
+            "type": "string",
+            "enum": ["http://trec-kba.org/schemas/v1.1/filter-run.json"],
+            "required": false,
+            "default": "http://trec-kba.org/schemas/v1.1/filter-run.json"
+            },
+        "task_id": {
+            "description": "Unique string that identifies the task your system is performing",
+            "type": "string",
+            "required": true
+            },
+        "topic_set_id": {
+            "description": "Unique string that identifies the topics for which your system is filtering",
+            "type": "string",
+            "required": true
+            },
+        "corpus_id": {
+            "description": "Unique string that identifies the corpus on which your system operated",
+            "type": "string",
+            "required": true
+            },
+        "team_id": {
+            "description": "Unique string that your team selected for identifying itself to TREC",
+            "type": "string",
+            "required": true
+            },
+        "team_name": {
+            "description": "Display name of team.",
+            "type": "string",
+            "required": true
+            },
+        "poc_name": {
+            "description": "Name of the primary point of contact for this run submission.",
+            "type": "string",
+            "required": true
+            },
+        "poc_email": {
+            "description": "Email address of the primary point of contact for this run submission.",
+            "type": "string",
+            "required": true
+            },
+        "system_id": {
+            "description": "Unique string that you select for distinguishing this system-&-configuration from other runs you submit",
+            "type": "string",
+            "required": true
+            },
+        "run_type": {
+            "description": "Flags for categorizing runs.",
+            "type": "string",
+            "required": true,
+            "enum": ["manual", "automatic", "other"]
+            },
+        "system_description": {
+            "description": "Human readable description of this system.  Please be verbose, e.g. 600 to 1000 characters.",
+            "type": "string",
+            "required": true
+            }
+        "system_description_short": {
+            "description": "Short human readable description of this system.  140 characters or less.",
+            "type": "string",
+            "required": true
+            }
+        }
+    }

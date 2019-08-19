@@ -1,0 +1,26 @@
+{
+    "$schema": "http://trec-kba.org/schemas/v1.0/filter-topics.json",
+    "topic_set_id": "sample-trec-kba-topics-2012",
+    "target_ids": [
+        {
+            "entity_type": "PER", 
+            "group": "", 
+            "target_id": "http://en.wikipedia.org/wiki/Brian_Hayes_(scientist)"
+        }, 
+        {
+            "entity_type": "PER", 
+            "group": "", 
+            "target_id": "http://en.wikipedia.org/wiki/Charles_Fort"
+        }, 
+        {
+            "entity_type": "PER", 
+            "group": "", 
+            "target_id": "http://en.wikipedia.org/wiki/Charles_Lambert"
+        }, 
+        {
+            "entity_type": "PER", 
+            "group": "", 
+            "target_id": "http://twitter.com/mccartneyAP"
+        }
+    ]
+}

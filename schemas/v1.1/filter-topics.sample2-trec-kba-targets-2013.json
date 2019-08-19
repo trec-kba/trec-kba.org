@@ -1,0 +1,21 @@
+{
+    "$schema": "http://trec-kba.org/schemas/v1.1/filter-topics.json", 
+    "targets": [
+        {
+            "entity_type": "FAC", 
+            "group": "fargo", 
+            "target_id": "http://en.wikipedia.org/wiki/Red_River_Zoo"
+        }, 
+        {
+            "entity_type": "ORG", 
+            "group": "fargo", 
+            "target_id": "http://en.wikipedia.org/wiki/Innovis_Health"
+        },  
+        {
+            "entity_type": "PER", 
+            "group": "turing", 
+            "target_id": "http://en.wikipedia.org/wiki/Fernando_J._Corbat%C3%B3"
+        }
+    ], 
+    "topic_set_id": "kba-2013-ccr-and-ssf"
+}

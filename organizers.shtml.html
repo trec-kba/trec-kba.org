@@ -1,0 +1,217 @@
+<html>
+  <head>
+        <title>Knowledge Base Acceleration (KBA) -- a track in NIST's TREC 2012</title>
+    <style>
+#kbabanner {
+  background: #9D9FA1;
+  color: #FFFFFF;
+  font-family: "Trebuchet MS", Helvetica, Arial, sans-serif;
+  font-size: 44px;
+  text-shadow: 2px 2px 3px gray;
+  padding: 4px 16px 0px 16px;
+  vertical-align: top;
+}
+#kbabanner a:link {
+  text-decoration: none;
+  color: #FFFFFF;
+}
+#kbabanner a:visited {
+  text-decoration: none;
+  color: #FFFFFF;
+}
+#container {
+  width: 90%;
+  margin: 10px auto;
+  background-color: #fff;
+  color: #333;
+  border: 1px solid gray;
+  line-height: 130%;
+}
+#top {
+  padding: .5em;
+  background-color: #ddd;
+  border-bottom: 1px solid gray;
+}
+#top h1 {
+  padding: 0;
+  margin: 0;
+}
+#leftnav {
+  float: left;
+  width: 250px;
+  margin: 0;
+  padding: 1em;
+}
+#leftnav li { 
+  //margin-left:0px; 
+  //margin-right:0px; 
+  padding: 0px 0px 5px 0px;
+  list-style:square; 
+  list-style-type:none;
+  font-weight: bold;
+}
+#leftnav ul { 
+  //margin-left:0px; 
+  //margin-right:0px; 
+  padding: 0px 0px 0px 20px;
+  list-style:square; 
+  list-style-type:none;
+}
+#content {
+  margin-left: 290px;
+  border-left: 1px solid gray;
+  padding: 1em;
+  max-width: 56em;
+}
+
+html, body {height: 90%;}
+
+#wrap {min-height: 100%;}
+
+#main {
+  overflow:auto;
+  padding-bottom: 15px; /* must be same height as the footer */
+}
+
+#footer {
+  position: relative;
+  margin-top: -15px; /* negative value of footer height */
+  height: 15px;
+  clear:both;
+  margin: 0;
+  padding: .5em;
+  color: #333;
+  background-color: #ddd;
+  border-top: 1px solid gray;	
+}
+/*Opera Fix*/
+body:before {
+  content:"";
+  height:100%;
+  float:left;
+  width:0;
+  margin-top:-32767px;/
+}
+#leftnav p { margin: 0 0 1em 0; }
+#content h2 { margin: 0 0 .5em 0; }
+
+.diagram {
+   position: relative;
+   width: 100%; /* for IE 6 */
+}
+.diagram p {
+   position: absolute;
+   top: -20px;
+   left: 300px;
+   width: 50%;
+   text-align: left;
+   font-size: large;
+   font-weight: normal;
+   border-style: solid;
+   padding: 5px;
+}
+    </style>
+    <script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-27631853-2']);
+  _gaq.push(['_trackPageview']);
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+    </script>
+
+    <script type="text/javascript">
+  (function() {
+    var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+    po.src = 'https://apis.google.com/js/plusone.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+  })();
+    </script>
+    <!--[if !IE 7]>
+	<style type="text/css">
+	  #wrap {display:table;height:100%}
+	</style>
+    <![endif]-->
+
+  </head>
+  <body>
+        <div id="kbabanner">
+      <a href="index.html">
+	TREC Knowledge Base Acceleration
+	<image src="/trec-knowledge-base-acceleration-logo.png" height="50" style="float:right;"/>
+      </a>
+    </div>
+    <div id="wrap">
+      <div id="leftnav">
+	<ul>
+	  <li><a href="index.html">Overview</a></li>
+	  <li><a href="data/index.shtml.html">Truth Data</a></li>
+	    <ol>
+	      <li><a href="data/fakba1/index.shtml.html">Google Freebase Annotation of KBA StreamCorpus</a></li>
+	    </ol>
+	  <li><a href="trec-kba-2014/index.shtml.html">2014 Evaluation (three tasks):</a>
+	    <ol>
+	      <li><a href="trec-kba-2014/vital-filtering.shtml.html">1) Vital Filtering</a></li>
+	      <li><a href="trec-kba-2014/streaming-slot-filling.shtml.html">2) Streaming Slot Filling</a></li>
+	      <li><a href="trec-kba-2014/accelerate-and-create.shtml.html">3) Accelerate &amp; Create</a></li>
+	      <li><a href="trec-kba-2014/technical-details.shtml.html">Technical Details</a></li>
+	    </ol>
+	  </li>
+	  <li><a href="trec-kba-2013.shtml.html">2013 Tasks</a></li>
+	  <li><a href="kba-ccr-2012.shtml.html">2012 Task</a></li>
+	  <li>Stream Corpus</a>
+	    <ol>
+	      <li><a href="kba-stream-corpus-2014.shtml.html">StreamCorpus 2014</a>
+	      <li><a href="kba-stream-corpus-2013.shtml.html">StreamCorpus 2013</a>
+	      <li><a href="kba-stream-corpus-2012.shtml.html">StreamCorpus 2012</a>
+	    </ol>
+	  </li>
+	  <!--li><a href="/future-task-ideas.shtml">Future Task Ideas</a></li-->
+	  <li><a href="background.shtml.html">Background</a></li>
+	  <li><a href="organizers.shtml.html">Organizers</a></li>
+	</ul>
+	<table>
+	  <tr><td>
+	      <p>Supporters:</p>
+	      <center>
+		<p><a href="http://aws.amazon.com/"><img src="img/AWS-logo.png"/></a></p>
+		<p><a href="http://trec.nist.gov/"><img src="img/NIST-logo.png"/></a></p>
+		<p><a href="http://diffeo.com/"><img src="img/Diffeo-logo.png"/></a></p>
+		<p><a href="http://mit.edu/"><img width="100" src="img/MIT-logo.gif"/></a></p>
+		<p><a href="http://hertzfoundation.org/"><img src="img/Hertz-Foundation-logo.png"/></a></p>
+	  </center></td></tr>
+	</table>
+        <!-- Place this tag where you want the +1 button to render -->
+        <g:plusone size="small" annotation="inline"></g:plusone>
+      </div>
+    <!-- wrap gets closed in footer.shtml -->
+
+      <div id="content">
+	<h1>Organizers</h1>
+	<p>TREC KBA Program Committee:
+	  <ul>
+	    <li> John R. Frank - MIT, Diffeo - for correspondence 
+              <script type="text/javascript">
+                document.write('<a href='http://trec-kba.org/+'mail' + 'to' + ':' + 'support' + '@' + 'di' + 'ffeo' + '.com' + '>');
+                document.write('support' + '@' + 'dif' + 'feo' + '.com');
+                document.write('</a>');
+	      </script>
+	    </li>
+	    <li> Steve Bauer - MIT, Diffeo</li>
+	    <li> Max Kleiman-Weiner - MIT, Diffeo</li>
+	    <li> Boyan Onyshkevych - USG</li>
+	    <li> Dan Roberts - MIT, Diffeo</li>
+	    <li> Ian Soboroff - NIST</li>
+	  </ul>
+	</p>
+	<p>We are grateful for the efforts of the <a href="metadata-committee.shtml.html">Metadata Committee</a>.
+      </div>
+    </div> <!-- end of wrap -->
+    <div id="footer">
+      <a href="http://groups.google.com/group/trec-kba">Google Group for TREC KBA</a>
+    </div>
+
+  </body>
+</html>

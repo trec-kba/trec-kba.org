@@ -1,0 +1,341 @@
+<html>
+  <head>
+        <title>Knowledge Base Acceleration (KBA) -- a track in NIST's TREC 2012</title>
+    <style>
+#kbabanner {
+  background: #9D9FA1;
+  color: #FFFFFF;
+  font-family: "Trebuchet MS", Helvetica, Arial, sans-serif;
+  font-size: 44px;
+  text-shadow: 2px 2px 3px gray;
+  padding: 4px 16px 0px 16px;
+  vertical-align: top;
+}
+#kbabanner a:link {
+  text-decoration: none;
+  color: #FFFFFF;
+}
+#kbabanner a:visited {
+  text-decoration: none;
+  color: #FFFFFF;
+}
+#container {
+  width: 90%;
+  margin: 10px auto;
+  background-color: #fff;
+  color: #333;
+  border: 1px solid gray;
+  line-height: 130%;
+}
+#top {
+  padding: .5em;
+  background-color: #ddd;
+  border-bottom: 1px solid gray;
+}
+#top h1 {
+  padding: 0;
+  margin: 0;
+}
+#leftnav {
+  float: left;
+  width: 250px;
+  margin: 0;
+  padding: 1em;
+}
+#leftnav li { 
+  //margin-left:0px; 
+  //margin-right:0px; 
+  padding: 0px 0px 5px 0px;
+  list-style:square; 
+  list-style-type:none;
+  font-weight: bold;
+}
+#leftnav ul { 
+  //margin-left:0px; 
+  //margin-right:0px; 
+  padding: 0px 0px 0px 20px;
+  list-style:square; 
+  list-style-type:none;
+}
+#content {
+  margin-left: 290px;
+  border-left: 1px solid gray;
+  padding: 1em;
+  max-width: 56em;
+}
+
+html, body {height: 90%;}
+
+#wrap {min-height: 100%;}
+
+#main {
+  overflow:auto;
+  padding-bottom: 15px; /* must be same height as the footer */
+}
+
+#footer {
+  position: relative;
+  margin-top: -15px; /* negative value of footer height */
+  height: 15px;
+  clear:both;
+  margin: 0;
+  padding: .5em;
+  color: #333;
+  background-color: #ddd;
+  border-top: 1px solid gray;	
+}
+/*Opera Fix*/
+body:before {
+  content:"";
+  height:100%;
+  float:left;
+  width:0;
+  margin-top:-32767px;/
+}
+#leftnav p { margin: 0 0 1em 0; }
+#content h2 { margin: 0 0 .5em 0; }
+
+.diagram {
+   position: relative;
+   width: 100%; /* for IE 6 */
+}
+.diagram p {
+   position: absolute;
+   top: -20px;
+   left: 300px;
+   width: 50%;
+   text-align: left;
+   font-size: large;
+   font-weight: normal;
+   border-style: solid;
+   padding: 5px;
+}
+    </style>
+    <script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-27631853-2']);
+  _gaq.push(['_trackPageview']);
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+    </script>
+
+    <script type="text/javascript">
+  (function() {
+    var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+    po.src = 'https://apis.google.com/js/plusone.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+  })();
+    </script>
+    <!--[if !IE 7]>
+	<style type="text/css">
+	  #wrap {display:table;height:100%}
+	</style>
+    <![endif]-->
+
+  </head>
+  <body>
+        <div id="kbabanner">
+      <a href="index.html">
+	TREC Knowledge Base Acceleration
+	<image src="/trec-knowledge-base-acceleration-logo.png" height="50" style="float:right;"/>
+      </a>
+    </div>
+    <div id="wrap">
+      <div id="leftnav">
+	<ul>
+	  <li><a href="index.html">Overview</a></li>
+	  <li><a href="data/index.shtml.html">Truth Data</a></li>
+	    <ol>
+	      <li><a href="data/fakba1/index.shtml.html">Google Freebase Annotation of KBA StreamCorpus</a></li>
+	    </ol>
+	  <li><a href="trec-kba-2014/index.shtml.html">2014 Evaluation (three tasks):</a>
+	    <ol>
+	      <li><a href="trec-kba-2014/vital-filtering.shtml.html">1) Vital Filtering</a></li>
+	      <li><a href="trec-kba-2014/streaming-slot-filling.shtml.html">2) Streaming Slot Filling</a></li>
+	      <li><a href="trec-kba-2014/accelerate-and-create.shtml.html">3) Accelerate &amp; Create</a></li>
+	      <li><a href="trec-kba-2014/technical-details.shtml.html">Technical Details</a></li>
+	    </ol>
+	  </li>
+	  <li><a href="trec-kba-2013.shtml.html">2013 Tasks</a></li>
+	  <li><a href="kba-ccr-2012.shtml.html">2012 Task</a></li>
+	  <li>Stream Corpus</a>
+	    <ol>
+	      <li><a href="kba-stream-corpus-2014.shtml.html">StreamCorpus 2014</a>
+	      <li><a href="kba-stream-corpus-2013.shtml.html">StreamCorpus 2013</a>
+	      <li><a href="kba-stream-corpus-2012.shtml.html">StreamCorpus 2012</a>
+	    </ol>
+	  </li>
+	  <!--li><a href="/future-task-ideas.shtml">Future Task Ideas</a></li-->
+	  <li><a href="background.shtml.html">Background</a></li>
+	  <li><a href="organizers.shtml.html">Organizers</a></li>
+	</ul>
+	<table>
+	  <tr><td>
+	      <p>Supporters:</p>
+	      <center>
+		<p><a href="http://aws.amazon.com/"><img src="img/AWS-logo.png"/></a></p>
+		<p><a href="http://trec.nist.gov/"><img src="img/NIST-logo.png"/></a></p>
+		<p><a href="http://diffeo.com/"><img src="img/Diffeo-logo.png"/></a></p>
+		<p><a href="http://mit.edu/"><img width="100" src="img/MIT-logo.gif"/></a></p>
+		<p><a href="http://hertzfoundation.org/"><img src="img/Hertz-Foundation-logo.png"/></a></p>
+	  </center></td></tr>
+	</table>
+        <!-- Place this tag where you want the +1 button to render -->
+        <g:plusone size="small" annotation="inline"></g:plusone>
+      </div>
+    <!-- wrap gets closed in footer.shtml -->
+
+      <div id="content">
+ 	<h2>KBA Stream Corpus 2012</h2>
+	<p><font size="5" color="red">This page is <b>archival</b>.  The KBA Stream Corpus
+	2012 is being subsumed into the 
+	<a href="kba-stream-corpus-2013.shtml.html">KBA Stream Corpus 2013</a>.</font>
+	</p>
+
+	<p>To support the <a href="kba-ccr-2012.shtml.html">kba-ccr-2012 task</a>, we assembled a corpus in which every document has a time stamp in the time range from October 2011 through April 2012.  This corpus is distributed by NIST (see below).
+
+	<p> The corpus has three components:
+	  <ul>
+	    <li><b>linking (<a href="schemas/v1.0/sample-linking.gz">sample (json, see thrift below)</a>)</b> Brian Eoff and Hilary Mason at Bitly have generously donated a set of URLs that were shortened at <a href="http://bitly.com">bitly.com</a>.  The timestamp of the shorten event places it in the stream.  To create a substream from Bitly's massive data stream, we designed a set of ~10k queries that Brian uses to query their internal index of the full text of all pages.  These ~10k queries are the Wikipedia page titles of the <a href="kba-ccr-2012.shtml.html">~50 topic entities for kba-ccr-2012</a> and also titles of all of their in- and out-linking pages in the English Wikipedia snapshot from January 2012.  The queries that matched a given text are in the 'source_metadata' property of the <a href="kba-stream-corpus-2012.shtml.html#json-format">JSON objects described below</a>.</li>
+	    <li><b>social (<a href="schemas/v1.0/sample-social.gz">sample (json, see thrift below)</a>)</b> We obtained an aggregated stream of blogs and forums with rich category metadata.</li>
+	    <li><b>news (<a href="schemas/v1.0/sample-news.gz">sample (json, see thrift below)</a>)</b> We acquired a set of URLs of global public news wires with timestamps and fetched the content.</li>
+	  </ul>
+	</p>
+
+	<h2>Corpus Stats</h2>
+	<p>The corpus is approximately 9TB of 'raw' text, not including 'cleansed' and 'ner'.  After XZ compression, it is 1.9TB.</p>
+	<table>
+	  <tr><td></td><th>news</th><th>linking</th><th>social</th></tr>
+	  <tr><th>num docs</th><td>134,625,663</td><td>5,400,200</td><td>322,650,609</td></tr>
+	  <tr><th>size of 'raw'</th><td>8072GB</td><td>350GB</td><td>531GB</td></tr>
+	  <tr><th>num docs with 'cleansed' &amp; 'ner'</th><td>53,245,364</td><td>5,343,568</td><td>309,071,598</td></tr>
+	  <tr><th>size of 'ner'</th><td>17,53GB</td><td>222GB</td><td>1723GB</td></tr>
+	</table>
+	<p>Stats in the table are derived from <a href="aggregate-stats.json">aggregate-stats.json</a></p>
+	<p>The corpus consists of several languages.  The boilerpipe cleansed and Stanford NER output was only generated for documents which had a reasonable chance of being English.</p>
+	<p>The corpus spans the months October 2011 through April 2012.  The plot below was generated from <a href="all-date-hour-stats.json">all-date-hour-stats.json</a></p>
+	<img src="all-date-hour-stats.png" width="700"/>
+
+	<h2>Named Entity Tagging</h2>
+	<p>Thanks to the <a href="metadata-committee.shtml.html">TREC KBA
+	Metadata Committee</a> the corpus includes boilerpipe cleansed
+	text and Stanford NER tagging on the English subset of the
+	corpus.  You can see a small sample of this NER tagging in the
+	citation corpus
+	sample <a href="schemas/v1.0/sample-wikipedia.gz">sample-wikipedia.gz</a>.
+	The <a href="metadata-committee.shtml.html">Metadata Committee</a>
+	is working on providing this type of tag-stripping and NER
+	tagging on all possibly-English texts in the corpus.</p>
+	
+	<p>To take full advantage of the cleansed and ner output, one
+	should examine the descriptions of these processing stages in
+	doc.body.stages</p>
+
+	<p>The structure of the rows in the NER output is:
+	  <pre>TokenID, Token, Lemma, PartOfSpeechTag, EntityMentionType, StartOffset, EndOffset</pre>
+	</p>
+
+	<h2>Directory Structure</h2>
+	<p>The files containing JSON lines are gzipped and stored in a shallow directory hierarchy:</p>
+	<pre>
+	  /stream-corpus/YYYY-MM-DD-HH/news.(md5).gz
+	  /stream-corpus/YYYY-MM-DD-HH/social.(md5).gz
+	  /stream-corpus/YYYY-MM-DD-HH/linking.(md5).gz
+	</pre>
+	<p>'YYYY-MM-DD-HH' denotes a year-month-day-hour in UTC and 'md5' is the hex representation of the md5 hash of the contents within the gzipped file.  The number of stream-item instances per file varies between a few hundred and a few hundred thousand.  This directory structure should enable a variety of processing approaches, including multi-step mapreduce jobs with hadoop.</p>
+	
+	<h2>Thrift Serialization</h2>
+	<p> We transformed the corpus from JSON to <a href="http://thrift.apache.org/">thrift</a>, which is >10x faster to deserialize and supports binary data, thus allowing us to drop the string-escape encoding hack described below.  Our thrift objects are defined in <a href="schemas/v1.0/kba.thrift">http://trec-kba.org/schemas/v1.0/kba.thrift</a>, which you can use to generate client code in most programming languages.  For example, to generate java or python client classes for loading the deserialized data, you can:</p>
+	<pre>
+	    thrift -r --gen py   kba.thrift
+	    thrift -r --gen java kba.thrift
+	</pre>
+	<p> You can see thrift in action in two examples:</p>
+	<ul>
+	  <li> <a href="toy-kba-system.tar.gz">the toy_kba_system</a></li>
+	  <li> <a href="schemas/v1.0/kba_thrift_verify">kba_thrift_verify</a></li>
+	</ul>
+	<p> kba_thrift_verify uses the stats.json file that is present in every directory of the corpus to confirm that all of the data is present in that directory.  Note that the kba_thrift_verify tool relies on four components that are not part of the python standard library:</p>
+	<ul>
+	  <li>The python classes generated by thrift --gen (see above)</li>
+	  <li>The <a href="http://pypi.python.org/pypi/thrift/0.8.0">python bindings to thrift,</a></li>
+	  <li><a href="http://tukaani.org/xz/">XZ utils command line tools</a>, which it uses as a child process,</li>
+	  <li><a href="http://www.gnupg.org/">GnuPG</a>, for decrypting the corpus using the key provided to you by NIST, which it also uses as a child process.</li>
+	</ul>
+
+	<h2><a name="data-request-forms">Obtaining the Corpus</a></h2>
+	<p>See the corpus access page at NIST: <a href="http://trec.nist.gov/data/kba.html">http://trec.nist.gov/data/kba.html</a></p>
+
+	<!--p>The corpus is available in <a href="http://aws.amazon.com/">Amazon Web Services (AWS) S3</a>:
+	  <ul>
+	    <li> We recommend using Amazon's <a href="http://aws.amazon.com/ec2/">Elastic Compute Cloud (EC2)</a> and <a href="http://aws.amazon.com/elasticmapreduce/">Elastic Map Reduce (EMR)</a> tools to process the corpus.  While this will cost you compute charges, Amazon is hosting the corpus for free in this bucket:  
+	      <pre>s3://aws-publicdatasets/trec/kba/kba-stream-corpus-2012/ </pre>
+	      A useful tool for interacting with the corpus in S3 is <a href="http://s3tools.org/s3cmd">http://s3tools.org/s3cmd</a>.
+	    </li>
+	    <br/>
+	    <li> You can also retrieve the corpus using wget, like this:
+	      <pre>
+## Fetch the list of directory names -- date-hour strings
+wget http://s3.amazonaws.com/aws-publicdatasets/trec/kba/kba-stream-corpus-2012/dir-names.txt
+		    
+## Use GNU parallel to make multiple wget requests in parallel.  
+## The --continue flag makes this restartable.
+cat dir-names.txt | parallel -j 10 --eta 'wget --recursive --continue --no-host-directories --no-parent --reject "index.html*" http://s3.amazonaws.com/aws-publicdatasets/trec/kba/kba-stream-corpus-2012/{}/index.html'
+	      </pre>		  
+	    </li>
+	  </ul>
+	</p>
+
+	<p>If accessing the data from AWS is challenging for you, NIST also has a few physical disks containing the corpus data for teams participating in TREC.  NIST has two types of disks containing the corpus: 2TB FAT32 disks or 3TB EXT2 disks.  Contact NIST, and they will mail one to you.  The 2TB FAT32 disks contain 99% of the corpus, so you must fetch the remainder over the internet from S3.  We request that teams copy the data off and send the disks back to NIST as fast as practical.</p>
+	-->
+
+	<h2><a name="json-format">JSON Format (deprecated, replaced by thrift format)</a></h2>
+	<p>The corpus is stored in gzip'ed files containing one document per line.  Each line is a JSON string containing both metadata and the raw byte array of the text.  Generic JSON does not support byte arrays.  Instead of using BSON, we chose to string-escape the raw bytes of content so they could be stored in generic JSON.</p>
+
+	<p><h3>Checkout the <a href="schemas/v1.0/validator_form.html">schema viewer</a>!</h3></p>
+	<p>The documents are stored in JSON objects, so each document and its metadata is serialized on to one line.  The corpus consists of files with one JSON object per line.  The schema for these JSON objects is <a href="schemas/v1.0/stream-item.json">http://trec-kba.org/schemas/v1.0/stream-item.json</a>, which you can explore using this <a href="schemas/v1.0/validator_form.html">JSON schema validator.</a></p>
+
+	<h2>Character Encodings</h2>
+	<p>All strings in the metadata and instances of content-item are treated as byte arrays and converted to string literals that JSON can handle without Unicode conversion.  The particular flavor of string literal used is Python's string literal, i.e. we used String.encode('string-escape') which is the same as repr(my_string).  To obtain the original byte array in python, one can:
+
+	  <pre>
+	    import json
+
+	    # get first doc out of the file
+	    json_string = open('news-f3023a10a2553766f958c424ebdeafef.jsonlines').readline()
+	    
+	    # deserialize  (deprecated, replaced by thrift format)
+	    doc = json.loads( json_string )
+
+	    # unescape the string literal to regain the raw bytes,   (deprecated, replaced by thrift format)
+	    raw_bytes = doc['body']['raw'].decode('string-escape')
+	    
+	    # use the character encoding suggested by the metadata.
+	    # This is still relevant on the thrift format, because it
+	    # represents the probable encoding of the 'raw' data served
+	    # to us by the remote host
+	    char_string = raw_bytes.decode(doc['body']['encoding'], errors='replace')
+
+	  </pre>
+	<p>A Java implementation of Python's string escape and unescape functions is available here: <a href="schemas/v1.0/StringEscapePythonUtils.java">http://trec-kba.org/schemas/v1.0/StringEscapePythonUtils.java</a>.</p>
+
+        <h2>Citation Corpus (on hold)</h2>
+	<p>We are also gathering a corpus of pages cited in the
+	English Wikipedia.  These citations were created by real
+	Wikipedians.  The corpus can be used for many purposes,
+	including training models.  Here is
+	an <a href="schemas/v1.0/sample-wikipedia.gz">sample of a few
+	documents that are cited by multiple Wikipedia
+	entities.</a></p>
+
+      </div>
+    </div> <!-- end of wrap -->
+    <div id="footer">
+      <a href="http://groups.google.com/group/trec-kba">Google Group for TREC KBA</a>
+    </div>
+
+  </body>
+</html>

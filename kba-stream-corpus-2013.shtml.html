@@ -1,0 +1,305 @@
+<html>
+  <head>
+        <title>Knowledge Base Acceleration (KBA) -- a track in NIST's TREC 2012</title>
+    <style>
+#kbabanner {
+  background: #9D9FA1;
+  color: #FFFFFF;
+  font-family: "Trebuchet MS", Helvetica, Arial, sans-serif;
+  font-size: 44px;
+  text-shadow: 2px 2px 3px gray;
+  padding: 4px 16px 0px 16px;
+  vertical-align: top;
+}
+#kbabanner a:link {
+  text-decoration: none;
+  color: #FFFFFF;
+}
+#kbabanner a:visited {
+  text-decoration: none;
+  color: #FFFFFF;
+}
+#container {
+  width: 90%;
+  margin: 10px auto;
+  background-color: #fff;
+  color: #333;
+  border: 1px solid gray;
+  line-height: 130%;
+}
+#top {
+  padding: .5em;
+  background-color: #ddd;
+  border-bottom: 1px solid gray;
+}
+#top h1 {
+  padding: 0;
+  margin: 0;
+}
+#leftnav {
+  float: left;
+  width: 250px;
+  margin: 0;
+  padding: 1em;
+}
+#leftnav li { 
+  //margin-left:0px; 
+  //margin-right:0px; 
+  padding: 0px 0px 5px 0px;
+  list-style:square; 
+  list-style-type:none;
+  font-weight: bold;
+}
+#leftnav ul { 
+  //margin-left:0px; 
+  //margin-right:0px; 
+  padding: 0px 0px 0px 20px;
+  list-style:square; 
+  list-style-type:none;
+}
+#content {
+  margin-left: 290px;
+  border-left: 1px solid gray;
+  padding: 1em;
+  max-width: 56em;
+}
+
+html, body {height: 90%;}
+
+#wrap {min-height: 100%;}
+
+#main {
+  overflow:auto;
+  padding-bottom: 15px; /* must be same height as the footer */
+}
+
+#footer {
+  position: relative;
+  margin-top: -15px; /* negative value of footer height */
+  height: 15px;
+  clear:both;
+  margin: 0;
+  padding: .5em;
+  color: #333;
+  background-color: #ddd;
+  border-top: 1px solid gray;	
+}
+/*Opera Fix*/
+body:before {
+  content:"";
+  height:100%;
+  float:left;
+  width:0;
+  margin-top:-32767px;/
+}
+#leftnav p { margin: 0 0 1em 0; }
+#content h2 { margin: 0 0 .5em 0; }
+
+.diagram {
+   position: relative;
+   width: 100%; /* for IE 6 */
+}
+.diagram p {
+   position: absolute;
+   top: -20px;
+   left: 300px;
+   width: 50%;
+   text-align: left;
+   font-size: large;
+   font-weight: normal;
+   border-style: solid;
+   padding: 5px;
+}
+    </style>
+    <script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-27631853-2']);
+  _gaq.push(['_trackPageview']);
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+    </script>
+
+    <script type="text/javascript">
+  (function() {
+    var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+    po.src = 'https://apis.google.com/js/plusone.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+  })();
+    </script>
+    <!--[if !IE 7]>
+	<style type="text/css">
+	  #wrap {display:table;height:100%}
+	</style>
+    <![endif]-->
+
+  </head>
+  <body>
+        <div id="kbabanner">
+      <a href="index.html">
+	TREC Knowledge Base Acceleration
+	<image src="/trec-knowledge-base-acceleration-logo.png" height="50" style="float:right;"/>
+      </a>
+    </div>
+    <div id="wrap">
+      <div id="leftnav">
+	<ul>
+	  <li><a href="index.html">Overview</a></li>
+	  <li><a href="data/index.shtml.html">Truth Data</a></li>
+	    <ol>
+	      <li><a href="data/fakba1/index.shtml.html">Google Freebase Annotation of KBA StreamCorpus</a></li>
+	    </ol>
+	  <li><a href="trec-kba-2014/index.shtml.html">2014 Evaluation (three tasks):</a>
+	    <ol>
+	      <li><a href="trec-kba-2014/vital-filtering.shtml.html">1) Vital Filtering</a></li>
+	      <li><a href="trec-kba-2014/streaming-slot-filling.shtml.html">2) Streaming Slot Filling</a></li>
+	      <li><a href="trec-kba-2014/accelerate-and-create.shtml.html">3) Accelerate &amp; Create</a></li>
+	      <li><a href="trec-kba-2014/technical-details.shtml.html">Technical Details</a></li>
+	    </ol>
+	  </li>
+	  <li><a href="trec-kba-2013.shtml.html">2013 Tasks</a></li>
+	  <li><a href="kba-ccr-2012.shtml.html">2012 Task</a></li>
+	  <li>Stream Corpus</a>
+	    <ol>
+	      <li><a href="kba-stream-corpus-2014.shtml.html">StreamCorpus 2014</a>
+	      <li><a href="kba-stream-corpus-2013.shtml.html">StreamCorpus 2013</a>
+	      <li><a href="kba-stream-corpus-2012.shtml.html">StreamCorpus 2012</a>
+	    </ol>
+	  </li>
+	  <!--li><a href="/future-task-ideas.shtml">Future Task Ideas</a></li-->
+	  <li><a href="background.shtml.html">Background</a></li>
+	  <li><a href="organizers.shtml.html">Organizers</a></li>
+	</ul>
+	<table>
+	  <tr><td>
+	      <p>Supporters:</p>
+	      <center>
+		<p><a href="http://aws.amazon.com/"><img src="img/AWS-logo.png"/></a></p>
+		<p><a href="http://trec.nist.gov/"><img src="img/NIST-logo.png"/></a></p>
+		<p><a href="http://diffeo.com/"><img src="img/Diffeo-logo.png"/></a></p>
+		<p><a href="http://mit.edu/"><img width="100" src="img/MIT-logo.gif"/></a></p>
+		<p><a href="http://hertzfoundation.org/"><img src="img/Hertz-Foundation-logo.png"/></a></p>
+	  </center></td></tr>
+	</table>
+        <!-- Place this tag where you want the +1 button to render -->
+        <g:plusone size="small" annotation="inline"></g:plusone>
+      </div>
+    <!-- wrap gets closed in footer.shtml -->
+
+      <div id="content">
+ 	<h2>KBA Stream Corpus 2013</h2>
+	<p><font size="5" color="red">This page is <b>archival</b>.  The KBA Stream Corpus
+	2013 is being updated in the 
+	<a href="kba-stream-corpus-2014.shtml.html">KBA Stream Corpus 2014</a>.</font>
+	</p>
+
+	<p>The TREC KBA Stream Corpus is the next generation of the
+	<a href="kba-stream-corpus-2012.shtml.html">kba-stream-corpus-2012</a>.</p>
+	  
+	<p>To support the <a href="trec-kba-2013.shtml.html">KBA tasks</a>
+	in TREC 2013, and also other tasks using the KBA corpus, we
+	assembled a corpus in which every document has a time stamp in
+	the time range from October 2011 through January 2013.  This
+	corpus is distributed by NIST (see below).</p>
+
+	<p>The content from the 2012 corpus is included in the 2013
+	corpus and provides the first 4973 hours of this extended
+	corpus.  The corpus is available in Amazon S3 and we recommend
+	that you process the corpus using 
+	<a href="http://aws.amazon.com/">Amazon EC2</a>.
+	</p>
+        
+	<h2>Directory Structure</h2>
+	<p>The files containing JSON lines are gzipped and stored in a shallow directory hierarchy:</p>
+	<pre>
+	  /stream-corpus/YYYY-MM-DD-HH/&lt;substream&gt;.&lt;item count&gt;.&lt;md5&gt;.xz.gpg
+	</pre>
+	<p>'YYYY-MM-DD-HH' denotes a year-month-day-hour in UTC.</p>
+	<p>'md5' represents the md5 hexdigest of that chunks decrypted
+	uncompressed data.  The number of stream_item instances per
+	file varies between a few hundred and a few hundred thousand.
+	This directory structure enables a variety of processing
+	approaches, including multi-step mapreduce jobs.</p>
+
+	<h2>Compressed and Encrypted</h2>
+	<p>After serializing the data with thrift, we have compressed
+	each chunk with XZ and encrypted it with GPG.  The GPG keys
+	are provided by NIST to organizations that sign the data use
+	agreements.</p>
+
+	<h2>Sentence Chunking, NER, and in-doc coref chains</h2>
+	<p>We are preparing to re-run an entity tagger on the corpus
+	to obtain sentence chunking and also in-doc coref chains.
+	This will extend the 'ner' content from the 2012 corpus, which
+	is:
+	  <pre>TokenID, Token, Lemma, PartOfSpeechTag, EntityMentionType, StartOffset, EndOffset</pre>
+	Details will be posted here when the new NER tagging is defined.
+	</p>
+	
+	<h2>Thrift Serialization</h2>
+	<p> The data inside each chunk file is serialized
+	with <a href="http://thrift.apache.org/">thrift</a>, which you
+	can use to generate client code in most programming languages.
+	For KBA 2012, we
+	used <a href="https://github.com/trec-kba/streamcorpus/blob/master/if/streamcorpus-v0_1_0.thrift">https://github.com/trec-kba/streamcorpus/blob/master/if/streamcorpus-v0_1_0.thrift</a>
+
+	For KBA 2013, we have extended this thrift definition.  Read here for more details:
+	  <a href="https://github.com/trec-kba/streamcorpus/blob/master/if/streamcorpus.thrift">https://github.com/trec-kba/streamcorpus/blob/master/if/streamcorpus.thrift</a>.</p>
+
+	<p>See
+	the <a href="https://github.com/trec-kba/streamcorpus/">streamcorpus
+	project in github</a> for tools to help you interact with
+	streamcorpus chunks.</p>
+	
+	<p> This old script uses the original v0_1_0 thrift definition:</p>
+	<ul>
+	  <li> <a href="schemas/v1.0/kba_thrift_verify">kba_thrift_verify</a></li>
+	</ul>
+	<p> kba_thrift_verify uses the stats.json file that is present
+	in every directory of the corpus to confirm that all of the
+	data is present in that directory.  Note that the
+	kba_thrift_verify tool relies on four components that are not
+	part of the python standard library:</p>
+	<ul>
+	  <li>The python classes generated by thrift --gen (see above)</li>
+	  <li>The <a href="http://pypi.python.org/pypi/thrift/0.8.0">python bindings to thrift,</a></li>
+	  <li><a href="http://tukaani.org/xz/">XZ utils command line tools</a>, which it uses as a child process,</li>
+	  <li><a href="http://www.gnupg.org/">GnuPG</a>, for decrypting the corpus using the key provided to you by NIST, which it also uses as a child process.</li>
+	</ul>
+
+	<h2><a name="data-request-forms">Obtaining the Corpus</a></h2>
+	<p>See the corpus access page at NIST: <a href="http://trec.nist.gov/data/kba.html">http://trec.nist.gov/data/kba.html</a></p>
+
+
+	<!--p>The corpus is available in <a href="http://aws.amazon.com/">Amazon Web Services (AWS) S3</a>:
+	  <ul>
+	    <li> We recommend using Amazon's <a href="http://aws.amazon.com/ec2/">Elastic Compute Cloud (EC2)</a> and <a href="http://aws.amazon.com/elasticmapreduce/">Elastic Map Reduce (EMR)</a> tools to process the corpus.  While this will cost you compute charges, Amazon is hosting the corpus for free in this bucket:  
+	      <pre>s3://aws-publicdatasets/trec/kba/kba-stream-corpus-2012/ </pre>
+	      A useful tool for interacting with the corpus in S3 is <a href="http://s3tools.org/s3cmd">http://s3tools.org/s3cmd</a>.
+	    </li>
+	    <br/>
+	    <li> You can also retrieve the corpus using wget, like this:
+	      <pre>
+## Fetch the list of directory names -- date-hour strings
+wget http://s3.amazonaws.com/aws-publicdatasets/trec/kba/kba-stream-corpus-2012/dir-names.txt
+		    
+## Use GNU parallel to make multiple wget requests in parallel.  
+## The --continue flag makes this restartable.
+cat dir-names.txt | parallel -j 10 --eta 'wget --recursive --continue --no-host-directories --no-parent --reject "index.html*" http://s3.amazonaws.com/aws-publicdatasets/trec/kba/kba-stream-corpus-2012/{}/index.html'
+	      </pre>		  
+	    </li>
+	  </ul>
+	</p>
+
+	<p>If accessing the data from AWS is challenging for you, NIST also has a few physical disks containing the corpus data for teams participating in TREC.  NIST has two types of disks containing the corpus: 2TB FAT32 disks or 3TB EXT2 disks.  Contact NIST, and they will mail one to you.  The 2TB FAT32 disks contain 99% of the corpus, so you must fetch the remainder over the internet from S3.  We request that teams copy the data off and send the disks back to NIST as fast as practical.</p>
+	-->
+      </div>
+    </div> <!-- end of wrap -->
+    <div id="footer">
+      <a href="http://groups.google.com/group/trec-kba">Google Group for TREC KBA</a>
+    </div>
+
+  </body>
+</html>

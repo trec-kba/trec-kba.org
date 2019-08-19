@@ -1,0 +1,81 @@
+{
+        "adult_content": false, 
+        "author": "admin", 
+        "comments": "http://dailyator.com/apple-you-win-i-want-an-ipad/#comments", 
+        "content_categories": [
+            {
+                "categories": [
+                    "Handhelds news", 
+                    "Mac news"
+                ], 
+                "group": "Technology"
+            }, 
+            {
+                "categories": [
+                    "Apple news"
+                ], 
+                "group": "Companies"
+            }
+        ], 
+        "feed_categories": [
+            {
+                "categories": [
+                    "ugc financial feeds", 
+                    "ugc technology feeds"
+                ], 
+                "group": "General"
+            }
+        ], 
+        "feed_class": "Blog", 
+        "feed_language": "English", 
+        "feed_media_type": "text", 
+        "generator": "http://wordpress.org/?v=3.3.1", 
+        "home_link": "http://dailyator.com", 
+        "id": 10004803061, 
+        "inbound_link_count": 1, 
+        "item_categories": [
+            "Tech News", 
+            "apple", 
+            "gadgets", 
+            "tech"
+        ], 
+        "item_harvest_date": "2012-03-08 04:33:29.0", 
+        "language": "English", 
+        "last_build_date": "2012-03-10 15:42:09.0", 
+        "media_type": "text", 
+        "outbound_links": [
+            "http://www.news.com.au/technology/tablets/how-did-twitter-rate-tim-cooks-performance-at-the-ipad-3-launch/story-fn6vigfp-1226292686354", 
+            "http://www.digitaltrends.com/mobile/apple-you-win-i-want-an-ipad/", 
+            "http://www.digitaltrends.com/", 
+            "http://www.digitaltrends.com/mobile/our-kindle-fire-impressions-and-why-amazon-is-destined-to-dominate/", 
+            "http://www.digitaltrends.com/mobile/apple-sues-htc-again-will-microsoft-come-to-the-rescue/", 
+            "http://www.digitaltrends.com/computing/eight-windows-8-features-that-could-save-microsoft/", 
+            "http://www.digitaltrends.com/mobile/five-reasons-why-the-sun-is-setting-on-windows-dominance/", 
+            "http://news.yahoo.com/apple-win-want-ipad-010615671.html"
+        ], 
+        "pub_date": "2012-03-08 02:27:48.0", 
+        "publishing_platform": "WordPress", 
+        "source": "Daily News", 
+        "stock_ticker": [
+            {
+                "exchange": "MTAA", 
+                "name": "Save", 
+                "symbol": "SAVE"
+            }, 
+            {
+                "exchange": "XNAS", 
+                "name": "Google, Inc.", 
+                "symbol": "GOOG"
+            }, 
+            {
+                "exchange": "XNAS", 
+                "name": "Apple, Inc.", 
+                "symbol": "AAPL"
+            }, 
+            {
+                "exchange": "XETR", 
+                "name": "Apple, Inc.", 
+                "symbol": "APC"
+            }
+        ]
+    }

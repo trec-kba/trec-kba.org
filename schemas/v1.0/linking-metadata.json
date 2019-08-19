@@ -1,0 +1,29 @@
+{
+    "id": "http://trec-kba.org/schemas/v1.0/news-metadata.json",
+    "description": "Metadata for stream items from stream_source='news'.",
+    "type": "object",
+    "$schema": "http://json-schema.org/draft-03/schema#",
+    "extends": [{"$ref": "http://trec-kba.org/schemas/v1.0/http-metadata.json"}],
+    "properties": {
+        "$schema": {
+            "description": "URI of this JSON schema document.",
+            "type": "string",
+            "enum": ["http://trec-kba.org/schemas/v1.0/linking-metadata.json"],
+            "required": false,
+            "default": "http://trec-kba.org/schemas/v1.0/linking-metadata.json"
+            },
+	"queries": {
+            "description": "List of Wikipedia page titles that matched the full text of this page as represented in Bitly's internal search engine.",
+            "type": "array",
+	    "items": {
+                "type": "string"
+                },
+            "required": true
+            },
+	"shorten_events": {
+            "description": "Mapping between bitly.com hashes and timestamp of shorten event.  The property names on this object are hash IDs (string), and the values seconds since the epoch (float).  The earliest such timestamp within a given GMT calendar day is used as the stream_time in the parent stream-item object.",
+            "type": "object",
+            "required": true
+            },
+        }
+    }

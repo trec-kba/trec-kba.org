@@ -1,0 +1,68 @@
+#!/usr/bin/python
+
+"""
+Verifies that a text file is in the format required for a submission
+to the TREC KBA 2012 task called "ccr-2012"
+
+If the file is valid, this outputs nothing and exits with status 0.
+
+If the file is invalid, this print diagnostics to stderr and exists
+with an non-zero status code.
+"""
+
+import re
+import sys
+import json
+from datetime import datetime
+import argparse
+import traceback
+parser = argparse.ArgumentParser(description=__doc__)
+parser.add_argument(dest="submission",   help="path to submission file to validate, can be gzip'ed or bzip2'ed")
+args = parser.parse_args()
+
+def log(mesg):
+    sys.stderr.write("%s\n" % mesg)
+    sys.stderr.flush()
+
+if args.submission.endswith(".gz"):
+    submission = gzip.GzipFile(args.submission)
+elif args.submission.endswith(".bz2"):
+    submission = bz2.BZ2File(args.submission)
+else:
+    submission = open(args.submission)
+
+def get_comment(line):
+    if line.startswith("#"):
+        return line.lstrip("#")
+    else:
+        return None
+
+try:
+    first_line = submission.readline()
+    should_be_filter_run = get_comment(first_line)
+    filter_run = json.loads(should_be_filter_run)
+except Exception, exc:
+    log("failed to load a valid JSON string as filter_run instance from first line: length=%d\n%s" % (
+            len(first_line), traceback.format_exc(exc)))
+    sys.exit(1)
+
+assert "task_id" in filter_run, "filter_run is missing task_id"
+assert "topic_set_id" in filter_run, "filter_run is missing topic_step_id"
+assert "corpus_id" in filter_run, "filter_run is missing corpus_id"
+assert "team_id" in filter_run, "filter_run is missing team_id"
+assert "system_id" in filter_run, "filter_run is missing system_id"
+assert "run_type" in filter_run, "filter_run is missing run_type"
+
+for line in submission:
+    if get_comment(line):
+        continue
+    team_id, system_id, date_hour, stream_id, entity, relevance = line.strip().split()
+    assert team_id == filter_run["team_id"]
+    assert system_id == filter_run["system_id"]
+    epoch_ticks, doc_id = stream_id.split("-")
+    assert re.match("^[0-9a-f]{32}$", doc_id), "invalid doc_id=%r" % doc_id
+    stream_id_date_hour = datetime.utcfromtimestamp(int(epoch_ticks)).strftime("%Y-%m-%d-%H")
+    assert date_hour == stream_id_date_hour, "date_hour %s disagrees with stream_id-->%s" % (date_hour, stream_id_date_hour)
+    relevance = int(relevance)
+    assert 0 <= relevance <= 1000, "relevance not in range [0,1000]"
+    assert len(entity) > 0, "blank entity"

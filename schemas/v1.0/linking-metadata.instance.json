@@ -1,0 +1,34 @@
+{
+        "http_headers": {
+            "age": "0", 
+            "cache-control": "no-cache, must-revalidate, post-check=0, pre-check=0", 
+            "connection": "keep-alive", 
+            "content-encoding": "gzip", 
+            "content-length": "13869", 
+            "content-type": "text/html; charset=utf-8", 
+            "date": "Sun, 11 Mar 2012 04:42:10 GMT", 
+            "etag": "\"1331440929\"", 
+            "last-modified": "Sun, 11 Mar 2012 04:42:09 GMT", 
+            "server": "nginx", 
+            "vary": "Accept-Encoding", 
+            "via": "1.1 varnish", 
+            "x-ah-environment": "prod", 
+            "x-cache": "MISS", 
+            "x-drupal-cache": "MISS", 
+            "x-varnish": "1789757322"
+        }, 
+        "http_status": 200, 
+        "queries": [
+            "Advice column", 
+            "Front organization", 
+            "News Corporation", 
+            "Non-profit organization", 
+            "Ontario", 
+            "The Situation Room", 
+            "What You Waiting For?"
+        ], 
+        "redirect_chain": [], 
+        "shorten_events": {
+            "ywtkH6": 1329742160.0
+        }
+    }

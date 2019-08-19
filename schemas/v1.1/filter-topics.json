@@ -1,0 +1,47 @@
+{
+    "id": "http://trec-kba.org/schemas/v1.1/filter-topics.json",
+    "description": "Describes the topic entities for a KBA filtering task.",
+    "type": "object",
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "properties": {
+        "$schema": {
+            "description": "URI of this JSON schema document.",
+            "type": "string",
+            "enum": ["http://trec-kba.org/schemas/v1.1/filter-topics.json"],
+            "required": false,
+            "default": "http://trec-kba.org/schemas/v1.1/filter-topics.json"
+            },
+        "topic_set_id": {
+            "description": "Unique string that identifies this set of topic entities",
+            "type": "string",
+            "required": true
+            },
+        "targets": {
+            "description": "Array of target objects describing entities within reference knowledge-base-like systems, such as en.wikipedia.org, freebase.com, twitter.com, etc.",
+            "required": true,
+            "type": "object",
+            "oneOf": [
+                { "$ref": "#/definitions/target" }
+            ]
+        }
+    },
+    "definitions": {
+        "target": {
+            "description": "Object describing a target entity",
+            "type": "object",
+            "properties": {
+                "target_id": {
+                    "type": "string"
+                },
+                "group": {
+                    "description": "String that identifies a group of query targets that are generally related.",
+                    "type": "string"
+                },
+                "entity_type": {
+                    "description": "String identifying the type of entity from https://github.com/trec-kba/streamcorpus/blob/master/if/streamcorpus.thrift",
+                    "type": { "enum": ["FAC", "ORG", "PER"] }
+                }
+            }
+        }
+    }
+}

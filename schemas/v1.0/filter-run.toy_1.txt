@@ -1,0 +1,31 @@
+#{"team_id": "CompInsights", "run_info": {"num_entities": 4, "num_stream_hours": 3}, "topic_set_id": "sample-trec-kba-topics-2012", "corpus_id": "tiny-sample-of-hourly-corpus", "task_id": "kba-ccr-2012", "system_id": "toy_1", "$schema": "http://trec-kba.org/schemas/v1.0/filter-run.json", "system_description": "Collapses entity title strings and documents into sets of words and looks for fraction of exact match overlap with entity titles.  Relevance is fraction of entity title words that appear in doc.", "run_type": "automatic"}
+CompInsights	toy_1	2012-02-01-00	1328055120-f6462409e60d2748a0adef82fe68b86d	Andrew_Forrest	1000
+CompInsights	toy_1	2012-02-01-00	1328057880-79cdee3c9218ec77f6580183cb16e045	Andrew_Forrest	428
+CompInsights	toy_1	2012-02-01-00	1328057280-80fb850c089caa381a796c34e23d9af8	Andrew_Forrest	428
+CompInsights	toy_1	2012-02-01-00	1328056560-450983d117c5a7903a3a27c959cc682a	Amy_Chua	375
+CompInsights	toy_1	2012-02-01-00	1328056560-450983d117c5a7903a3a27c959cc682a	Andrew_Forrest	428
+CompInsights	toy_1	2012-02-01-00	1328056260-684e2f8fc90de6ef949946f5061a91e0	Andrew_Forrest	428
+CompInsights	toy_1	2012-02-01-00	1328056560-be417475cca57b6557a7d5db0bbc6959	Andrew_Forrest	428
+CompInsights	toy_1	2012-02-01-00	1328057520-4e92eb721bfbfdfa0b1d9476b1ecb009	Annie_Laurie_Gaylor	315
+CompInsights	toy_1	2012-02-01-01	1328058660-807e4aaeca58000f6889c31c24712247	Andrew_Forrest	428
+CompInsights	toy_1	2012-02-01-01	1328060040-7a8c209ad36bbb9c946348996f8c616b	Annie_Laurie_Gaylor	263
+CompInsights	toy_1	2012-02-01-02	1328063280-1ac4b6f3a58004d1596d6e42c4746e21	Andrew_Forrest	428
+CompInsights	toy_1	2012-02-01-02	1328064660-1a0167925256b32d715c1a3a2ee0730c	Andrew_Forrest	428
+CompInsights	toy_1	2012-02-01-02	1328062980-7324a71469556bcd1f3904ba090ab685	Andrew_Forrest	428
+#{
+#    "team_id": "CompInsights", 
+#    "run_info": {
+#        "num_filter_results": 13, 
+#        "elapsed_time": 3.591719150543213, 
+#        "num_entities": 4, 
+#        "num_entity_doc_compares": 2296, 
+#        "num_stream_hours": 3
+#    }, 
+#    "topic_set_id": "sample-trec-kba-topics-2012", 
+#    "corpus_id": "tiny-sample-of-hourly-corpus", 
+#    "task_id": "kba-ccr-2012", 
+#    "system_id": "toy_1", 
+#    "$schema": "http://trec-kba.org/schemas/v1.0/filter-run.json", 
+#    "system_description": "Collapses entity title strings and documents into sets of words and looks for fraction of exact match overlap with entity titles.  Relevance is fraction of entity title words that appear in doc.", 
+#    "run_type": "automatic"
+#}

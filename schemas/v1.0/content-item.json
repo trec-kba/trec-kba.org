@@ -1,0 +1,44 @@
+{
+    "id": "http://trec-kba.org/schemas/v1.0/content-item.json",
+    "description": "Raw data, such as text, used by stream-item for 'title', 'body', and 'anchor'.",
+    "type": "object",
+    "$schema": "http://json-schema.org/draft-03/schema#",
+    "properties": {
+        "$schema": {
+            "description": "URI of this JSON schema document.",
+            "type": "string",
+            "enum": ["http://trec-kba.org/schemas/v1.0/content-item.json"],
+            "required": false,
+            "default": "http://trec-kba.org/schemas/v1.0/content-item.json"
+            },
+        "raw": {
+            "description": "Raw data downloaded from remote source.  This is always treated as a byte array and converted to a string literal using python v2.7.2 String.encode('string-escape').  See http://trec-kba.org/corpus.shtml for more info.",
+            "type": "string",
+            "required": true
+            },
+        "encoding": {
+            "description": "Character encoding extracted from headers, and if that fails then the first <meta.*?charset tag in 'raw'.",
+            "type": "string",
+            "required": false
+            },
+        "stages": {
+            "description": "Sequence of post-processing steps applied to 'raw' in order to produce additional properties on this content-item instance.",
+            "type": "array",
+	    "items": {
+		"description": "Name of post-processing step.",
+		"type": "object",
+                "properties": {
+                    "name": {
+                        "description": "Property name on the content-item instance containing the output of this stage of processing.  These property names are not defined in this schema.  Such added properties are permitted because content-item.additionalProperties is true.",
+                        "type": "string"
+                        },
+                    "description": {
+                        "description": "Human-readable description of the software configuration used in this stage of processing.",
+                        "type": "string"
+                        }
+                    }
+                },
+            "required": true
+            }
+        }
+    }

@@ -1,0 +1,281 @@
+<html>
+  <head>
+        <title>Knowledge Base Acceleration (KBA) -- a track in NIST's TREC 2012</title>
+    <style>
+#kbabanner {
+  background: #9D9FA1;
+  color: #FFFFFF;
+  font-family: "Trebuchet MS", Helvetica, Arial, sans-serif;
+  font-size: 44px;
+  text-shadow: 2px 2px 3px gray;
+  padding: 4px 16px 0px 16px;
+  vertical-align: top;
+}
+#kbabanner a:link {
+  text-decoration: none;
+  color: #FFFFFF;
+}
+#kbabanner a:visited {
+  text-decoration: none;
+  color: #FFFFFF;
+}
+#container {
+  width: 90%;
+  margin: 10px auto;
+  background-color: #fff;
+  color: #333;
+  border: 1px solid gray;
+  line-height: 130%;
+}
+#top {
+  padding: .5em;
+  background-color: #ddd;
+  border-bottom: 1px solid gray;
+}
+#top h1 {
+  padding: 0;
+  margin: 0;
+}
+#leftnav {
+  float: left;
+  width: 250px;
+  margin: 0;
+  padding: 1em;
+}
+#leftnav li { 
+  //margin-left:0px; 
+  //margin-right:0px; 
+  padding: 0px 0px 5px 0px;
+  list-style:square; 
+  list-style-type:none;
+  font-weight: bold;
+}
+#leftnav ul { 
+  //margin-left:0px; 
+  //margin-right:0px; 
+  padding: 0px 0px 0px 20px;
+  list-style:square; 
+  list-style-type:none;
+}
+#content {
+  margin-left: 290px;
+  border-left: 1px solid gray;
+  padding: 1em;
+  max-width: 56em;
+}
+
+html, body {height: 90%;}
+
+#wrap {min-height: 100%;}
+
+#main {
+  overflow:auto;
+  padding-bottom: 15px; /* must be same height as the footer */
+}
+
+#footer {
+  position: relative;
+  margin-top: -15px; /* negative value of footer height */
+  height: 15px;
+  clear:both;
+  margin: 0;
+  padding: .5em;
+  color: #333;
+  background-color: #ddd;
+  border-top: 1px solid gray;	
+}
+/*Opera Fix*/
+body:before {
+  content:"";
+  height:100%;
+  float:left;
+  width:0;
+  margin-top:-32767px;/
+}
+#leftnav p { margin: 0 0 1em 0; }
+#content h2 { margin: 0 0 .5em 0; }
+
+.diagram {
+   position: relative;
+   width: 100%; /* for IE 6 */
+}
+.diagram p {
+   position: absolute;
+   top: -20px;
+   left: 300px;
+   width: 50%;
+   text-align: left;
+   font-size: large;
+   font-weight: normal;
+   border-style: solid;
+   padding: 5px;
+}
+    </style>
+    <script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-27631853-2']);
+  _gaq.push(['_trackPageview']);
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+    </script>
+
+    <script type="text/javascript">
+  (function() {
+    var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+    po.src = 'https://apis.google.com/js/plusone.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+  })();
+    </script>
+    <!--[if !IE 7]>
+	<style type="text/css">
+	  #wrap {display:table;height:100%}
+	</style>
+    <![endif]-->
+
+  </head>
+  <body>
+        <div id="kbabanner">
+      <a href="index.html">
+	TREC Knowledge Base Acceleration
+	<image src="/trec-knowledge-base-acceleration-logo.png" height="50" style="float:right;"/>
+      </a>
+    </div>
+    <div id="wrap">
+      <div id="leftnav">
+	<ul>
+	  <li><a href="index.html">Overview</a></li>
+	  <li><a href="data/index.shtml.html">Truth Data</a></li>
+	    <ol>
+	      <li><a href="data/fakba1/index.shtml.html">Google Freebase Annotation of KBA StreamCorpus</a></li>
+	    </ol>
+	  <li><a href="trec-kba-2014/index.shtml.html">2014 Evaluation (three tasks):</a>
+	    <ol>
+	      <li><a href="trec-kba-2014/vital-filtering.shtml.html">1) Vital Filtering</a></li>
+	      <li><a href="trec-kba-2014/streaming-slot-filling.shtml.html">2) Streaming Slot Filling</a></li>
+	      <li><a href="trec-kba-2014/accelerate-and-create.shtml.html">3) Accelerate &amp; Create</a></li>
+	      <li><a href="trec-kba-2014/technical-details.shtml.html">Technical Details</a></li>
+	    </ol>
+	  </li>
+	  <li><a href="trec-kba-2013.shtml.html">2013 Tasks</a></li>
+	  <li><a href="kba-ccr-2012.shtml.html">2012 Task</a></li>
+	  <li>Stream Corpus</a>
+	    <ol>
+	      <li><a href="kba-stream-corpus-2014.shtml.html">StreamCorpus 2014</a>
+	      <li><a href="kba-stream-corpus-2013.shtml.html">StreamCorpus 2013</a>
+	      <li><a href="kba-stream-corpus-2012.shtml.html">StreamCorpus 2012</a>
+	    </ol>
+	  </li>
+	  <!--li><a href="/future-task-ideas.shtml">Future Task Ideas</a></li-->
+	  <li><a href="background.shtml.html">Background</a></li>
+	  <li><a href="organizers.shtml.html">Organizers</a></li>
+	</ul>
+	<table>
+	  <tr><td>
+	      <p>Supporters:</p>
+	      <center>
+		<p><a href="http://aws.amazon.com/"><img src="img/AWS-logo.png"/></a></p>
+		<p><a href="http://trec.nist.gov/"><img src="img/NIST-logo.png"/></a></p>
+		<p><a href="http://diffeo.com/"><img src="img/Diffeo-logo.png"/></a></p>
+		<p><a href="http://mit.edu/"><img width="100" src="img/MIT-logo.gif"/></a></p>
+		<p><a href="http://hertzfoundation.org/"><img src="img/Hertz-Foundation-logo.png"/></a></p>
+	  </center></td></tr>
+	</table>
+        <!-- Place this tag where you want the +1 button to render -->
+        <g:plusone size="small" annotation="inline"></g:plusone>
+      </div>
+    <!-- wrap gets closed in footer.shtml -->
+
+      <div id="content">
+<h2>Background on KBA</h2>
+<p>Knowledge Base Acceleration (KBA) is an open evaluation in
+NIST's <a href="http://trec.nist.gov">Text Retrieval Conference
+(TREC).</a>  KBA addresses this fundamental question:
+
+<!-- insert the core research question of KBA used on several pages -->
+<div style="text-align: center; background-color: #eeeeee; font-size: x-large;">
+<b>Given a <i>rich dossier</i> on a subject, 
+<br/> filter a stream of documents to 
+<br/> accelerate users filling in knowledge gaps.
+</b></div>
+
+
+
+<p>Specfically, KBA posses this question in a stream filtering context
+and uses entities (people, organizations, buildings) as the subjects
+of interest.  The dossiers are profiles about the entities from a
+knowledge base (KB).  As the stream of documents progresses, the
+entities change and evolve, so KBA systems must detect when vital,
+new information appears that would motivate an update to the KB.</p>
+
+<p>KBA provides training data in the form of ground truth labels from
+the <i>beginning</i> of the stream.  This simulates a human user
+training a filter with feedback (positive and negative examples) and
+then leaving the system to run open loop as the stream continues.
+
+<p>KBA provides a predefined list of entity profiles as query targets
+and a corpus organized in hourly batches of 10<sup>5</sup> texts.
+Considering each hourly batch in chronological order, KBA systems
+perform various knowledge discovery tasks -- see the specific
+measurement goals for each year's tasks.
+
+	<p>Why streams and entities?</p>
+<ul><li>The hourly structured of the KBA stream corpus allows entities
+to <i>evolve</i>.  Unlike traditional filter topics defined by a list
+of keyword queries, <i>entities</i> are described by semi-structured
+articles in a knowledge base (KB) like Wikipedia, Facebook, LinkedIn,
+Crunchbase, etc.  Such KB articles are more human-centric and also
+provide richer material for modeling.</li></ul>
+
+	<p>What are knowledge bases and why accelerate them?</p>
+
+	<ul>
+	  <li>A knowledge base is a database of content about entities and their attributes and relationships.  For example, Wikipedia (WP) can be viewed as a knowledge base (KB) about the people, companies, groups, events, and other entities described by its articles.  The links between Wikipedia articles are often labeled as signifying relationships, such as "X is an employee of Y," and the infoboxes on some WP pages list semi-structured attributes of the entity.  In addition to Wikipedia, other KBs are an increasingly important part of workflows in biomedical research, financial market analysis, government, and other industries.</li>
+
+	  <br/>
+	  
+	  <li>The number of humans populating and maintaining a KB is generally much smaller than the number of entities that the KB intends to describe.  This mismatch means that the human curators are always behind -- new knowledge about an entity often waits a long time before a human editor incorporates it into the KB.  The KBA activity in TREC defines a set of well-posed research questions about how computer algorithms might help close this gap by automatically detecting new content about entities and recommending edits to the KB.</li>
+	</ul>
+
+	<p>Here is an <a href="http://en.wikipedia.org/wiki/Takashi_Murakami">example of an entity from Wikipedia</a> that illustrates several properties that make KBA research interesting:</p>
+	<img src="annotated-entity-example.png" width="600"/>
+
+	<p>KBA is related to several existing research activities in text analytics and text retrieval, including entity linking, relation extraction, knowledge base population, and topic detection &amp; tracking.  KBA combines elements of these lines of thinking by asking researchers to invent systems to participate in the human-driven process of assimilating information into a knowledge base (KB), like Wikipedia (WP) or Freebase (FB).</p>
+
+	<p>Incoming streams of new information are so large that even if a content routing engine perfectly connected each piece of inbound content with appropriate human curators and KB nodes, the humans would still fall behind.  Thus, a routing system must actually run open loop without human feedback for extended periods of time accumulating evidence about entities in the KB.</p>
+
+	<p>The KBA track is a forum for examining issues related to creating such systems, including:</p>
+
+	<ul>
+	  <li>While many news articles explicitly mention entities with WP nodes, some relevant articles do not.  Detecting these articles and linking them to appropriate WP nodes requires more sophisticated filtering techniques than simple name matching.</li>
+	  <br/>
+	  <li>Important attributes of an entity might change before a human editor assimilates this new information into the KB.  Thus, a KBA system may need to refer to its own proposed-but-not-yet-accepted edits in order to properly assess subsequent items in the stream.</li>
+	  <br/>
+	  <li>Only after sufficient evidence has accumulated should the system summon the scarce resources of human curators.  How can one define "sufficient" evidence?</li>
+	</ul>
+
+	<p>To begin studying these issues, we are generating a time-stamped corpus of Web, news, and social media over a multi-month period.  We are in the process of creating training &amp; evaluation data by manually labeling this corpus with passage selections associated with KB nodes.  In future years, we may consider other knowledge bases and streams, such as the stream of new articles in PubMed and KBs about proteins.</p>
+
+	<p>For the first year of KBA (TREC 2012), we conducted
+	a <a href="kba-ccr-2012.shtml.html">simple filtering task</a> and
+	had 11 teams submit runs from 43 algorithmic
+	approaches.  <a href="trec-kba-2013.shtml.html">TREC KBA 2013</a>
+	had 14 teams and more than 140 submissions.  <a href="http://trec-kba.org/trec-kba-2014">KBA is continuing in 2014.</a></p>
+
+	<p>Systems in KBA 2012 &amp; 2013 used a variety of
+approaches.  Given the large training set on some entities, machine
+learning approaches that used just words and phrases as features were
+often above the median in vital filtering.  Given the rich structure
+of links in WP, mining rich features from the KB also performed well.
+Several teams explored temporality within the CCR context. </p>
+
+      </div>
+    </div> <!-- end of wrap -->
+    <div id="footer">
+      <a href="http://groups.google.com/group/trec-kba">Google Group for TREC KBA</a>
+    </div>
+
+  </body>
+</html>

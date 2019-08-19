@@ -1,0 +1,407 @@
+<html>
+  <head>
+        <title>Knowledge Base Acceleration (KBA) -- a track in NIST's TREC 2012</title>
+    <style>
+#kbabanner {
+  background: #9D9FA1;
+  color: #FFFFFF;
+  font-family: "Trebuchet MS", Helvetica, Arial, sans-serif;
+  font-size: 44px;
+  text-shadow: 2px 2px 3px gray;
+  padding: 4px 16px 0px 16px;
+  vertical-align: top;
+}
+#kbabanner a:link {
+  text-decoration: none;
+  color: #FFFFFF;
+}
+#kbabanner a:visited {
+  text-decoration: none;
+  color: #FFFFFF;
+}
+#container {
+  width: 90%;
+  margin: 10px auto;
+  background-color: #fff;
+  color: #333;
+  border: 1px solid gray;
+  line-height: 130%;
+}
+#top {
+  padding: .5em;
+  background-color: #ddd;
+  border-bottom: 1px solid gray;
+}
+#top h1 {
+  padding: 0;
+  margin: 0;
+}
+#leftnav {
+  float: left;
+  width: 250px;
+  margin: 0;
+  padding: 1em;
+}
+#leftnav li { 
+  //margin-left:0px; 
+  //margin-right:0px; 
+  padding: 0px 0px 5px 0px;
+  list-style:square; 
+  list-style-type:none;
+  font-weight: bold;
+}
+#leftnav ul { 
+  //margin-left:0px; 
+  //margin-right:0px; 
+  padding: 0px 0px 0px 20px;
+  list-style:square; 
+  list-style-type:none;
+}
+#content {
+  margin-left: 290px;
+  border-left: 1px solid gray;
+  padding: 1em;
+  max-width: 56em;
+}
+
+html, body {height: 90%;}
+
+#wrap {min-height: 100%;}
+
+#main {
+  overflow:auto;
+  padding-bottom: 15px; /* must be same height as the footer */
+}
+
+#footer {
+  position: relative;
+  margin-top: -15px; /* negative value of footer height */
+  height: 15px;
+  clear:both;
+  margin: 0;
+  padding: .5em;
+  color: #333;
+  background-color: #ddd;
+  border-top: 1px solid gray;	
+}
+/*Opera Fix*/
+body:before {
+  content:"";
+  height:100%;
+  float:left;
+  width:0;
+  margin-top:-32767px;/
+}
+#leftnav p { margin: 0 0 1em 0; }
+#content h2 { margin: 0 0 .5em 0; }
+
+.diagram {
+   position: relative;
+   width: 100%; /* for IE 6 */
+}
+.diagram p {
+   position: absolute;
+   top: -20px;
+   left: 300px;
+   width: 50%;
+   text-align: left;
+   font-size: large;
+   font-weight: normal;
+   border-style: solid;
+   padding: 5px;
+}
+    </style>
+    <script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-27631853-2']);
+  _gaq.push(['_trackPageview']);
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+    </script>
+
+    <script type="text/javascript">
+  (function() {
+    var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+    po.src = 'https://apis.google.com/js/plusone.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+  })();
+    </script>
+    <!--[if !IE 7]>
+	<style type="text/css">
+	  #wrap {display:table;height:100%}
+	</style>
+    <![endif]-->
+
+  </head>
+  <body>
+        <div id="kbabanner">
+      <a href="index.html">
+	TREC Knowledge Base Acceleration
+	<image src="/trec-knowledge-base-acceleration-logo.png" height="50" style="float:right;"/>
+      </a>
+    </div>
+    <div id="wrap">
+      <div id="leftnav">
+	<ul>
+	  <li><a href="index.html">Overview</a></li>
+	  <li><a href="data/index.shtml.html">Truth Data</a></li>
+	    <ol>
+	      <li><a href="data/fakba1/index.shtml.html">Google Freebase Annotation of KBA StreamCorpus</a></li>
+	    </ol>
+	  <li><a href="trec-kba-2014/index.shtml.html">2014 Evaluation (three tasks):</a>
+	    <ol>
+	      <li><a href="trec-kba-2014/vital-filtering.shtml.html">1) Vital Filtering</a></li>
+	      <li><a href="trec-kba-2014/streaming-slot-filling.shtml.html">2) Streaming Slot Filling</a></li>
+	      <li><a href="trec-kba-2014/accelerate-and-create.shtml.html">3) Accelerate &amp; Create</a></li>
+	      <li><a href="trec-kba-2014/technical-details.shtml.html">Technical Details</a></li>
+	    </ol>
+	  </li>
+	  <li><a href="trec-kba-2013.shtml.html">2013 Tasks</a></li>
+	  <li><a href="kba-ccr-2012.shtml.html">2012 Task</a></li>
+	  <li>Stream Corpus</a>
+	    <ol>
+	      <li><a href="kba-stream-corpus-2014.shtml.html">StreamCorpus 2014</a>
+	      <li><a href="kba-stream-corpus-2013.shtml.html">StreamCorpus 2013</a>
+	      <li><a href="kba-stream-corpus-2012.shtml.html">StreamCorpus 2012</a>
+	    </ol>
+	  </li>
+	  <!--li><a href="/future-task-ideas.shtml">Future Task Ideas</a></li-->
+	  <li><a href="background.shtml.html">Background</a></li>
+	  <li><a href="organizers.shtml.html">Organizers</a></li>
+	</ul>
+	<table>
+	  <tr><td>
+	      <p>Supporters:</p>
+	      <center>
+		<p><a href="http://aws.amazon.com/"><img src="img/AWS-logo.png"/></a></p>
+		<p><a href="http://trec.nist.gov/"><img src="img/NIST-logo.png"/></a></p>
+		<p><a href="http://diffeo.com/"><img src="img/Diffeo-logo.png"/></a></p>
+		<p><a href="http://mit.edu/"><img width="100" src="img/MIT-logo.gif"/></a></p>
+		<p><a href="http://hertzfoundation.org/"><img src="img/Hertz-Foundation-logo.png"/></a></p>
+	  </center></td></tr>
+	</table>
+        <!-- Place this tag where you want the +1 button to render -->
+        <g:plusone size="small" annotation="inline"></g:plusone>
+      </div>
+    <!-- wrap gets closed in footer.shtml -->
+
+      <div id="content">
+ 	<h2>KBA Stream Corpus 2014</h2>
+ 	<p><font size="5" color="red"><a href="http://s3.amazonaws.com/aws-publicdatasets/trec/kba/index.html">The KBA Stream Corpus
+	2014</a> was released in the third week of May 2014</font>
+	</p>
+
+	<p>For full details on KBA StreamCorpus, see the home page in
+	s3: <a href="http://s3.amazonaws.com/aws-publicdatasets/trec/kba/index.html">http://s3.amazonaws.com/aws-publicdatasets/trec/kba/index.html</a></p>
+
+	<p>The TREC KBA Stream Corpus has three improvements over the 
+	<a href="kba-stream-corpus-2013.shtml.html">kba-stream-corpus-2013</a>:
+	<ul>
+	  <li>BBN's Serif NLP tools, including within-doc coref and dependency parses, are being run on all English-like documents.
+	  <li>Better character encoding detection and conversion to UTF8, and more documents have clean_visible.
+	  <li>epoch_ticks always agree with zulu_timestamp and the date_hour directory.
+	</ul>	    
+	</p>
+	  
+	<p>See <a href="http://streamcorpus.org">streamcorpus.org</a>
+	for more info on tools for processing the corpus.</p>
+
+	<p>Every document has a time stamp in the time range from
+	October 2011 through mid February 2013.</p>
+
+	<p>We will post a complete list of paths in S3 when it is
+	available.</p>
+        
+	<h2>Directory Structure</h2>
+	<p>The data is stored in a shallow directory hierarchy:</p>
+	<pre>
+	  /.../YYYY-MM-DD-HH/&lt;substream source name&gt;.&lt;item count&gt;.&lt;md5&gt;.xz.gpg
+	</pre>
+	<p>'YYYY-MM-DD-HH' denotes a year-month-day-hour in UTC.</p>
+	<p>'md5' represents the md5 hexdigest of that chunks decrypted
+	uncompressed data.  The number of stream_item instances per
+	file varies between few dozen and five hundred.  This
+	directory structure enables a variety of processing
+	approaches, including multi-step mapreduce jobs.</p>
+
+	<h2>Compressed and Encrypted</h2>
+	<p>After serializing the data with thrift, we have compressed
+	each chunk with XZ and encrypted it with GPG.  The GPG keys
+	are provided by NIST to organizations that sign the data use
+	agreements.</p>
+
+	<h2>NER, dependency parsing, in-doc coref chains</h2>
+	<p>We are running BBN's Serif named entity recognizer,
+	within-doc coreference resolver, and dependency parser on the
+	corpus.
+	</p>
+	
+	<h2>Thrift Serialization</h2>
+	<p> The data inside each chunk file is serialized
+	with <a href="http://thrift.apache.org/">thrift</a>, which you
+	can use to generate client code in most programming languages.
+
+	For KBA 2014, we have extended this thrift definition.  Read here for more details:
+	  <a href="https://github.com/trec-kba/streamcorpus/blob/master/if/streamcorpus-v0_3_0.thrift">https://github.com/trec-kba/streamcorpus/blob/master/if/streamcorpus.thrift</a>.</p>
+
+	<p>See
+	the <a href="https://github.com/trec-kba/streamcorpus/">streamcorpus
+	project in github</a> for tools to help you interact with
+	streamcorpus chunks.</p>
+	
+	<ul>
+	  <li>The python classes generated by thrift --gen (see above)</li>
+	  <li>The <a href="http://pypi.python.org/pypi/thrift/">python bindings to thrift,</a></li>
+	  <li><a href="http://tukaani.org/xz/">XZ utils command line tools</a>, which it uses as a child process,</li>
+	  <li><a href="http://www.gnupg.org/">GnuPG</a>, for decrypting the corpus using the key provided to you by NIST, which it also uses as a child process.</li>
+	</ul>
+
+
+<h2>Coping with the Big Data</h2>
+<p>While the corpus is large, each individual hour is only 10^5 docs.
+Teams have exploited this in several ways, including:
+  <ul>
+    <li><b>Pre-indexing</b> many hourly chunks in a search engine
+    like <a href="http://www.lemurproject.org/indri/">indri</a>, 
+    <a href="http://lucene.apache.org/solr/">solr</a>, 
+    <a href="http://www.elasticsearch.org/">elasticsearch</a>,
+    and then simulate an hourly stream by issuing queries restricted
+    to each hour in sequential order.  In implementing such an
+    approach, one should avoid using future information by configuring
+    ranking algorithms to <i>not</i> not use statistics future
+    documents.</li>
+    <li><b>Batch processing</b>: you can iterate over the corpus as a
+    sequence of ~4300 batches.  This can be implemented using a
+    MapReduce framework like Hadoop or
+    even <a href="https://github.com/erikfrey/bashreduce">BashReduce</a>.</li>
+  </ul>
+</p>
+
+<a name="serif"/>
+<h2>Serif</h2>
+
+<p>BBN's Serif tagger has been run to generate
+StreamItem.body.sentences['serif'] output on all English-like
+documents in the corpus.  In addition to Token.entity_type,
+Token.mention_type, and Token.equiv_id (within-doc coref), this also
+provides Token.dependency_path and Token.parent_id
+
+<p>Each dependency path shows the complete path through the
+constituent parse tree to get from a word to the word it depends on.
+This path consists of two parts: walking up the tree from the source
+word to the common ancestor node; and then walking down the tree to
+the word that the source word depends on.  These are expressed as
+follows:
+
+<pre>
+   PATH     := PATH_UP CTAG PATH_DN
+   PATH_UP  := "/" | "/" CTAG PATH_UP
+   PATH_DN  := "\" | "\" CTAG PATH_DN
+   CTAG     := S | NP | PP | VP | etc...
+</pre>
+
+<p>Where PATH_UP is the path up from the source word to the common 
+ancestor, the "CTAG" in the "PATH" expansion is the constituent tag for 
+the common ancestor, and PATH_DN is the path back down to the word that 
+the source word depends on.  The "root" node (the one whose "parent_id" 
+is -1) will always have an empty PATH_DN.
+
+Here's an example sentence:
+<pre>
+> 0 Comment    -1  /NPA/NP\
+> 1 on          0  /PP/NP\NPA\
+> 2 Third       3  /NPA\
+> 3 Baby        1  /NPA/PP\
+> 4 for         0  /PP/NP\NPA\
+> 5 Umngani     4  /NPA/PP\
+> 6 by          0  /PP/NP\NPA\
+> 7 ALLE        6  /NPP/PP\
+</pre>
+
+<p>And here's the corresponding parse tree (with constituent tags, but 
+*not* part of speech tags):
+
+<pre>
+   (NP (NPA Comment)
+       (PP on (NPA Third Baby))
+       (PP for (NPA Umnagi))
+       (PP by (NPP ALLE)))
+</pre>
+
+<p>To take an example, if we start at the word "for" (word 4), and trace 
+the path to the word it depends on (word 0), then we go up the tree from 
+"for->PP->NP", and then back down the tree from "NP->NPA->Comment". 
+Putting those paths together, we get "/PP/NP\NPA", which is indeed the 
+dependency label shown.
+
+<p>To reconstruct the parse tree that it came from, we can start with the 
+root node ("Comment") -- based on its PATH_UP, we have:
+<pre>
+     (NP (NPA Comment))
+</pre>
+
+<p>Then we can add in the words that are dependent on it (words 1, 4, and 
+6), to get:
+<pre>
+     (NP (NPA Comment) (PP on) (PP for) (PP by))
+</pre>
+
+<p>(Note that the complete PATH_DN is actually more information that we 
+really need to reconstruct the tree -- in particular, all we really need 
+to know is how long PATH_DN is -- i.e., "how high" to attach the 
+dependent).  Moving on, we attach the words that are dependent on the 
+prepositions to get:
+
+<pre>
+   (NP (NPA Comment)
+       (PP on (NPA Baby))
+       (PP for (NPA Umnagi))
+       (PP by (NPP ALLE)))
+</pre>
+
+<p>And finally we attach "Third" to "Baby" using the very short path 
+"/NPA\" to get back to the original tree:
+
+<pre>
+   (NP (NPA Comment)
+       (PP on (NPA Third Baby))
+       (PP for (NPA Umnagi))
+       (PP by (NPP ALLE)))
+</pre>
+
+
+
+	<h2><a name="data-request-forms">Obtaining the Corpus</a></h2>
+	<p style="font-size: large;">See the corpus access page at NIST: <a href="http://trec.nist.gov/data/kba.html">http://trec.nist.gov/data/kba.html</a></p>
+
+<p>The corpus is available in <a href="http://aws.amazon.com/">Amazon Web Services (AWS) S3</a>:
+	  <ul>
+	    <li> We recommend using Amazon's <a href="http://aws.amazon.com/ec2/">Elastic Compute Cloud (EC2)</a> and <a href="http://aws.amazon.com/elasticmapreduce/">Elastic Map Reduce (EMR)</a> tools to process the corpus.  While this will cost you compute charges, Amazon is hosting the corpus for free in this bucket:  
+	      <pre>s3://aws-publicdatasets/trec/kba/index.html</pre>
+	      A useful tool for interacting with the corpus in S3 is <a href="http://s3tools.org/s3cmd">http://s3tools.org/s3cmd</a>.
+	    </li>
+	    <br/>
+	    <li> You can also retrieve the corpus using wget, like this:
+	      <pre>
+## Fetch the list of directory names -- date-hour strings
+wget http://s3.amazonaws.com/aws-publicdatasets/trec/kba/(TBD...)
+		    
+## Use GNU parallel to make multiple wget requests in parallel.  
+## The --continue flag makes this restartable.
+cat dir-names.txt | parallel -j 10 --eta 'wget --recursive --continue --no-host-directories --no-parent --reject "index.html*" http://s3.amazonaws.com/aws-publicdatasets/trec/kba/(TBD...)/{}/index.html'
+	      </pre>		  
+	    </li>
+	  </ul>
+	</p>
+
+      </div>
+    </div> <!-- end of wrap -->
+    <div id="footer">
+      <a href="http://groups.google.com/group/trec-kba">Google Group for TREC KBA</a>
+    </div>
+
+  </body>
+</html>

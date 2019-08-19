@@ -1,0 +1,442 @@
+<html>
+  <head>
+        <title>Knowledge Base Acceleration (KBA) -- a track in NIST's TREC 2012</title>
+    <style>
+#kbabanner {
+  background: #9D9FA1;
+  color: #FFFFFF;
+  font-family: "Trebuchet MS", Helvetica, Arial, sans-serif;
+  font-size: 44px;
+  text-shadow: 2px 2px 3px gray;
+  padding: 4px 16px 0px 16px;
+  vertical-align: top;
+}
+#kbabanner a:link {
+  text-decoration: none;
+  color: #FFFFFF;
+}
+#kbabanner a:visited {
+  text-decoration: none;
+  color: #FFFFFF;
+}
+#container {
+  width: 90%;
+  margin: 10px auto;
+  background-color: #fff;
+  color: #333;
+  border: 1px solid gray;
+  line-height: 130%;
+}
+#top {
+  padding: .5em;
+  background-color: #ddd;
+  border-bottom: 1px solid gray;
+}
+#top h1 {
+  padding: 0;
+  margin: 0;
+}
+#leftnav {
+  float: left;
+  width: 250px;
+  margin: 0;
+  padding: 1em;
+}
+#leftnav li { 
+  //margin-left:0px; 
+  //margin-right:0px; 
+  padding: 0px 0px 5px 0px;
+  list-style:square; 
+  list-style-type:none;
+  font-weight: bold;
+}
+#leftnav ul { 
+  //margin-left:0px; 
+  //margin-right:0px; 
+  padding: 0px 0px 0px 20px;
+  list-style:square; 
+  list-style-type:none;
+}
+#content {
+  margin-left: 290px;
+  border-left: 1px solid gray;
+  padding: 1em;
+  max-width: 56em;
+}
+
+html, body {height: 90%;}
+
+#wrap {min-height: 100%;}
+
+#main {
+  overflow:auto;
+  padding-bottom: 15px; /* must be same height as the footer */
+}
+
+#footer {
+  position: relative;
+  margin-top: -15px; /* negative value of footer height */
+  height: 15px;
+  clear:both;
+  margin: 0;
+  padding: .5em;
+  color: #333;
+  background-color: #ddd;
+  border-top: 1px solid gray;	
+}
+/*Opera Fix*/
+body:before {
+  content:"";
+  height:100%;
+  float:left;
+  width:0;
+  margin-top:-32767px;/
+}
+#leftnav p { margin: 0 0 1em 0; }
+#content h2 { margin: 0 0 .5em 0; }
+
+.diagram {
+   position: relative;
+   width: 100%; /* for IE 6 */
+}
+.diagram p {
+   position: absolute;
+   top: -20px;
+   left: 300px;
+   width: 50%;
+   text-align: left;
+   font-size: large;
+   font-weight: normal;
+   border-style: solid;
+   padding: 5px;
+}
+    </style>
+    <script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-27631853-2']);
+  _gaq.push(['_trackPageview']);
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+    </script>
+
+    <script type="text/javascript">
+  (function() {
+    var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+    po.src = 'https://apis.google.com/js/plusone.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+  })();
+    </script>
+    <!--[if !IE 7]>
+	<style type="text/css">
+	  #wrap {display:table;height:100%}
+	</style>
+    <![endif]-->
+
+  </head>
+  <body>
+        <div id="kbabanner">
+      <a href="../index.html">
+	TREC Knowledge Base Acceleration
+	<image src="/trec-knowledge-base-acceleration-logo.png" height="50" style="float:right;"/>
+      </a>
+    </div>
+    <div id="wrap">
+      <div id="leftnav">
+	<ul>
+	  <li><a href="../index.html">Overview</a></li>
+	  <li><a href="../data/index.shtml.html">Truth Data</a></li>
+	    <ol>
+	      <li><a href="../data/fakba1/index.shtml.html">Google Freebase Annotation of KBA StreamCorpus</a></li>
+	    </ol>
+	  <li><a href="index.shtml.html">2014 Evaluation (three tasks):</a>
+	    <ol>
+	      <li><a href="vital-filtering.shtml.html">1) Vital Filtering</a></li>
+	      <li><a href="streaming-slot-filling.shtml.html">2) Streaming Slot Filling</a></li>
+	      <li><a href="accelerate-and-create.shtml.html">3) Accelerate &amp; Create</a></li>
+	      <li><a href="technical-details.shtml.html">Technical Details</a></li>
+	    </ol>
+	  </li>
+	  <li><a href="../trec-kba-2013.shtml.html">2013 Tasks</a></li>
+	  <li><a href="../kba-ccr-2012.shtml.html">2012 Task</a></li>
+	  <li>Stream Corpus</a>
+	    <ol>
+	      <li><a href="../kba-stream-corpus-2014.shtml.html">StreamCorpus 2014</a>
+	      <li><a href="../kba-stream-corpus-2013.shtml.html">StreamCorpus 2013</a>
+	      <li><a href="../kba-stream-corpus-2012.shtml.html">StreamCorpus 2012</a>
+	    </ol>
+	  </li>
+	  <!--li><a href="/future-task-ideas.shtml">Future Task Ideas</a></li-->
+	  <li><a href="../background.shtml.html">Background</a></li>
+	  <li><a href="../organizers.shtml.html">Organizers</a></li>
+	</ul>
+	<table>
+	  <tr><td>
+	      <p>Supporters:</p>
+	      <center>
+		<p><a href="http://aws.amazon.com/"><img src="../img/AWS-logo.png"/></a></p>
+		<p><a href="http://trec.nist.gov/"><img src="../img/NIST-logo.png"/></a></p>
+		<p><a href="http://diffeo.com/"><img src="../img/Diffeo-logo.png"/></a></p>
+		<p><a href="http://mit.edu/"><img width="100" src="../img/MIT-logo.gif"/></a></p>
+		<p><a href="http://hertzfoundation.org/"><img src="../img/Hertz-Foundation-logo.png"/></a></p>
+	  </center></td></tr>
+	</table>
+        <!-- Place this tag where you want the +1 button to render -->
+        <g:plusone size="small" annotation="inline"></g:plusone>
+      </div>
+    <!-- wrap gets closed in footer.shtml -->
+
+      <div id="content">
+
+<h2>TREC KBA 2014: Vital Filtering</h2>
+<p>Knowledge Base Acceleration (KBA) is an open evaluation in
+NIST's <a href="http://trec.nist.gov">Text Retrieval Conference
+(TREC).</a>  KBA addresses this fundamental question:
+
+<!-- insert the core research question of KBA used on several pages -->
+<div style="text-align: center; background-color: #eeeeee; font-size: x-large;">
+<b>Given a <i>rich dossier</i> on a subject, 
+<br/> filter a stream of documents to 
+<br/> accelerate users filling in knowledge gaps.
+</b></div>
+
+
+<p>The Vital Filtering task is the foundation task in KBA.  All
+systems must perform this task.  This task is also known as
+&quot;Cumulative Citation Recommendation&quot; or &quot;CCR&quot;, and
+repeats the KBA 2012 and KBA 2013 task
+with <a href="index.shtml.html#improvements">improvements</a>.</p>
+
+<h3>Basic Rules</h3>
+
+<p>The <a href="technical-details.shtml.html#submissions">run submission format</a> requires:<span style="font-family: courier">task_id: kba-ccr-2014</span>
+</p>
+
+<p>Systems must iterate over the hourly directories of data in
+chronological order, hour by hour.  Systems must not go back to
+promote documents using information from the future.  There is no
+limit on the number of documents that may be included in a run
+submission.</p>
+
+<p>All of the filtering topics and annotations from the beginning of the
+stream will be available to all teams at the start of the
+evaluation.</p>
+
+<p>All entities will be <i>specified</i> by a &quot;target_id&quot;
+URL in <a href="http://en.wikipedia.org/">Wikipedia</a> or a URL
+invented for the track.  Since many entities will not have a Wikipedia
+profile, the <i>definition</i> of the entity will consist of the
+training documents with byte offsets to mentions of the entity.</p>
+
+<p>The &quot;no future info&quot; rule is still in effect:
+for any given date hour, systems may only access information about the
+entity from the past.  Systems that use Twitter or Wikipedia APIs to
+access information about the entity must filter the data from those
+APIs to only consider information that was available before the
+date_hour being processed.</p>
+
+<p>While all of the ground truth data for KBA will be released with
+the queries to support the <a href="accelerate-and-create.shtml.html">third
+task</a>, Vital Filtering systems may only use the ground truth data
+up to the specific cutoff time.</p>
+
+<p>It is possible for a document to be vital for multiple
+target entities.<p>
+
+<p>Only those documents that have 'clean_visible' text are candidates
+for the task.  The NIST Assessors are instructed to discard any
+documents that are not primarily English.</p>
+
+<h3>Entity Selection Process</h3>		
+<p>Instead of having the organizers hand-pick entities as we did in
+previous years, we are setting up the assessors to hand-pick entities
+from within a geographic domain.  This will help ensure that the
+entities have more uniform coverage in the stream, and will hopefully
+find more interrelated entities.</p>
+
+<h3>Assessor Guidelines</h3>
+<p>kba-ccr-2014 has no novelty requirement, so if Justin Bieber were a
+target entity (he is not) and he happens to produce a new album, and
+two hundred StreamItems (documents) announce it within a very short
+time frame, e.g. one day, then in principle they are all citation
+worthy -- they all contain information that would update an already
+up-to-date profile.</p>
+
+<p>The hard part of CCR is modeling the notion of citation worthiness
+and vitality: what would motivate a change and what does &quot;already
+up-to-date&quot; mean?  The assessors are instructed to learn the
+background information about the entity, and then to adopt a
+subjective timeframe for how rapidly <i>new</i> information
+transitions to <i>background</i> information based on their own style
+and sense of the rate of change of the entity.  Generally, the
+timeframe is less than a week and more than one hour.  Since multiple
+reports about a change often provide a diversity of perspectives and
+nuance, there is a natural period of re-equilibration that accompanies
+each substantive change.  The duration of this updating window is
+subjective and a key aspect of vital filtering, because this is a
+user-centric task.
+
+<p>Regarding what kind of information qualifies as
+&quot;motivating&quot; a change, the NIST assessors are instructed to
+approach each entity as though they are building a detailed profile or
+dossier appropriate to that specific entity.  Some entities have more
+exciting/dramatic updates than others.  Assessors must pick a
+subjective threshold for what to include.  The threshold is generally
+above recording that the entity was mentioned in a particular
+newspaper (otherwise every mention would be inherently vital).  The
+threshold is generally sensitive enough to include explicit meeting or
+place/time events involving the entity.</p>
+
+<p>Since some entities are in Wikipedia, the assessors mental model of
+a profile should look like a completed Wikipedia article.  Other
+entities are less well known, and might not meet the notoriety
+requirements of Wikipedia -- in these cases, the NIST assessors are
+instructed to consider a profile appropriate for the entity, such as a
+Freebase article.  The profile and its content should match the nature
+of the entity.  </p>
+
+<h3>Relation to <a href="streaming-slot-filling.shtml.html">Streaming Slot
+Filling</a></h3>
+<p>Assessors treat the KBA corpus as the universe of available
+information for filling slots on profiles.  <u><i>By definition, any
+document that fills a slot is vital.</i></u>  Therefore, two forms of
+vital documents occur:
+<ol>
+  <li>Documents describing current events that affect the entity</li>
+  <li>Documents that fill a previously empty slot on the profile</li>
+</ol>
+</p>
+
+<p>For entities with Wikipedia articles in the
+ <a href="http://s3.amazonaws.com/aws-publicdatasets/trec/kba/enwiki-20120104/index.html">enwiki-20120104-pages-articles.xml.xz
+   snapshot</a>, some of the slots may already be filled at the start
+   of the streamcorpus time range.</p>
+
+<h3>Pre-Hoc Judging</h3>
+<p>Both CCR and SSF are judged <font color="red">pre-hoc</font>, and
+all the CCR annotation for an early portion of the stream are provided
+as training data for all the pariticpants to use.</p>
+
+<p>Documents available to the assessors will be selected from the
+billion-document stream corpus using a high-recall (low-precision)
+name matching for the target geographic region, website hostnames
+relevant to that region, and/or surface form names of the entities.
+Participants' systems will probably find some true positive results
+that were not available to the annotators.  In 2012, we assessed the
+recall of the pre-hoc judging process and concluded that for most
+entities it was over 90%.  
+
+<p>While some systems may discover interesting pockets of unjudged
+documents, the pre-hoc judging process provides a valid and efficient
+means of comparing system's approaches without pooling results from
+systems and re-judging post-hoc.</p>
+
+<h3>Rating Levels</h3>
+<p>The 2012 and 2013 annotations required assessors to input
+&quot;contains_mention&quot; as well as rating level.  For 2014, we
+have simplified this: the two highest rating levels (vital and useful)
+imply contains_mention=True; the lowest rating level (garbage) implies
+contains_mention=False.  If necessary for computing some statistic,
+rating=Neutral(0) also implies contains_mention=True, however neutral
+documents are often best ignored as not containing substantive
+positive <i>or</i> negative examples of mentions to the entity.</p>
+
+<p>In 2013, KBA annotation had eight possible states from the
+cross-product of contains_mention=True|False and rating=-1,0,1,2.  For
+2014, we have reduced this to four possible states by eliminating
+ambiguous corner cases.  In 2013, there was relatively low assessor
+agreement on rating=-1 versus rating=0, and contains_mention is always
+True for rating=1,2.  The 2013 data can be mapped into this smaller
+set with these rules:
+
+<pre>
+if contains_mention == False:
+    ## all non-mentioning are now garbage
+    rating_2014 = -1
+elif rating_2013 == -1:
+    ## was garbage and contains mentions, so change to neutral
+    rating_2014 = 0
+else:
+    rating_2014 = rating_2013
+</pre>
+</p>
+
+<ul>
+  <li> <b><font color="red">Vital:</font> rating=2</b> means that the
+  document contains information that <i>at the time it entered the
+  stream</i> would motivate an update to the entity's dossier with
+  either a new slot value or timely, new info about the entity's
+  current state, actions, or situation.
+
+  The new info must motivate a change to an already up-to-date
+  knowledge base article.  Special cases include a deceased entity, in
+  which case the entity's estate is the current embodiment of the
+  entity and changes to the estate might trigger vital updates.  The
+  boundary between useful and vital is typified by documents in which
+  the temporal context is vague or requires thought to ascertain, such
+  as a job posting by an organization in which the assessor can deduce
+  that the date on the job posting implies that the organization
+  recently changed by opening the position.  Assessors must judge
+  whether such content is <i>timeless</i> (therefore Useful) or
+  happening <i>in time</i> (therefore Vital).
+
+  <br/>(No change from 2013.)</li>
+
+  <li> <b><font color="red">Useful:</font> rating=1</b> possibly
+  citable but not timely, e.g. background bio, primary or secondary
+  source.  After the basic slots are filled, this kind of text is
+  merely useful not vital.  The boundary between neutral and useful is
+  typified by documents that provide little detail about an entity,
+  such as &quot;Curduroy Mansions, by Alex McCall-Smith, is on the
+  best seller list.&quot; Assessors must judge whether such content
+  would be useful as a citable reference in the initial compilation of
+  the profile for this particular entity.
+
+  <br/>(No change from 2013.)</li>
+
+  <li> <b><font color="red">Neutral:</font> rating=0</b> informative but not
+  citable, e.g. tertiary source like WP article itself not relevant.
+  The boundary between garbage and neutral is typified by mentioning
+  documents that provide very little info about entity, e.g. entity
+  name used in product name or a passing reference like &quot;this
+  books plot reminds me of Alexander McCall Smith.&quot; Assessors
+  must make a subjective judgment based on the context and the
+  particular entity whether such texts are neutral or garbage.
+
+  <br/>(No change from 2013.)</li>
+
+  <li> <b><font color="red">Garbage:</font> (aka non-mentioning)
+  rating=&dash;1</b> no information about target entity, e.g. a
+  surface form name appears and context confirms that it is a
+  different entity, also includes spam or junk data that clearly does
+  not mention the entity.  If the assessor is unsure whether the
+  author intended to refer to the entity, then it is garbage.
+
+  <br/>Change from 2013: Garbage <i>always</i> means
+  non-mentioning.</li>
+</ul>
+
+<h3>Metrics</h3>
+
+<p> The primary metric for vital filtering (CCR) is maximum
+macro-averaged F_1 measure.  F_1 is a function of confidence cutoff.
+By sweeping the cutoff, we obtain a range of precision (P) &amp;
+recall (R) scores for each target entity.  After averaging P and R
+across the set of target queries, we then compute F_1 at each
+confidence threshold and take the maximum F_1 as the single score for
+the system.  The SSF metric will be as similar as possible.</p>
+
+<p>We are also interested in ranking measures and temporally oriented
+measures, and may add other secondary metrics.</p>
+
+
+      </div>
+    </div> <!-- end of wrap -->
+    <div id="footer">
+      <a href="http://groups.google.com/group/trec-kba">Google Group for TREC KBA</a>
+    </div>
+
+  </body>
+</html>

@@ -1,0 +1,301 @@
+<html>
+  <head>
+        <title>Knowledge Base Acceleration (KBA) -- a track in NIST's TREC 2012</title>
+    <style>
+#kbabanner {
+  background: #9D9FA1;
+  color: #FFFFFF;
+  font-family: "Trebuchet MS", Helvetica, Arial, sans-serif;
+  font-size: 44px;
+  text-shadow: 2px 2px 3px gray;
+  padding: 4px 16px 0px 16px;
+  vertical-align: top;
+}
+#kbabanner a:link {
+  text-decoration: none;
+  color: #FFFFFF;
+}
+#kbabanner a:visited {
+  text-decoration: none;
+  color: #FFFFFF;
+}
+#container {
+  width: 90%;
+  margin: 10px auto;
+  background-color: #fff;
+  color: #333;
+  border: 1px solid gray;
+  line-height: 130%;
+}
+#top {
+  padding: .5em;
+  background-color: #ddd;
+  border-bottom: 1px solid gray;
+}
+#top h1 {
+  padding: 0;
+  margin: 0;
+}
+#leftnav {
+  float: left;
+  width: 250px;
+  margin: 0;
+  padding: 1em;
+}
+#leftnav li { 
+  //margin-left:0px; 
+  //margin-right:0px; 
+  padding: 0px 0px 5px 0px;
+  list-style:square; 
+  list-style-type:none;
+  font-weight: bold;
+}
+#leftnav ul { 
+  //margin-left:0px; 
+  //margin-right:0px; 
+  padding: 0px 0px 0px 20px;
+  list-style:square; 
+  list-style-type:none;
+}
+#content {
+  margin-left: 290px;
+  border-left: 1px solid gray;
+  padding: 1em;
+  max-width: 56em;
+}
+
+html, body {height: 90%;}
+
+#wrap {min-height: 100%;}
+
+#main {
+  overflow:auto;
+  padding-bottom: 15px; /* must be same height as the footer */
+}
+
+#footer {
+  position: relative;
+  margin-top: -15px; /* negative value of footer height */
+  height: 15px;
+  clear:both;
+  margin: 0;
+  padding: .5em;
+  color: #333;
+  background-color: #ddd;
+  border-top: 1px solid gray;	
+}
+/*Opera Fix*/
+body:before {
+  content:"";
+  height:100%;
+  float:left;
+  width:0;
+  margin-top:-32767px;/
+}
+#leftnav p { margin: 0 0 1em 0; }
+#content h2 { margin: 0 0 .5em 0; }
+
+.diagram {
+   position: relative;
+   width: 100%; /* for IE 6 */
+}
+.diagram p {
+   position: absolute;
+   top: -20px;
+   left: 300px;
+   width: 50%;
+   text-align: left;
+   font-size: large;
+   font-weight: normal;
+   border-style: solid;
+   padding: 5px;
+}
+    </style>
+    <script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-27631853-2']);
+  _gaq.push(['_trackPageview']);
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+    </script>
+
+    <script type="text/javascript">
+  (function() {
+    var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+    po.src = 'https://apis.google.com/js/plusone.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+  })();
+    </script>
+    <!--[if !IE 7]>
+	<style type="text/css">
+	  #wrap {display:table;height:100%}
+	</style>
+    <![endif]-->
+
+  </head>
+  <body>
+        <div id="kbabanner">
+      <a href="../index.html">
+	TREC Knowledge Base Acceleration
+	<image src="/trec-knowledge-base-acceleration-logo.png" height="50" style="float:right;"/>
+      </a>
+    </div>
+    <div id="wrap">
+      <div id="leftnav">
+	<ul>
+	  <li><a href="../index.html">Overview</a></li>
+	  <li><a href="../data/index.shtml.html">Truth Data</a></li>
+	    <ol>
+	      <li><a href="../data/fakba1/index.shtml.html">Google Freebase Annotation of KBA StreamCorpus</a></li>
+	    </ol>
+	  <li><a href="index.shtml.html">2014 Evaluation (three tasks):</a>
+	    <ol>
+	      <li><a href="vital-filtering.shtml.html">1) Vital Filtering</a></li>
+	      <li><a href="streaming-slot-filling.shtml.html">2) Streaming Slot Filling</a></li>
+	      <li><a href="accelerate-and-create.shtml.html">3) Accelerate &amp; Create</a></li>
+	      <li><a href="technical-details.shtml.html">Technical Details</a></li>
+	    </ol>
+	  </li>
+	  <li><a href="../trec-kba-2013.shtml.html">2013 Tasks</a></li>
+	  <li><a href="../kba-ccr-2012.shtml.html">2012 Task</a></li>
+	  <li>Stream Corpus</a>
+	    <ol>
+	      <li><a href="../kba-stream-corpus-2014.shtml.html">StreamCorpus 2014</a>
+	      <li><a href="../kba-stream-corpus-2013.shtml.html">StreamCorpus 2013</a>
+	      <li><a href="../kba-stream-corpus-2012.shtml.html">StreamCorpus 2012</a>
+	    </ol>
+	  </li>
+	  <!--li><a href="/future-task-ideas.shtml">Future Task Ideas</a></li-->
+	  <li><a href="../background.shtml.html">Background</a></li>
+	  <li><a href="../organizers.shtml.html">Organizers</a></li>
+	</ul>
+	<table>
+	  <tr><td>
+	      <p>Supporters:</p>
+	      <center>
+		<p><a href="http://aws.amazon.com/"><img src="../img/AWS-logo.png"/></a></p>
+		<p><a href="http://trec.nist.gov/"><img src="../img/NIST-logo.png"/></a></p>
+		<p><a href="http://diffeo.com/"><img src="../img/Diffeo-logo.png"/></a></p>
+		<p><a href="http://mit.edu/"><img width="100" src="../img/MIT-logo.gif"/></a></p>
+		<p><a href="http://hertzfoundation.org/"><img src="../img/Hertz-Foundation-logo.png"/></a></p>
+	  </center></td></tr>
+	</table>
+        <!-- Place this tag where you want the +1 button to render -->
+        <g:plusone size="small" annotation="inline"></g:plusone>
+      </div>
+    <!-- wrap gets closed in footer.shtml -->
+
+      <div id="content">
+
+<h2>TREC KBA 2014: Streaming Slot Filling</h2>
+<p>Knowledge Base Acceleration (KBA) is an open evaluation in
+NIST's <a href="http://trec.nist.gov">Text Retrieval Conference
+(TREC).</a>  KBA addresses this fundamental question:
+
+<!-- insert the core research question of KBA used on several pages -->
+<div style="text-align: center; background-color: #eeeeee; font-size: x-large;">
+<b>Given a <i>rich dossier</i> on a subject, 
+<br/> filter a stream of documents to 
+<br/> accelerate users filling in knowledge gaps.
+</b></div>
+
+
+<h3>Basic Rules</h3>
+<p>SSF builds on CCR by requiring systems to complete a basic
+attribute information on each entity's profile in the KB.  In 2014, we
+have simplified this task by having the assessors create basic
+profiles for every entity while performing the vital filtering task.
+For each slot on each entity, assessors will assemble a list of valid
+string values from the <i>entire time frame.</i></p>
+
+<p>Systems must identify candidate slot fills as the stream progresses.</p>
+
+<p>The slot equivalence class concept from SSF 2013 has been
+deprecated and is not used in 2014.</p>
+
+<p>SSF runs use the
+same <a href="technical-details.shtml.html#submissions">run submission
+format</a> as CCR with two additional fields to specify the slot name
+and the byte offset of the slot filling passage in the clean_visible
+text.  Generally, slot fills are short phrases, not long
+paragraphs.</p>
+
+<p>The <a href="technical-details.shtml.html#submissions">run submission format</a> requires: <span style="font-family: courier">task_id: kba-ssf-2014</span>
+</p>
+
+<h3>Metrics</h3>
+<p>To score an SSF run, we plan to:
+<ol>
+  <li>Treat each (entity, slot_name) pair as a query</li>
+  <li>Take all of run's responses (slot fills) from the entire time range</li>
+  <li>De-duplicate responses keeping the highest confidence score for each string</li>
+  <li>Sort the list of fill strings for each query by confidence</li>
+  <li>Compute Mean Average Precision (MAP) on these ranked lists</li>
+  <li>Possibly other rank-based measures.</li>
+</ol>
+</p>
+
+<p>This procedures balances two objectives: 1) requiring systems to
+operate in a streaming fashion, and 2) enabling a clear cut evaluation
+protocol.</p>
+
+<p>Slot filling is a rich and complex task, and is explored by other
+open evaluations, e.g. <a href="http://www.nist.gov/tac/">TAC KBP</a>.
+For KBA SSF, we focus on generating candidate slot fills to present to
+a human trying to rapidly improve a KB profile.  This simplifies
+evaluation in several ways.  By pooling all of the slot fills from the
+entire time frame and scoring them against the entire list of ground
+truth slot fills, the metric ignores changing slot values.  While we
+are interested in a system's ability to model evolving slot values, we
+have elected to focus on the more basic task of finding good slot
+fills within the hour-by-hour restriction of the KBA task.  This means
+that the task is to find strings that <i>were ever</i> a good slot
+fill for that (entity-slot_name) pair.  In the future, we may
+introduce revised versions of this task.</p>
+
+<h3><a name="slot-names"></a>Target slots</h3>
+<p><font color="red">(This list will be changed/updated during
+assessing in June 2014)</font>:</p>
+
+<ul>
+  <li>Person (EntityType.PER):
+    <ul>
+      <li>Names</li>
+      <li>PlaceOfBirth</li>
+      <li>DateOfBirth</li>
+      <li>DateOfDeath</li>
+      <li>CauseOfDeath</li>
+      <li>AwardsWon</li>
+      <li>Titles</li>
+      <li>FounderOf</li>
+      <li>MemberOf (including EmployeeOf)</li>
+    </ul>
+  </li>
+  <li>Buildings &amp; Facilities (EntityType.FAC):
+    <ul>
+      <li>Names</li>
+      <li>DateOfConstruction</li>
+      <li>Owner</li>
+    </ul>
+  </li>
+  <li>Organizations (EntityType.ORG): 
+    <ul>
+      <li>Names</li> 
+      <li>DateOfFounding</li>
+      <li>FoundedBy</li>
+      <li>Members</li>
+    </ul>
+  </li>
+</ul>
+
+      </div>
+    </div> <!-- end of wrap -->
+    <div id="footer">
+      <a href="http://groups.google.com/group/trec-kba">Google Group for TREC KBA</a>
+    </div>
+
+  </body>
+</html>

@@ -1,0 +1,14 @@
+{
+    "$schema": "http://trec-kba.org/schemas/v1.0/filter-topics.json",
+    "topic_set_id": "sample-trec-kba-topics-2012",
+    "topic_names": ["Alisher_Usmanov", "Amy_Chua", "Andrew_Forrest", "Annie_Laurie_Gaylor"],
+    "kb": {
+        "name": "en-wikipedia",
+        "URL": "http://en.wikipedia.org/wiki/",
+        "snapshot_time": {
+            "epoch_ticks": 1326334731.0,
+            "zulu_timestamp": "2012-01-12T02:18:51.000000Z"
+            },
+        "description": "English Wikipedia shortly after the end of 2011.  snapshot_time is when the last part of this dump finished: http://dumps.wikimedia.org/enwiki/20120104/.  topic_names are the so-called 'urlname' within English Wikipedia on the snapshot date.  A URL for the entity's article page can be constructed by appending its topic name to kb.URL"
+        }
+    }

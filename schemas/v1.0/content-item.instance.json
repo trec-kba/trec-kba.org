@@ -1,0 +1,6 @@
+{
+    "$schema": "http://trec-kba.org/schemas/v1.0/content-item.json",
+    "raw": "hello",
+    "encoding": "utf-8",
+    "stages": []
+    }
